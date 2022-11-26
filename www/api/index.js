@@ -363,7 +363,7 @@ __export(routes_exports, {
   default: () => Index,
   loader: () => loader2
 });
-var import_react31 = require("@remix-run/react"), import_node = require("@remix-run/node"), import_remix4 = require("@clerk/remix"), import_ssr3 = require("@clerk/remix/ssr.server"), import_react32 = require("@chakra-ui/react");
+var import_react33 = require("@remix-run/react"), import_node = require("@remix-run/node"), import_remix4 = require("@clerk/remix"), import_ssr3 = require("@clerk/remix/ssr.server"), import_react34 = require("@chakra-ui/react");
 
 // app/utils/db.server.ts
 var import_ssr2 = require("@clerk/remix/ssr.server"), import_supabase_js = require("@supabase/supabase-js"), getDB = async (request) => {
@@ -2585,6 +2585,462 @@ var app = () => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HeroSlider, {
   columnNumber: 5
 }, this), ZeroSlider_default = app;
 
+// app/components/Header/Header.tsx
+var import_styled2 = __toESM(require("@emotion/styled")), import_react31 = require("react"), import_react_router_dom = require("react-router-dom"), import_react32 = require("@chakra-ui/react"), import_jsx_dev_runtime = require("react/jsx-dev-runtime");
+function Header({}) {
+  let navigate = (0, import_react_router_dom.useNavigate)(), navRef = (0, import_react31.useRef)(null), headerRef = (0, import_react31.useRef)(null), [scrolled, setScrolled] = (0, import_react31.useState)(!1), [inputFocus, setInputFocus] = (0, import_react31.useState)(!1), primaryLocationRef = (0, import_react31.useRef)(null), secondaryLocationRef = (0, import_react31.useRef)(null), [location, setLocation] = (0, import_react31.useState)(""), [checkInDate, setCheckInDate] = (0, import_react31.useState)(new Date()), [checkOutDate, setCheckOutDate] = (0, import_react31.useState)(new Date()), [numberOfAdults, setNumberOfAdults] = (0, import_react31.useState)(0), [numberOfChildren, setNumberOfChildren] = (0, import_react31.useState)(0), closeDatePicker = () => {
+    setInputFocus(!1), setLocation(""), setNumberOfChildren(0), setNumberOfAdults(0), setCheckInDate(new Date()), setCheckOutDate(new Date()), document.body.style.overflow = "initial";
+  };
+  return (0, import_react31.useEffect)(() => {
+    let handleClick = (event) => {
+      !headerRef.current || headerRef.current.contains(event.target) || closeDatePicker();
+    };
+    return document.addEventListener("click", handleClick), () => document.removeEventListener("click", handleClick);
+  }, []), (0, import_react31.useEffect)(() => {
+    let onScroll = () => {
+      window.scrollY > 10 ? setScrolled(!0) : setScrolled(!1);
+    };
+    return window.addEventListener("scroll", onScroll), () => window.removeEventListener("scroll", onScroll);
+  }, []), /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HeaderSection, {
+    ref: headerRef,
+    className: [
+      scrolled && "scrolled",
+      inputFocus ? "inputFocus" : null
+    ].join(" "),
+    children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
+      className: "headerInner",
+      children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
+          className: "logo",
+          onClick: () => navigate("/"),
+          children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("svg", {
+              viewBox: "0 0 256 276",
+              xmlns: "http://www.w3.org/2000/svg",
+              preserveAspectRatio: "xMidYMid",
+              children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("path", {
+                d: "M238 223.1a41 41 0 01-46 35c-7-.8-13.8-3-21-7.1-10-5.5-19.8-14-31.4-26.8 18.2-22.3 29.2-42.7 33.4-61 1.9-8.5 2.2-16.2 1.3-23.4a44.7 44.7 0 00-7.4-18.7 46.5 46.5 0 00-38.9-19.6c-16 0-30.3 7.4-38.9 19.6a44.8 44.8 0 00-7.4 18.7 57.3 57.3 0 001.3 23.5c4.2 18.2 15.5 38.9 33.4 61.2A123.8 123.8 0 0185 251.3c-7.2 4.1-14.1 6.3-21 7.1a41 41 0 01-46-35c-.9-6.9-.3-13.8 2.4-21.5.9-2.8 2.2-5.5 3.6-8.8l6.4-13.8.2-.6c19-41 39.5-83 60.7-123.8l.8-1.7 6.7-12.7c2.2-4.4 4.6-8.5 7.7-12a28.8 28.8 0 0144.1 0c3 3.5 5.5 7.6 7.7 12 2.2 4.2 4.4 8.6 6.7 12.7l.8 1.7c21 41 41.4 83 60.4 124.1v.3c2.2 4.4 4.1 9.4 6.3 13.8 1.4 3.3 2.8 6 3.6 8.8 2.2 7.2 3 14 2 21.2zm-110-13c-14.9-18.7-24.6-36.3-27.9-51.2a44.5 44.5 0 01-.8-16.9c.6-4.4 2.2-8.2 4.4-11.5 5.3-7.5 14-12.2 24.3-12.2 10.2 0 19.3 4.4 24.3 12.2 2.2 3.3 3.8 7.1 4.4 11.5.8 5 .5 10.8-.8 16.9-3.4 14.6-13 32.2-27.9 51.3zm124.4-14.3l-4.2-10-6.3-14-.3-.2c-19-41.4-39.4-83.3-61-124.7l-.8-1.7c-2.2-4.1-4.4-8.5-6.6-13-2.7-4.9-5.5-10.1-9.9-15.1a44.5 44.5 0 00-35-17.1C114.5 0 102 6 93 16.6a95 95 0 00-10 15.1l-6.6 13-.8 1.6c-21.2 41.4-42 83.3-61 124.7l-.2.6-6.4 14c-1.4 3-2.7 6.4-4.1 10a58.6 58.6 0 0062 79.4 72.8 72.8 0 0027.6-9.4c11.3-6.3 22-15.4 34.2-28.7a144.9 144.9 0 0034.2 28.7 72.9 72.9 0 0034.8 10 58.5 58.5 0 0058.2-50.2 52.1 52.1 0 00-2.5-29.6z",
+                fill: "currentColor"
+              }, void 0, !1, {
+                fileName: "app/components/Header/Header.tsx",
+                lineNumber: 114,
+                columnNumber: 13
+              }, this)
+            }, void 0, !1, {
+              fileName: "app/components/Header/Header.tsx",
+              lineNumber: 109,
+              columnNumber: 11
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
+              children: "airbnb"
+            }, void 0, !1, {
+              fileName: "app/components/Header/Header.tsx",
+              lineNumber: 119,
+              columnNumber: 11
+            }, this)
+          ]
+        }, void 0, !0, {
+          fileName: "app/components/Header/Header.tsx",
+          lineNumber: 108,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("nav", {
+          ref: navRef
+        }, void 0, !1, {
+          fileName: "app/components/Header/Header.tsx",
+          lineNumber: 121,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
+          className: "profile",
+          children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
+              href: "#",
+              children: "Become a host"
+            }, void 0, !1, {
+              fileName: "app/components/Header/Header.tsx",
+              lineNumber: 218,
+              columnNumber: 11
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
+              className: "signin",
+              children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react32.Link, {
+                backgroundColor: "white",
+                color: "hostelloRed.500",
+                href: "/sign-in",
+                p: "2",
+                borderRadius: "lg",
+                children: "Sign In"
+              }, void 0, !1, {
+                fileName: "app/components/Header/Header.tsx",
+                lineNumber: 225,
+                columnNumber: 13
+              }, this)
+            }, void 0, !1, {
+              fileName: "app/components/Header/Header.tsx",
+              lineNumber: 224,
+              columnNumber: 11
+            }, this)
+          ]
+        }, void 0, !0, {
+          fileName: "app/components/Header/Header.tsx",
+          lineNumber: 217,
+          columnNumber: 9
+        }, this)
+      ]
+    }, void 0, !0, {
+      fileName: "app/components/Header/Header.tsx",
+      lineNumber: 107,
+      columnNumber: 7
+    }, this)
+  }, void 0, !1, {
+    fileName: "app/components/Header/Header.tsx",
+    lineNumber: 100,
+    columnNumber: 5
+  }, this);
+}
+var HeaderSection = import_styled2.default.header`
+  position: fixed;
+  top: 0;
+  color: #fafafc;
+  padding: 1.5rem 3.5rem;
+  width: 100%;
+  z-index: 10;
+  transition: background 0.2s, border-bottom 0.2s;
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fafafc;
+    border-radius: 99px;
+    display: flex;
+    align-items: center;
+    left: 0;
+    top: 0;
+    transition: all 0.2s;
+    label,
+    input,
+    .guestNumber {
+      background: none;
+      font-size: 14px;
+      border: none;
+      line-height: 1.5;
+      display: block;
+      color: #2e2e48;
+      outline: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    input {
+      width: 100%;
+      font-weight: 700;
+      &::placeholder {
+        color: #2e2e48;
+        font-weight: 400;
+        opacity: 0.5;
+      }
+    }
+    .guestNumber {
+      font-weight: 700;
+      .empty {
+        color: #2e2e48;
+        font-weight: 400;
+        opacity: 0.5;
+      }
+    }
+    .field {
+      width: 100%;
+      padding: 0.5rem 1.5rem;
+      border-radius: 99px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: background 0.2s;
+      position: relative;
+      & + .field::before {
+        position: absolute;
+        content: "";
+        width: 2px;
+        height: 2rem;
+        background: #efeff5;
+        border-radius: 2px;
+        left: 0;
+        transition: transform 0.2s;
+      }
+      &:hover,
+      &:focus-within {
+        background: #efeff5;
+      }
+      &:last-of-type {
+        padding-right: 10rem;
+      }
+    }
+  }
+  .overlay:hover .field::before,
+  .overlay:focus-within .field::before {
+    transform: scale(0);
+  }
+  .user,
+  .profile,
+  .logo,
+  .globe,
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  .headerInner {
+    max-width: var(--containerWidth);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+  & > div {
+    flex: 0 0 20%;
+  }
+  nav {
+    flex: 1;
+    justify-content: center;
+    transition: all 0.2s;
+    a + a {
+      margin-left: 1.5rem;
+    }
+    a {
+      position: relative;
+    }
+    a::before {
+      position: absolute;
+      content: "";
+      width: 1.5rem;
+      height: 2px;
+      border-radius: 2px;
+      background: #fafafc;
+      bottom: -0.5rem;
+      left: calc(50% - 0.75rem);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.2s;
+    }
+    a:hover::before,
+    a.active::before {
+      transform: scaleX(1);
+    }
+  }
+  .logo {
+    cursor: pointer;
+    svg {
+      height: 2rem;
+      color: #fafafc;
+      transition: color 0.2s;
+    }
+    span {
+      font-weight: 600;
+      font-size: 1.15rem;
+      margin-left: 0.5rem;
+    }
+  }
+  .profile {
+    justify-content: flex-end;
+    white-space: nowrap;
+    svg {
+      height: 1.15rem;
+    }
+    a,
+    .themeToggle {
+      margin-right: 1.5rem;
+    }
+    .userIcon {
+      background: #2e2e48;
+      border-radius: 99px;
+      height: 1.5rem;
+      width: 1.5rem;
+      color: #fafafc;
+    }
+    .user {
+      background: #fafafc;
+      border-radius: 99px;
+      padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+    }
+    .menu {
+      color: #2e2e48;
+      margin-right: 0.5rem;
+    }
+  }
+  form {
+    position: absolute;
+    transform: translate(-50%, 150%);
+    left: 50%;
+    top: -1rem;
+    background: #fafafc;
+    padding: 0.5rem;
+    border-radius: 99px;
+    display: flex;
+    align-items: center;
+    max-width: 720px;
+    margin: 1.5rem 0;
+    width: 60vw;
+    box-shadow: 0 1rem 3rem -1rem #1e1e38;
+    transition: all 0.2s;
+    transform-origin: center;
+    & * {
+      transition: all 0.2s;
+    }
+    & > input {
+      background: none;
+      border: none;
+      font-size: 1.15rem;
+      flex: 1;
+      padding: 0 1.5rem;
+      color: #2e2e48;
+      outline: none;
+      &::placeholder {
+        color: #2e2e48;
+        opacity: 0.6;
+      }
+    }
+    & > button {
+      background: var(--red);
+      color: #fafafc;
+      border: none;
+      padding: 0.5rem calc(1.75rem / 2);
+      height: 3rem;
+      max-width: 300px;
+      display: flex;
+      align-items: center;
+      border-radius: 99px;
+      font-weight: 700;
+      font-size: 1rem;
+      overflow: hidden;
+      z-index: 2;
+      &:hover:not(:disabled) {
+        box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--red);
+      }
+      &:disabled {
+        opacity: 0.5;
+      }
+    }
+    & > button svg {
+      height: 1.25rem;
+      margin-right: 0.75rem;
+      flex: 0 0 1.25rem;
+    }
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  @media (max-width: 36rem) {
+    .profile,
+    .logo,
+    nav,
+    form > button span {
+      display: none;
+    }
+    .overlay {
+      display: none;
+    }
+    .headerInner {
+      grid-template-columns: 1fr;
+    }
+    form {
+      position: relative;
+      transform: none !important;
+      width: 100% !important;
+      left: unset;
+      top: 0;
+      margin: 0;
+      & > input {
+        padding: 0 1rem;
+        font-size: 1rem;
+      }
+      & > button {
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 0 0.6rem;
+      }
+      & > button svg {
+        height: 1rem;
+        width: 1rem;
+      }
+    }
+  }
+  @media (min-width: 36rem) and (max-width: 62.5rem) {
+    nav {
+      display: none;
+    }
+    .headerInner {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  &.scrolled:not(.inputFocus) {
+    background: #fafafc;
+    color: #2e2e48;
+    border-bottom: 2px solid #efeff5;
+    .overlay {
+      opacity: 0;
+      pointer-events: none;
+    }
+    nav {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .logo svg {
+      color: var(--red);
+    }
+    .user {
+      box-shadow: 0 0 0 2px #efeff5;
+    }
+    form {
+      box-shadow: 0 0 0 2px #efeff5;
+      transform: translate(-50%, 0.125rem) scale(0.83);
+      width: 480px;
+      & > button {
+        max-width: 3rem;
+      }
+      & > button span {
+        opacity: 0;
+      }
+    }
+    @media (max-width: 36rem) {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      form {
+        padding: 0;
+        box-shadow: none;
+        background: #efeff5;
+      }
+    }
+    @media (min-width: 36rem) and (max-width: 62.5rem) {
+      .profile {
+        opacity: 0;
+        pointer-events: none;
+      }
+      form {
+        left: auto;
+        right: 0;
+        transform: translate(0, 0.125rem) scale(0.83);
+        width: 50%;
+      }
+    }
+  }
+  &.inputFocus {
+    color: #2e2e48;
+    .logo svg {
+      color: var(--red);
+    }
+    form {
+      background: #fafafc;
+      width: 100%;
+      box-shadow: 0 1rem 1.5rem -0.5rem #0001;
+    }
+  }
+`;
+
 // app/routes/index.tsx
 var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), dbErrorMessage = 'Something is missing.<br/>Did you set up Supabase yet?<br/>You can find the <a href="https://github.com/clerkinc/remix-bossa-nova-stack#configuring-the-database" target="_blank">instructions in the README file</a>.', loader2 = async ({ request }) => {
   let { userId } = await (0, import_ssr3.getAuth)(request);
@@ -2600,28 +3056,41 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), dbErrorMessage = 
   return db && await db.from("songs").insert({ body: song, user_id: userId }), null;
 };
 function Index() {
-  let { signOut } = (0, import_remix4.useAuth)(), data = (0, import_react31.useLoaderData)(), headingSize = (0, import_react32.useBreakpointValue)({ base: "lg", sm: "2xl", lg: "4xl" });
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react32.Stack, {
-    justify: "center",
-    textAlign: "center",
-    h: "100vh",
-    flex: 1,
-    color: "white",
-    gap: 20,
-    children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(ZeroSlider_default, {}, void 0, !1, {
+  let { signOut } = (0, import_remix4.useAuth)(), data = (0, import_react33.useLoaderData)(), headingSize = (0, import_react34.useBreakpointValue)({ base: "lg", sm: "2xl", lg: "4xl" });
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, {
+    children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Stack, {
+      justify: "center",
+      textAlign: "center",
+      h: "100vh",
+      flex: 1,
+      color: "white",
+      gap: 20,
+      children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Header, {}, void 0, !1, {
+          fileName: "app/routes/index.tsx",
+          lineNumber: 69,
+          columnNumber: 17
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(ZeroSlider_default, {}, void 0, !1, {
+          fileName: "app/routes/index.tsx",
+          lineNumber: 70,
+          columnNumber: 17
+        }, this)
+      ]
+    }, void 0, !0, {
       fileName: "app/routes/index.tsx",
-      lineNumber: 66,
+      lineNumber: 61,
       columnNumber: 13
     }, this)
   }, void 0, !1, {
     fileName: "app/routes/index.tsx",
-    lineNumber: 58,
+    lineNumber: 60,
     columnNumber: 9
   }, this);
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "6c8c9f8d", entry: { module: "/build/entry.client-NUSWYUE2.js", imports: ["/build/_shared/chunk-MTZNF3KS.js", "/build/_shared/chunk-TQRZ6MKN.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-OOF2NEB2.js", imports: ["/build/_shared/chunk-V7UNJAP4.js", "/build/_shared/chunk-VJ4EJLE6.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-EX3PV2QY.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in/$": { id: "routes/sign-in/$", parentId: "root", path: "sign-in/*", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in/$-5F6QOJD6.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up/$": { id: "routes/sign-up/$", parentId: "root", path: "sign-up/*", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up/$-WNSLXJCS.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-6C8C9F8D.js" };
+var assets_manifest_default = { version: "829c47bd", entry: { module: "/build/entry.client-QJ4XP3PK.js", imports: ["/build/_shared/chunk-DW5TUCQ7.js", "/build/_shared/chunk-CX7ACZEC.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-EHODMERI.js", imports: ["/build/_shared/chunk-T4PHLTZI.js", "/build/_shared/chunk-QHC6ONDH.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-S6Q6W6Y4.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in/$": { id: "routes/sign-in/$", parentId: "root", path: "sign-in/*", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in/$-BAFFGPLJ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up/$": { id: "routes/sign-up/$", parentId: "root", path: "sign-up/*", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up/$-Y2BMNG74.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-829C47BD.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", publicPath = "/build/", entry = { module: entry_server_exports }, routes = {

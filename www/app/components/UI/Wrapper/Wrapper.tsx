@@ -15,7 +15,7 @@ const WrapperDiv = styled.div({
 });
 
 
-const wrapper = ({children}: {children: React.ReactChildren} ) => {
+const wrapper = ({children}: {children: React.ReactChildren | JSX.Element[]} ) => {
   return (
     <WrapperDiv>
       {children}

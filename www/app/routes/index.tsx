@@ -5,6 +5,7 @@ import { useAuth } from '@clerk/remix'
 import { getAuth } from '@clerk/remix/ssr.server'
 import {
     Button,
+    Container,
     Flex,
     Heading,
     Link as ChakraLink,
@@ -14,6 +15,7 @@ import {
 } from '@chakra-ui/react'
 import { getDB } from 'utils'
 import ZeroSlider from '~/components/ZeroSlider/ZeroSlider'
+import Header from '~/components/Header/Header'
 
 const dbErrorMessage =
     'Something is missing.<br/>Did you set up Supabase yet?<br/>You can find the <a href="https://github.com/clerkinc/remix-bossa-nova-stack#configuring-the-database" target="_blank">instructions in the README file</a>.'
@@ -55,15 +57,18 @@ export default function Index() {
     const headingSize = useBreakpointValue({ base: 'lg', sm: '2xl', lg: '4xl' })
 
     return (
-        <Stack
-            justify='center'
-            textAlign='center'
-            h='100vh'
-            flex={1}
-            color='white'
-            gap={20}
-        >
-            <ZeroSlider/>
-        </Stack>
+        <>
+            <Stack
+                justify='center'
+                textAlign='center'
+                h='100vh'
+                flex={1}
+                color='white'
+                gap={20}
+            >
+                <Header/>
+                <ZeroSlider/>
+            </Stack>
+        </>
     )
 }
