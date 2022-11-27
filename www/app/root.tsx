@@ -15,6 +15,8 @@ import { withEmotionCache } from '@emotion/react'
 import { theme } from 'theme'
 import { ServerStyleContext, ClientStyleContext } from './context'
 import 'focus-visible' // Remove Chakra's outline caused by clicks
+import Header from './components/Header/Header'
+import styles from "./styles/index.css";
 
 export const loader: LoaderFunction = args => rootAuthLoader(args)
 export const CatchBoundary = ClerkCatchBoundary()
@@ -32,10 +34,29 @@ const ourTheme = {
     }
 }
 
+{/*
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/animate.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+*/}
+export function links() {
+  return [
+    { rel: "stylesheet", href: styles },
+    {/*
+    { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/animate.min.css" },
+    { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" },
+    { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-icons.css" },
+    */}
+    //{ rel: "stylesheet", href: "assets/vendor/swiper/swiper-bundle.min.css" },
+  ];
+}
+
 function App() {
     return (
         <Document>
             <ChakraProvider theme={ourTheme}>
+                <Header/>
                 <Box as='main' minH='100vh' pos='relative'>
                     <Outlet />
                 </Box>

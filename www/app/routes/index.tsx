@@ -66,7 +66,6 @@ export default function Index() {
                 color='white'
                 gap={20}
             >
-                <Header/>
                 <ZeroSlider/>
             </Stack>
         </>
