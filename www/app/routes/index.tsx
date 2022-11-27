@@ -4,9 +4,11 @@ import { ActionFunction, json } from '@remix-run/node'
 import { useAuth } from '@clerk/remix'
 import { getAuth } from '@clerk/remix/ssr.server'
 import {
+    Box,
     Button,
     Container,
     Flex,
+    Grid,
     Heading,
     Link as ChakraLink,
     Stack,
@@ -16,6 +18,7 @@ import {
 import { getDB } from 'utils'
 import ZeroSlider from '~/components/ZeroSlider/ZeroSlider'
 import Header from '~/components/Header/Header'
+import HostelsList from '~/components/HostelsList/HostelsList'
 
 const dbErrorMessage =
     'Something is missing.<br/>Did you set up Supabase yet?<br/>You can find the <a href="https://github.com/clerkinc/remix-bossa-nova-stack#configuring-the-database" target="_blank">instructions in the README file</a>.'
@@ -68,6 +71,7 @@ export default function Index() {
             >
                 <ZeroSlider/>
             </Stack>
+            <HostelsList/>
         </>
     )
 }

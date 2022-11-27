@@ -2134,7 +2134,7 @@ __export(routes_exports, {
   default: () => Index,
   loader: () => loader2
 });
-var import_react34 = require("@remix-run/react"), import_node = require("@remix-run/node"), import_remix4 = require("@clerk/remix"), import_ssr3 = require("@clerk/remix/ssr.server"), import_react35 = require("@chakra-ui/react");
+var import_react36 = require("@remix-run/react"), import_node = require("@remix-run/node"), import_remix4 = require("@clerk/remix"), import_ssr3 = require("@clerk/remix/ssr.server"), import_react37 = require("@chakra-ui/react");
 
 // app/utils/db.server.ts
 var import_ssr2 = require("@clerk/remix/ssr.server"), import_supabase_js = require("@supabase/supabase-js"), getDB = async (request) => {
@@ -4356,6 +4356,350 @@ var app = () => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HeroSlider, {
   columnNumber: 5
 }, this), ZeroSlider_default = app;
 
+// app/components/HostelsList/HostelsList.tsx
+var import_react34 = require("@chakra-ui/react"), import_icons = require("@chakra-ui/icons"), import_react35 = require("react");
+
+// app/components/HostelsList/hostels.json
+var hostels_default = [
+  {
+    city: "Helsinki",
+    country: "Finland",
+    superHost: !1,
+    title: "Stylist apartment in center of the city",
+    rating: 4.4,
+    maxGuests: 3,
+    type: "Entire apartment",
+    beds: 2,
+    photo: "https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80"
+  },
+  {
+    city: "Turku",
+    country: "Finland",
+    superHost: !1,
+    title: "Nice apartment in center of Helsinki",
+    rating: 4.2,
+    maxGuests: 5,
+    type: "Entire apartment",
+    beds: 3,
+    photo: "https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
+  },
+  {
+    city: "Helsinki",
+    country: "Finland",
+    superHost: !0,
+    title: "Arty interior in 1900 wooden house",
+    rating: 4.5,
+    maxGuests: 10,
+    type: "Entire house",
+    beds: 6,
+    photo: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
+  },
+  {
+    city: "Helsinki",
+    country: "Finland",
+    superHost: !1,
+    title: "Apartment next to market spuare",
+    rating: 4.48,
+    maxGuests: 3,
+    type: "Entire apartment",
+    beds: null,
+    photo: "https://images.unsplash.com/photo-1556020685-ae41abfc9365?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
+  },
+  {
+    city: "Turku",
+    country: "Finland",
+    superHost: !0,
+    title: "Villa Aurora guest-house",
+    rating: 4.75,
+    maxGuests: 9,
+    type: "Entire house",
+    beds: null,
+    photo: "https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2249&q=80"
+  },
+  {
+    city: "Vaasa",
+    country: "Finland",
+    superHost: !0,
+    title: "A cosy family house",
+    rating: 4.95,
+    maxGuests: 6,
+    type: "Entire house",
+    beds: null,
+    photo: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
+  },
+  {
+    city: "Vaasa",
+    country: "Finland",
+    superHost: !1,
+    title: "Lovely Studio near Railway Station",
+    rating: 4.68,
+    maxGuests: 2,
+    type: "Private room",
+    beds: null,
+    photo: "https://images.unsplash.com/photo-1505693314120-0d443867891c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2591&q=80"
+  },
+  {
+    city: "Oulu",
+    country: "Finland",
+    superHost: !1,
+    title: "Peaceful little home in city center",
+    rating: 4.12,
+    maxGuests: 6,
+    type: "Entire house",
+    beds: 3,
+    photo: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
+  },
+  {
+    city: "Oulu",
+    country: "Finland",
+    superHost: !1,
+    title: "Beautiful new studio apartment nearby the center",
+    rating: 4.49,
+    maxGuests: 2,
+    type: "Entire apartment",
+    beds: 1,
+    photo: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2255&q=80"
+  },
+  {
+    city: "Oulu",
+    country: "Finland",
+    superHost: !0,
+    title: "Cozy woodhouse flat with wooden sauna",
+    rating: 4.38,
+    maxGuests: 4,
+    type: "Entire house",
+    beds: null,
+    photo: "https://images.unsplash.com/photo-1522156373667-4c7234bbd804?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=930&q=80"
+  },
+  {
+    city: "Vaasa",
+    country: "Finland",
+    superHost: !1,
+    title: "Brand new studio apartment near the harbour",
+    rating: 4.89,
+    maxGuests: 6,
+    type: "Entire apartment",
+    beds: 3,
+    photo: "https://images.unsplash.com/photo-1494203484021-3c454daf695d?ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
+  },
+  {
+    city: "Helsinki",
+    country: "Finland",
+    superHost: !1,
+    title: "Beautiful and comfortable old wooden house",
+    rating: 4.63,
+    maxGuests: 10,
+    type: "Entire house",
+    beds: null,
+    photo: "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
+  },
+  {
+    city: "Turku",
+    country: "Finland",
+    superHost: !1,
+    title: "Turku Nordic Home near city center",
+    rating: 4.24,
+    maxGuests: 5,
+    type: "Entire apartment",
+    beds: 3,
+    photo: "https://images.unsplash.com/photo-1519643381401-22c77e60520e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjE3MzYxfQ&auto=format&fit=crop&w=2253&q=80"
+  },
+  {
+    city: "Turku",
+    country: "Finland",
+    superHost: !0,
+    title: "Nice 2 room apartment close to everything",
+    rating: 4.34,
+    maxGuests: 6,
+    type: "Entire apartment",
+    beds: 3,
+    photo: "https://images.unsplash.com/photo-1523755231516-e43fd2e8dca5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1275&q=80"
+  }
+];
+
+// app/components/HostelsList/HostelsList.tsx
+var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), HostelsList = () => {
+  let [location, setLocation] = (0, import_react35.useState)(null), [guests, setGuests] = (0, import_react35.useState)(0), filteredStays = hostels_default.filter((stay) => (location === null || stay.city + ", " + stay.country === location) && stay.maxGuests >= guests), staysList = /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Stack, {
+    width: "100%",
+    paddingX: "60px",
+    children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Grid, {
+      templateColumns: "repeat(12, 1fr)",
+      gap: 8,
+      paddingY: 2,
+      children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.GridItem, {
+          colSpan: 12,
+          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Box, {
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-end",
+            children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Text, {
+                variant: "h5",
+                as: "h2",
+                sx: { fontWeight: "bold" },
+                children: "All stays"
+              }, void 0, !1, {
+                fileName: "app/components/HostelsList/HostelsList.tsx",
+                lineNumber: 16,
+                columnNumber: 17
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Text, {
+                variant: "body2",
+                as: "span",
+                children: filteredStays.length + " stay" + (filteredStays.length !== 1 ? "s" : "")
+              }, void 0, !1, {
+                fileName: "app/components/HostelsList/HostelsList.tsx",
+                lineNumber: 20,
+                columnNumber: 17
+              }, this)
+            ]
+          }, void 0, !0, {
+            fileName: "app/components/HostelsList/HostelsList.tsx",
+            lineNumber: 15,
+            columnNumber: 15
+          }, this)
+        }, void 0, !1, {
+          fileName: "app/components/HostelsList/HostelsList.tsx",
+          lineNumber: 14,
+          columnNumber: 13
+        }, this),
+        filteredStays.map((stay) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.GridItem, {
+          colSpan: [12, 6, 4],
+          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Card, {
+            sx: { border: 0, boxShadow: 0, background: "unset", height: "100%" },
+            children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.CardHeader, {
+                padding: 0,
+                children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", {
+                  src: stay.photo,
+                  alt: stay.title,
+                  width: "100%",
+                  style: { borderRadius: "16px", aspectRatio: "394/267", objectFit: "cover" }
+                }, void 0, !1, {
+                  fileName: "app/components/HostelsList/HostelsList.tsx",
+                  lineNumber: 30,
+                  columnNumber: 23
+                }, this)
+              }, void 0, !1, {
+                fileName: "app/components/HostelsList/HostelsList.tsx",
+                lineNumber: 29,
+                columnNumber: 21
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.CardBody, {
+                sx: { padding: 0, paddingTop: "0.5em" },
+                children: [
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Box, {
+                    display: "flex",
+                    justifyContent: "space-between",
+                    children: [
+                      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Box, {
+                        children: [
+                          stay.superHost && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Button, {
+                            variant: "outlined",
+                            size: "small",
+                            sx: { fontSize: "0.7em", borderRadius: "20px", lineHeight: 1.3, textTransform: "uppercase", fontWeight: "bold", marginRight: "1em" },
+                            children: "Super host"
+                          }, void 0, !1, {
+                            fileName: "app/components/HostelsList/HostelsList.tsx",
+                            lineNumber: 36,
+                            columnNumber: 29
+                          }, this),
+                          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Text, {
+                            variant: "body2",
+                            as: "span",
+                            sx: { opacity: 0.7 },
+                            children: stay.type + (stay.beds ? " \xB7 " + stay.beds + " beds" : "")
+                          }, void 0, !1, {
+                            fileName: "app/components/HostelsList/HostelsList.tsx",
+                            lineNumber: 40,
+                            columnNumber: 27
+                          }, this)
+                        ]
+                      }, void 0, !0, {
+                        fileName: "app/components/HostelsList/HostelsList.tsx",
+                        lineNumber: 34,
+                        columnNumber: 25
+                      }, this),
+                      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Stack, {
+                        direction: "row",
+                        alignItems: "center",
+                        gap: 0.5,
+                        children: [
+                          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_icons.StarIcon, {
+                            color: "secondary"
+                          }, void 0, !1, {
+                            fileName: "app/components/HostelsList/HostelsList.tsx",
+                            lineNumber: 45,
+                            columnNumber: 27
+                          }, this),
+                          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Text, {
+                            variant: "body2",
+                            as: "span",
+                            children: stay.rating
+                          }, void 0, !1, {
+                            fileName: "app/components/HostelsList/HostelsList.tsx",
+                            lineNumber: 46,
+                            columnNumber: 27
+                          }, this)
+                        ]
+                      }, void 0, !0, {
+                        fileName: "app/components/HostelsList/HostelsList.tsx",
+                        lineNumber: 44,
+                        columnNumber: 25
+                      }, this)
+                    ]
+                  }, void 0, !0, {
+                    fileName: "app/components/HostelsList/HostelsList.tsx",
+                    lineNumber: 33,
+                    columnNumber: 23
+                  }, this),
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Text, {
+                    variant: "h6",
+                    as: "p",
+                    children: stay.title
+                  }, void 0, !1, {
+                    fileName: "app/components/HostelsList/HostelsList.tsx",
+                    lineNumber: 52,
+                    columnNumber: 23
+                  }, this)
+                ]
+              }, void 0, !0, {
+                fileName: "app/components/HostelsList/HostelsList.tsx",
+                lineNumber: 32,
+                columnNumber: 21
+              }, this)
+            ]
+          }, void 0, !0, {
+            fileName: "app/components/HostelsList/HostelsList.tsx",
+            lineNumber: 28,
+            columnNumber: 19
+          }, this)
+        }, void 0, !1, {
+          fileName: "app/components/HostelsList/HostelsList.tsx",
+          lineNumber: 27,
+          columnNumber: 17
+        }, this))
+      ]
+    }, void 0, !0, {
+      fileName: "app/components/HostelsList/HostelsList.tsx",
+      lineNumber: 13,
+      columnNumber: 11
+    }, this)
+  }, void 0, !1, {
+    fileName: "app/components/HostelsList/HostelsList.tsx",
+    lineNumber: 12,
+    columnNumber: 9
+  }, this);
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, {
+    children: staysList
+  }, void 0, !1, {
+    fileName: "app/components/HostelsList/HostelsList.tsx",
+    lineNumber: 64,
+    columnNumber: 5
+  }, this);
+}, HostelsList_default = HostelsList;
+
 // app/routes/index.tsx
 var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), dbErrorMessage = 'Something is missing.<br/>Did you set up Supabase yet?<br/>You can find the <a href="https://github.com/clerkinc/remix-bossa-nova-stack#configuring-the-database" target="_blank">instructions in the README file</a>.', loader2 = async ({ request }) => {
   let { userId } = await (0, import_ssr3.getAuth)(request);
@@ -4371,34 +4715,41 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), dbErrorMessage = 
   return db && await db.from("songs").insert({ body: song, user_id: userId }), null;
 };
 function Index() {
-  let { signOut } = (0, import_remix4.useAuth)(), data = (0, import_react34.useLoaderData)(), headingSize = (0, import_react35.useBreakpointValue)({ base: "lg", sm: "2xl", lg: "4xl" });
+  let { signOut } = (0, import_remix4.useAuth)(), data = (0, import_react36.useLoaderData)(), headingSize = (0, import_react37.useBreakpointValue)({ base: "lg", sm: "2xl", lg: "4xl" });
   return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, {
-    children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react35.Stack, {
-      justify: "center",
-      textAlign: "center",
-      h: "100vh",
-      flex: 1,
-      color: "white",
-      gap: 20,
-      children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(ZeroSlider_default, {}, void 0, !1, {
+    children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react37.Stack, {
+        justify: "center",
+        textAlign: "center",
+        h: "100vh",
+        flex: 1,
+        color: "white",
+        gap: 20,
+        children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(ZeroSlider_default, {}, void 0, !1, {
+          fileName: "app/routes/index.tsx",
+          lineNumber: 72,
+          columnNumber: 17
+        }, this)
+      }, void 0, !1, {
         fileName: "app/routes/index.tsx",
-        lineNumber: 69,
-        columnNumber: 17
+        lineNumber: 64,
+        columnNumber: 13
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HostelsList_default, {}, void 0, !1, {
+        fileName: "app/routes/index.tsx",
+        lineNumber: 74,
+        columnNumber: 13
       }, this)
-    }, void 0, !1, {
-      fileName: "app/routes/index.tsx",
-      lineNumber: 61,
-      columnNumber: 13
-    }, this)
-  }, void 0, !1, {
+    ]
+  }, void 0, !0, {
     fileName: "app/routes/index.tsx",
-    lineNumber: 60,
+    lineNumber: 63,
     columnNumber: 9
   }, this);
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "079c72df", entry: { module: "/build/entry.client-KTFRKIGW.js", imports: ["/build/_shared/chunk-XYQ6REEW.js", "/build/_shared/chunk-3IHOYD53.js", "/build/_shared/chunk-DF3UMLFY.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-CLJAS4YE.js", imports: ["/build/_shared/chunk-76L6VUOC.js", "/build/_shared/chunk-EQA6FUBX.js", "/build/_shared/chunk-6LDNDHSZ.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/hostel/$hostelId": { id: "routes/hostel/$hostelId", parentId: "root", path: "hostel/:hostelId", index: void 0, caseSensitive: void 0, module: "/build/routes/hostel/$hostelId-VSB4W7EI.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-DMKXLNPQ.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in/$": { id: "routes/sign-in/$", parentId: "root", path: "sign-in/*", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in/$-46ZATJ5E.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up/$": { id: "routes/sign-up/$", parentId: "root", path: "sign-up/*", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up/$-ITJOQ7GI.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-079C72DF.js" };
+var assets_manifest_default = { version: "98fb67ac", entry: { module: "/build/entry.client-54QDP5ML.js", imports: ["/build/_shared/chunk-RFR2BVBZ.js", "/build/_shared/chunk-U7PDLUNP.js", "/build/_shared/chunk-36S4JRLM.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-ECXCB5GP.js", imports: ["/build/_shared/chunk-V5RMJA44.js", "/build/_shared/chunk-6AZZXBV6.js", "/build/_shared/chunk-3WKBNXIS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/hostel/$hostelId": { id: "routes/hostel/$hostelId", parentId: "root", path: "hostel/:hostelId", index: void 0, caseSensitive: void 0, module: "/build/routes/hostel/$hostelId-AUKC2TL5.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-GXHKC4IW.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in/$": { id: "routes/sign-in/$", parentId: "root", path: "sign-in/*", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in/$-EOIJ7FOZ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up/$": { id: "routes/sign-up/$", parentId: "root", path: "sign-up/*", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up/$-PSSTIFSB.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-98FB67AC.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
