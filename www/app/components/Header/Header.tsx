@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { Search, Globe, Menu, User } from "react-feather";
 import React, { useRef, useEffect, useState } from "react";
 {/*
 import DatePicker from "./DatePicker";
@@ -7,11 +6,14 @@ import { useMediaQuery } from "@react-hook/media-query";
 import MobileNav from "./MobileNav";
 */}
 import { useNavigate } from "react-router-dom";
-import { Button, Link } from '@chakra-ui/react';
+import { Button, Link, Stack, Text } from '@chakra-ui/react';
+import { useAuth, useUser } from '@clerk/remix';
 
 export default function Header({ /*placeholder*/ }) {
   const navigate = useNavigate();
   const navRef = useRef(null);
+  const { isSignedIn, signOut } = useAuth();
+  const { user } = useUser();
   const headerRef = useRef(null);
   const [scrolled, setScrolled] = useState(false);
   const [inputFocus, setInputFocus] = useState(false);
@@ -221,11 +223,22 @@ export default function Header({ /*placeholder*/ }) {
             <Globe />
           </a>
           */}
-          <div className="signin">
-            <Link backgroundColor='white' color='hostelloRed.500' href='/sign-in' p='2' borderRadius='lg'>
-              Sign In
-            </Link>
-          </div>
+          {isSignedIn ? (
+            <Stack className='user-profile' direction={'row'} justifyContent={'center'} alignItems={'center'}>
+              <Text>
+                {user?.firstName}
+              </Text>
+              <Text color={'red.300'} fontSize={'xs'} cursor={'pointer'} onClick={() => signOut()}>
+                Logout
+              </Text>
+            </Stack>
+          ) : (
+            <div className="signin">
+              <Link backgroundColor='white' color='hostelloRed.500' href='/sign-in' p='2' borderRadius='lg'>
+                Sign In
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </HeaderSection>
