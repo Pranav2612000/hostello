@@ -1,11 +1,13 @@
 import { Grid, Text, Container, Button, Stack, GridItem, Box, Card, CardBody, CardHeader } from '@chakra-ui/react';
 import {StarIcon} from '@chakra-ui/icons';
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import stays from './hostels.json';
 
 const HostelsList = () => {
   const [location, setLocation] = useState<null | String>(null);
   const [guests, setGuests] = useState<number>(0);
+  const navigate = useNavigate();
 
     const filteredStays = stays.filter((stay) => (location === null || stay.city + ', ' + stay.country === location) && stay.maxGuests >= guests)
     const staysList = (
@@ -25,7 +27,7 @@ const HostelsList = () => {
             {filteredStays.map((stay) => {
               return (
                 <GridItem colSpan={[12,6,4]}>
-                  <Card sx={{ border: 0, boxShadow: 0, background: 'unset', height: '100%' }}>
+                  <Card sx={{ border: 0, boxShadow: 0, background: 'unset', height: '100%' }} onClick={() => navigate(`/hostel/${stay.id}`)}>
                     <CardHeader padding={0}>
                       <img src={stay.photo} alt={stay.title} width="100%" style={{ borderRadius: '16px', aspectRatio: '394/267', objectFit: 'cover' }} />
                     </CardHeader>

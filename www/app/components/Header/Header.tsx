@@ -377,7 +377,7 @@ const HeaderSection = styled.header`
     cursor: pointer;
     svg {
       height: 2rem;
-      color: #fafafc;
+      color: #2e2e48;
       transition: color 0.2s;
     }
     span {

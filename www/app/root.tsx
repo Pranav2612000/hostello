@@ -47,8 +47,8 @@ export function links() {
     { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/animate.min.css" },
     { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" },
     { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-icons.css" },
-    */}
-    //{ rel: "stylesheet", href: "assets/vendor/swiper/swiper-bundle.min.css" },
+    */},
+    { rel: "stylesheet", href: "assets/vendor/swiper/swiper-bundle.min.css" },
   ];
 }
 

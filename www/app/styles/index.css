@@ -154,6 +154,31 @@ body {
     background-color: #2eca6a;
     z-index: 2;
   }
+
+  .nav-pills>li {
+    float: left;
+  }
+
+  .nav>li {
+      position: relative;
+      display: block;
+  }
+
+  .nav-pills-a.nav-pills .nav-link {
+    color: #000000;
+    position: relative;
+    font-weight: 600;
+  }
+
+  .nav-pills>li>a {
+      border-radius: 4px;
+  }
+
+  .nav>li>a {
+      position: relative;
+      display: block;
+      padding: 10px 15px;
+  }
   
   /*------/ Bg Image /------*/
   .bg-image {
@@ -1108,7 +1133,7 @@ body {
   
   /*------/ Intro Single /------*/
   .intro-single {
-    padding: 12rem 0 3rem;
+    padding: 8rem 0 3rem;
   }
   
   @media (max-width: 767px) {
@@ -1141,6 +1166,24 @@ body {
       font-size: 2.5rem;
     }
   }
+
+  .breadcrumb {
+    padding: 8px 15px;
+    margin-bottom: 20px;
+    list-style: none;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+  }
+
+  .breadcrumb>li {
+    display: inline-block;
+  }
+
+  .breadcrumb>li+li:before {
+    padding: 0 5px;
+    color: #ccc;
+    content: "/\00a0";
+}
   
   .intro-single .breadcrumb-box {
     padding: 1rem 0 0 0.5rem;
@@ -2169,4 +2212,20 @@ body {
   
   footer .credits {
     font-size: 14px;
+  }
+
+  .relative {
+    position: relative
+  }
+
+  .absolute {
+    position: absolute
+  }
+
+  .top-30 {
+    top: 30%;
+  }
+  
+  .left-50 {
+    left: 50%;
   }

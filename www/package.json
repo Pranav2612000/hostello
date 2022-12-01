@@ -40,6 +40,7 @@
     "@remix-run/serve": "^1.6.3",
     "@remix-run/vercel": "^1.6.3",
     "@supabase/supabase-js": "^1.35.3",
+    "clsx": "^1.2.1",
     "cross-env": "^7.0.3",
     "focus-visible": "^5.2.0",
     "framer-motion": "^6.2.8",

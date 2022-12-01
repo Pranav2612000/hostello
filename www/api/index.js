@@ -448,7 +448,7 @@ var HeaderSection = import_styled.default.header`
     cursor: pointer;
     svg {
       height: 2rem;
-      color: #fafafc;
+      color: #2e2e48;
       transition: color 0.2s;
     }
     span {
@@ -659,7 +659,7 @@ var HeaderSection = import_styled.default.header`
 `;
 
 // app/styles/index.css
-var styles_default = "/build/_assets/index-5FERVHJI.css";
+var styles_default = "/build/_assets/index-FZW7EZDT.css";
 
 // app/root.tsx
 var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), loader = (args) => (0, import_ssr.rootAuthLoader)(args), CatchBoundary = (0, import_remix2.ClerkCatchBoundary)(), ourTheme = {
@@ -677,7 +677,8 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), loader = (args) =
 function links() {
   return [
     { rel: "stylesheet", href: styles_default },
-    {}
+    {},
+    { rel: "stylesheet", href: "assets/vendor/swiper/swiper-bundle.min.css" }
   ];
 }
 function App() {
@@ -814,14 +815,87 @@ var hostelId_exports = {};
 __export(hostelId_exports, {
   default: () => HostelListing
 });
-var import_react11 = require("@chakra-ui/react"), import_jsx_dev_runtime = require("react/jsx-dev-runtime");
+var import_react11 = require("@chakra-ui/react"), import_react12 = require("react"), import_clsx = __toESM(require("clsx")), import_jsx_dev_runtime = require("react/jsx-dev-runtime"), tabs = [
+  {
+    name: "Video",
+    render: () => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
+      className: "tab-pane fade show active",
+      id: "pills-video",
+      role: "tabpanel",
+      "aria-labelledby": "pills-video-tab",
+      children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("iframe", {
+        src: "https://player.vimeo.com/video/73221098",
+        width: "100%",
+        height: "460",
+        frameBorder: "0",
+        allowFullScreen: !0
+      }, void 0, !1, {
+        fileName: "app/routes/hostel/$hostelId.tsx",
+        lineNumber: 11,
+        columnNumber: 11
+      }, this)
+    }, void 0, !1, {
+      fileName: "app/routes/hostel/$hostelId.tsx",
+      lineNumber: 10,
+      columnNumber: 9
+    }, this)
+  },
+  {
+    name: "Floor Plans",
+    render: () => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
+      className: "tab-pane fade",
+      id: "pills-plans",
+      role: "tabpanel",
+      "aria-labelledby": "pills-plans-tab",
+      children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", {
+        src: "assets/img/plan2.jpg",
+        alt: "",
+        className: "img-fluid"
+      }, void 0, !1, {
+        fileName: "app/routes/hostel/$hostelId.tsx",
+        lineNumber: 21,
+        columnNumber: 11
+      }, this)
+    }, void 0, !1, {
+      fileName: "app/routes/hostel/$hostelId.tsx",
+      lineNumber: 20,
+      columnNumber: 9
+    }, this)
+  },
+  {
+    name: "Ubication",
+    render: () => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
+      className: "tab-pane fade",
+      id: "pills-map",
+      role: "tabpanel",
+      "aria-labelledby": "pills-map-tab",
+      children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("iframe", {
+        src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968482413!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes+Square!5e0!3m2!1ses-419!2sve!4v1510329142834",
+        width: "100%",
+        height: "460",
+        frameBorder: "0",
+        style: { border: 0 },
+        allowFullScreen: !0
+      }, void 0, !1, {
+        fileName: "app/routes/hostel/$hostelId.tsx",
+        lineNumber: 31,
+        columnNumber: 11
+      }, this)
+    }, void 0, !1, {
+      fileName: "app/routes/hostel/$hostelId.tsx",
+      lineNumber: 30,
+      columnNumber: 9
+    }, this)
+  }
+];
 function HostelListing() {
+  let [infoTabIndex, setInfoTabIndex] = (0, import_react12.useState)(0);
   return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, {
     children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", {
         className: "intro-single",
         children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react11.Grid, {
-          p: "8",
+          px: ["4", "32"],
           templateColumns: "repeat(12, 1fr)",
           children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react11.GridItem, {
@@ -834,7 +908,7 @@ function HostelListing() {
                     children: "304 Blaster Up"
                   }, void 0, !1, {
                     fileName: "app/routes/hostel/$hostelId.tsx",
-                    lineNumber: 10,
+                    lineNumber: 45,
                     columnNumber: 15
                   }, this),
                   /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
@@ -842,18 +916,18 @@ function HostelListing() {
                     children: "Chicago, IL 606543"
                   }, void 0, !1, {
                     fileName: "app/routes/hostel/$hostelId.tsx",
-                    lineNumber: 11,
+                    lineNumber: 46,
                     columnNumber: 15
                   }, this)
                 ]
               }, void 0, !0, {
                 fileName: "app/routes/hostel/$hostelId.tsx",
-                lineNumber: 9,
+                lineNumber: 44,
                 columnNumber: 13
               }, this)
             }, void 0, !1, {
               fileName: "app/routes/hostel/$hostelId.tsx",
-              lineNumber: 8,
+              lineNumber: 43,
               columnNumber: 11
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react11.GridItem, {
@@ -871,12 +945,12 @@ function HostelListing() {
                         children: "Home"
                       }, void 0, !1, {
                         fileName: "app/routes/hostel/$hostelId.tsx",
-                        lineNumber: 18,
+                        lineNumber: 53,
                         columnNumber: 19
                       }, this)
                     }, void 0, !1, {
                       fileName: "app/routes/hostel/$hostelId.tsx",
-                      lineNumber: 17,
+                      lineNumber: 52,
                       columnNumber: 17
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
@@ -886,12 +960,12 @@ function HostelListing() {
                         children: "Properties"
                       }, void 0, !1, {
                         fileName: "app/routes/hostel/$hostelId.tsx",
-                        lineNumber: 21,
+                        lineNumber: 56,
                         columnNumber: 19
                       }, this)
                     }, void 0, !1, {
                       fileName: "app/routes/hostel/$hostelId.tsx",
-                      lineNumber: 20,
+                      lineNumber: 55,
                       columnNumber: 17
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
@@ -900,45 +974,45 @@ function HostelListing() {
                       children: "304 Blaster Up"
                     }, void 0, !1, {
                       fileName: "app/routes/hostel/$hostelId.tsx",
-                      lineNumber: 23,
+                      lineNumber: 58,
                       columnNumber: 17
                     }, this)
                   ]
                 }, void 0, !0, {
                   fileName: "app/routes/hostel/$hostelId.tsx",
-                  lineNumber: 16,
+                  lineNumber: 51,
                   columnNumber: 15
                 }, this)
               }, void 0, !1, {
                 fileName: "app/routes/hostel/$hostelId.tsx",
-                lineNumber: 15,
+                lineNumber: 50,
                 columnNumber: 13
               }, this)
             }, void 0, !1, {
               fileName: "app/routes/hostel/$hostelId.tsx",
-              lineNumber: 14,
+              lineNumber: 49,
               columnNumber: 11
             }, this)
           ]
         }, void 0, !0, {
           fileName: "app/routes/hostel/$hostelId.tsx",
-          lineNumber: 7,
+          lineNumber: 42,
           columnNumber: 9
         }, this)
       }, void 0, !1, {
         fileName: "app/routes/hostel/$hostelId.tsx",
-        lineNumber: 6,
+        lineNumber: 41,
         columnNumber: 7
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", {
         className: "property-single nav-arrow-b",
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-          className: "container",
+        children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react11.Stack, {
+          px: ["4", "32"],
           children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-              className: "row justify-content-center",
-              children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                className: "col-lg-8",
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react11.Grid, {
+              templateColumns: "repeat(12, 1fr)",
+              children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react11.GridItem, {
+                colSpan: [12, 8],
                 children: [
                   /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
                     id: "property-single-carousel",
@@ -953,12 +1027,12 @@ function HostelListing() {
                             alt: ""
                           }, void 0, !1, {
                             fileName: "app/routes/hostel/$hostelId.tsx",
-                            lineNumber: 40,
+                            lineNumber: 75,
                             columnNumber: 21
                           }, this)
                         }, void 0, !1, {
                           fileName: "app/routes/hostel/$hostelId.tsx",
-                          lineNumber: 39,
+                          lineNumber: 74,
                           columnNumber: 19
                         }, this),
                         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
@@ -968,693 +1042,407 @@ function HostelListing() {
                             alt: ""
                           }, void 0, !1, {
                             fileName: "app/routes/hostel/$hostelId.tsx",
-                            lineNumber: 43,
+                            lineNumber: 78,
                             columnNumber: 21
                           }, this)
                         }, void 0, !1, {
                           fileName: "app/routes/hostel/$hostelId.tsx",
-                          lineNumber: 42,
+                          lineNumber: 77,
                           columnNumber: 19
                         }, this)
                       ]
                     }, void 0, !0, {
                       fileName: "app/routes/hostel/$hostelId.tsx",
-                      lineNumber: 38,
+                      lineNumber: 73,
                       columnNumber: 17
                     }, this)
                   }, void 0, !1, {
                     fileName: "app/routes/hostel/$hostelId.tsx",
-                    lineNumber: 37,
+                    lineNumber: 72,
                     columnNumber: 15
                   }, this),
                   /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
                     className: "property-single-carousel-pagination carousel-pagination"
                   }, void 0, !1, {
                     fileName: "app/routes/hostel/$hostelId.tsx",
-                    lineNumber: 47,
+                    lineNumber: 82,
                     columnNumber: 15
                   }, this)
                 ]
               }, void 0, !0, {
                 fileName: "app/routes/hostel/$hostelId.tsx",
-                lineNumber: 36,
+                lineNumber: 71,
                 columnNumber: 13
               }, this)
             }, void 0, !1, {
               fileName: "app/routes/hostel/$hostelId.tsx",
-              lineNumber: 35,
+              lineNumber: 70,
               columnNumber: 11
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-              className: "row",
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react11.Grid, {
+              templateColumns: "repeat(12, 1fr)",
+              gap: 8,
               children: [
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                  className: "col-sm-12",
-                  children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                    className: "row justify-content-between",
-                    children: [
-                      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                        className: "col-md-5 col-lg-4",
+                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react11.GridItem, {
+                  colSpan: [12, 5, 4],
+                  children: [
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
+                      className: "property-price d-flex justify-content-center foo",
+                      children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
+                        className: "card-header-c d-flex relative",
                         children: [
                           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                            className: "property-price d-flex justify-content-center foo",
-                            children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                              className: "card-header-c d-flex",
-                              children: [
-                                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                                  className: "card-box-ico",
-                                  children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
-                                    className: "bi bi-cash",
-                                    children: "$"
-                                  }, void 0, !1, {
-                                    fileName: "app/routes/hostel/$hostelId.tsx",
-                                    lineNumber: 59,
-                                    columnNumber: 25
-                                  }, this)
-                                }, void 0, !1, {
-                                  fileName: "app/routes/hostel/$hostelId.tsx",
-                                  lineNumber: 58,
-                                  columnNumber: 23
-                                }, this),
-                                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                                  className: "card-title-c align-self-center",
-                                  children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h5", {
-                                    className: "title-c",
-                                    children: "15000"
-                                  }, void 0, !1, {
-                                    fileName: "app/routes/hostel/$hostelId.tsx",
-                                    lineNumber: 62,
-                                    columnNumber: 25
-                                  }, this)
-                                }, void 0, !1, {
-                                  fileName: "app/routes/hostel/$hostelId.tsx",
-                                  lineNumber: 61,
-                                  columnNumber: 23
-                                }, this)
-                              ]
-                            }, void 0, !0, {
+                            className: "card-box-ico",
+                            children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
+                              className: "bi bi-cash",
+                              children: "$"
+                            }, void 0, !1, {
                               fileName: "app/routes/hostel/$hostelId.tsx",
-                              lineNumber: 57,
+                              lineNumber: 91,
                               columnNumber: 21
                             }, this)
                           }, void 0, !1, {
                             fileName: "app/routes/hostel/$hostelId.tsx",
-                            lineNumber: 56,
+                            lineNumber: 90,
                             columnNumber: 19
                           }, this),
                           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                            className: "property-summary",
-                            children: [
-                              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                                className: "row",
-                                children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                                  className: "col-sm-12",
-                                  children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                                    className: "title-box-d section-t4",
-                                    children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h3", {
-                                      className: "title-d",
-                                      children: "Quick Summary"
-                                    }, void 0, !1, {
-                                      fileName: "app/routes/hostel/$hostelId.tsx",
-                                      lineNumber: 70,
-                                      columnNumber: 27
-                                    }, this)
-                                  }, void 0, !1, {
-                                    fileName: "app/routes/hostel/$hostelId.tsx",
-                                    lineNumber: 69,
-                                    columnNumber: 25
-                                  }, this)
-                                }, void 0, !1, {
-                                  fileName: "app/routes/hostel/$hostelId.tsx",
-                                  lineNumber: 68,
-                                  columnNumber: 23
-                                }, this)
-                              }, void 0, !1, {
-                                fileName: "app/routes/hostel/$hostelId.tsx",
-                                lineNumber: 67,
-                                columnNumber: 21
-                              }, this),
-                              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                                className: "summary-list",
-                                children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("ul", {
-                                  className: "list",
-                                  children: [
-                                    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                      className: "d-flex justify-content-between",
-                                      children: [
-                                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("strong", {
-                                          children: "Property ID:"
-                                        }, void 0, !1, {
-                                          fileName: "app/routes/hostel/$hostelId.tsx",
-                                          lineNumber: 77,
-                                          columnNumber: 27
-                                        }, this),
-                                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
-                                          children: "1134"
-                                        }, void 0, !1, {
-                                          fileName: "app/routes/hostel/$hostelId.tsx",
-                                          lineNumber: 78,
-                                          columnNumber: 27
-                                        }, this)
-                                      ]
-                                    }, void 0, !0, {
-                                      fileName: "app/routes/hostel/$hostelId.tsx",
-                                      lineNumber: 76,
-                                      columnNumber: 25
-                                    }, this),
-                                    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                      className: "d-flex justify-content-between",
-                                      children: [
-                                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("strong", {
-                                          children: "Location:"
-                                        }, void 0, !1, {
-                                          fileName: "app/routes/hostel/$hostelId.tsx",
-                                          lineNumber: 81,
-                                          columnNumber: 27
-                                        }, this),
-                                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
-                                          children: "Chicago, IL 606543"
-                                        }, void 0, !1, {
-                                          fileName: "app/routes/hostel/$hostelId.tsx",
-                                          lineNumber: 82,
-                                          columnNumber: 27
-                                        }, this)
-                                      ]
-                                    }, void 0, !0, {
-                                      fileName: "app/routes/hostel/$hostelId.tsx",
-                                      lineNumber: 80,
-                                      columnNumber: 25
-                                    }, this),
-                                    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                      className: "d-flex justify-content-between",
-                                      children: [
-                                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("strong", {
-                                          children: "Property Type:"
-                                        }, void 0, !1, {
-                                          fileName: "app/routes/hostel/$hostelId.tsx",
-                                          lineNumber: 85,
-                                          columnNumber: 27
-                                        }, this),
-                                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
-                                          children: "House"
-                                        }, void 0, !1, {
-                                          fileName: "app/routes/hostel/$hostelId.tsx",
-                                          lineNumber: 86,
-                                          columnNumber: 27
-                                        }, this)
-                                      ]
-                                    }, void 0, !0, {
-                                      fileName: "app/routes/hostel/$hostelId.tsx",
-                                      lineNumber: 84,
-                                      columnNumber: 25
-                                    }, this),
-                                    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                      className: "d-flex justify-content-between",
-                                      children: [
-                                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("strong", {
-                                          children: "Status:"
-                                        }, void 0, !1, {
-                                          fileName: "app/routes/hostel/$hostelId.tsx",
-                                          lineNumber: 89,
-                                          columnNumber: 27
-                                        }, this),
-                                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
-                                          children: "Sale"
-                                        }, void 0, !1, {
-                                          fileName: "app/routes/hostel/$hostelId.tsx",
-                                          lineNumber: 90,
-                                          columnNumber: 27
-                                        }, this)
-                                      ]
-                                    }, void 0, !0, {
-                                      fileName: "app/routes/hostel/$hostelId.tsx",
-                                      lineNumber: 88,
-                                      columnNumber: 25
-                                    }, this),
-                                    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                      className: "d-flex justify-content-between",
-                                      children: [
-                                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("strong", {
-                                          children: "Area:"
-                                        }, void 0, !1, {
-                                          fileName: "app/routes/hostel/$hostelId.tsx",
-                                          lineNumber: 93,
-                                          columnNumber: 27
-                                        }, this),
-                                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
-                                          children: [
-                                            "340m",
-                                            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("sup", {
-                                              children: "2"
-                                            }, void 0, !1, {
-                                              fileName: "app/routes/hostel/$hostelId.tsx",
-                                              lineNumber: 95,
-                                              columnNumber: 29
-                                            }, this)
-                                          ]
-                                        }, void 0, !0, {
-                                          fileName: "app/routes/hostel/$hostelId.tsx",
-                                          lineNumber: 94,
-                                          columnNumber: 27
-                                        }, this)
-                                      ]
-                                    }, void 0, !0, {
-                                      fileName: "app/routes/hostel/$hostelId.tsx",
-                                      lineNumber: 92,
-                                      columnNumber: 25
-                                    }, this),
-                                    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                      className: "d-flex justify-content-between",
-                                      children: [
-                                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("strong", {
-                                          children: "Beds:"
-                                        }, void 0, !1, {
-                                          fileName: "app/routes/hostel/$hostelId.tsx",
-                                          lineNumber: 99,
-                                          columnNumber: 27
-                                        }, this),
-                                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
-                                          children: "4"
-                                        }, void 0, !1, {
-                                          fileName: "app/routes/hostel/$hostelId.tsx",
-                                          lineNumber: 100,
-                                          columnNumber: 27
-                                        }, this)
-                                      ]
-                                    }, void 0, !0, {
-                                      fileName: "app/routes/hostel/$hostelId.tsx",
-                                      lineNumber: 98,
-                                      columnNumber: 25
-                                    }, this),
-                                    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                      className: "d-flex justify-content-between",
-                                      children: [
-                                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("strong", {
-                                          children: "Baths:"
-                                        }, void 0, !1, {
-                                          fileName: "app/routes/hostel/$hostelId.tsx",
-                                          lineNumber: 103,
-                                          columnNumber: 27
-                                        }, this),
-                                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
-                                          children: "2"
-                                        }, void 0, !1, {
-                                          fileName: "app/routes/hostel/$hostelId.tsx",
-                                          lineNumber: 104,
-                                          columnNumber: 27
-                                        }, this)
-                                      ]
-                                    }, void 0, !0, {
-                                      fileName: "app/routes/hostel/$hostelId.tsx",
-                                      lineNumber: 102,
-                                      columnNumber: 25
-                                    }, this),
-                                    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                      className: "d-flex justify-content-between",
-                                      children: [
-                                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("strong", {
-                                          children: "Garage:"
-                                        }, void 0, !1, {
-                                          fileName: "app/routes/hostel/$hostelId.tsx",
-                                          lineNumber: 107,
-                                          columnNumber: 27
-                                        }, this),
-                                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
-                                          children: "1"
-                                        }, void 0, !1, {
-                                          fileName: "app/routes/hostel/$hostelId.tsx",
-                                          lineNumber: 108,
-                                          columnNumber: 27
-                                        }, this)
-                                      ]
-                                    }, void 0, !0, {
-                                      fileName: "app/routes/hostel/$hostelId.tsx",
-                                      lineNumber: 106,
-                                      columnNumber: 25
-                                    }, this)
-                                  ]
-                                }, void 0, !0, {
-                                  fileName: "app/routes/hostel/$hostelId.tsx",
-                                  lineNumber: 75,
-                                  columnNumber: 23
-                                }, this)
-                              }, void 0, !1, {
-                                fileName: "app/routes/hostel/$hostelId.tsx",
-                                lineNumber: 74,
-                                columnNumber: 21
-                              }, this)
-                            ]
-                          }, void 0, !0, {
+                            className: "card-title-c align-self-center absolute top-30 left-50",
+                            children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h5", {
+                              className: "title-c",
+                              children: "15000"
+                            }, void 0, !1, {
+                              fileName: "app/routes/hostel/$hostelId.tsx",
+                              lineNumber: 94,
+                              columnNumber: 21
+                            }, this)
+                          }, void 0, !1, {
                             fileName: "app/routes/hostel/$hostelId.tsx",
-                            lineNumber: 66,
+                            lineNumber: 93,
                             columnNumber: 19
                           }, this)
                         ]
                       }, void 0, !0, {
                         fileName: "app/routes/hostel/$hostelId.tsx",
-                        lineNumber: 55,
-                        columnNumber: 17
-                      }, this),
-                      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                        className: "col-md-7 col-lg-7 section-md-t3",
-                        children: [
-                          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                            className: "row",
-                            children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                              className: "col-sm-12",
-                              children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                                className: "title-box-d",
-                                children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h3", {
-                                  className: "title-d",
-                                  children: "Property Description"
-                                }, void 0, !1, {
-                                  fileName: "app/routes/hostel/$hostelId.tsx",
-                                  lineNumber: 118,
-                                  columnNumber: 25
-                                }, this)
-                              }, void 0, !1, {
-                                fileName: "app/routes/hostel/$hostelId.tsx",
-                                lineNumber: 117,
-                                columnNumber: 23
-                              }, this)
-                            }, void 0, !1, {
-                              fileName: "app/routes/hostel/$hostelId.tsx",
-                              lineNumber: 116,
-                              columnNumber: 21
-                            }, this)
-                          }, void 0, !1, {
-                            fileName: "app/routes/hostel/$hostelId.tsx",
-                            lineNumber: 115,
-                            columnNumber: 19
-                          }, this),
-                          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                            className: "property-description",
-                            children: [
-                              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
-                                className: "description color-text-a",
-                                children: "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Cras ultricies ligula sed magna dictum porta. Curabitur aliquet quam id dui posuere blandit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar quam id dui posuere blandit."
-                              }, void 0, !1, {
-                                fileName: "app/routes/hostel/$hostelId.tsx",
-                                lineNumber: 123,
-                                columnNumber: 21
-                              }, this),
-                              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
-                                className: "description color-text-a no-margin",
-                                children: "Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec rutrum congue leo eget malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Donec sollicitudin molestie malesuada."
-                              }, void 0, !1, {
-                                fileName: "app/routes/hostel/$hostelId.tsx",
-                                lineNumber: 130,
-                                columnNumber: 21
-                              }, this)
-                            ]
-                          }, void 0, !0, {
-                            fileName: "app/routes/hostel/$hostelId.tsx",
-                            lineNumber: 122,
-                            columnNumber: 19
-                          }, this),
-                          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                            className: "row section-t3",
-                            children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                              className: "col-sm-12",
-                              children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                                className: "title-box-d",
-                                children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h3", {
-                                  className: "title-d",
-                                  children: "Amenities"
-                                }, void 0, !1, {
-                                  fileName: "app/routes/hostel/$hostelId.tsx",
-                                  lineNumber: 139,
-                                  columnNumber: 25
-                                }, this)
-                              }, void 0, !1, {
-                                fileName: "app/routes/hostel/$hostelId.tsx",
-                                lineNumber: 138,
-                                columnNumber: 23
-                              }, this)
-                            }, void 0, !1, {
-                              fileName: "app/routes/hostel/$hostelId.tsx",
-                              lineNumber: 137,
-                              columnNumber: 21
-                            }, this)
-                          }, void 0, !1, {
-                            fileName: "app/routes/hostel/$hostelId.tsx",
-                            lineNumber: 136,
-                            columnNumber: 19
-                          }, this),
-                          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                            className: "amenities-list color-text-a",
-                            children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("ul", {
-                              className: "list-a no-margin",
-                              children: [
-                                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                  children: "Balcony"
-                                }, void 0, !1, {
-                                  fileName: "app/routes/hostel/$hostelId.tsx",
-                                  lineNumber: 145,
-                                  columnNumber: 23
-                                }, this),
-                                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                  children: "Outdoor Kitchen"
-                                }, void 0, !1, {
-                                  fileName: "app/routes/hostel/$hostelId.tsx",
-                                  lineNumber: 146,
-                                  columnNumber: 23
-                                }, this),
-                                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                  children: "Cable Tv"
-                                }, void 0, !1, {
-                                  fileName: "app/routes/hostel/$hostelId.tsx",
-                                  lineNumber: 147,
-                                  columnNumber: 23
-                                }, this),
-                                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                  children: "Deck"
-                                }, void 0, !1, {
-                                  fileName: "app/routes/hostel/$hostelId.tsx",
-                                  lineNumber: 148,
-                                  columnNumber: 23
-                                }, this),
-                                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                  children: "Tennis Courts"
-                                }, void 0, !1, {
-                                  fileName: "app/routes/hostel/$hostelId.tsx",
-                                  lineNumber: 149,
-                                  columnNumber: 23
-                                }, this),
-                                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                  children: "Internet"
-                                }, void 0, !1, {
-                                  fileName: "app/routes/hostel/$hostelId.tsx",
-                                  lineNumber: 150,
-                                  columnNumber: 23
-                                }, this),
-                                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                  children: "Parking"
-                                }, void 0, !1, {
-                                  fileName: "app/routes/hostel/$hostelId.tsx",
-                                  lineNumber: 151,
-                                  columnNumber: 23
-                                }, this),
-                                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                  children: "Sun Room"
-                                }, void 0, !1, {
-                                  fileName: "app/routes/hostel/$hostelId.tsx",
-                                  lineNumber: 152,
-                                  columnNumber: 23
-                                }, this),
-                                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                  children: "Concrete Flooring"
-                                }, void 0, !1, {
-                                  fileName: "app/routes/hostel/$hostelId.tsx",
-                                  lineNumber: 153,
-                                  columnNumber: 23
-                                }, this)
-                              ]
-                            }, void 0, !0, {
-                              fileName: "app/routes/hostel/$hostelId.tsx",
-                              lineNumber: 144,
-                              columnNumber: 21
-                            }, this)
-                          }, void 0, !1, {
-                            fileName: "app/routes/hostel/$hostelId.tsx",
-                            lineNumber: 143,
-                            columnNumber: 19
-                          }, this)
-                        ]
-                      }, void 0, !0, {
-                        fileName: "app/routes/hostel/$hostelId.tsx",
-                        lineNumber: 114,
+                        lineNumber: 89,
                         columnNumber: 17
                       }, this)
-                    ]
-                  }, void 0, !0, {
-                    fileName: "app/routes/hostel/$hostelId.tsx",
-                    lineNumber: 54,
-                    columnNumber: 15
-                  }, this)
-                }, void 0, !1, {
-                  fileName: "app/routes/hostel/$hostelId.tsx",
-                  lineNumber: 52,
-                  columnNumber: 13
-                }, this),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                  className: "col-md-10 offset-md-1",
-                  children: [
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("ul", {
-                      className: "nav nav-pills-a nav-pills mb-3 section-t3",
-                      id: "pills-tab",
-                      role: "tablist",
-                      children: [
-                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                          className: "nav-item",
-                          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
-                            className: "nav-link active",
-                            id: "pills-video-tab",
-                            "data-bs-toggle": "pill",
-                            href: "#pills-video",
-                            role: "tab",
-                            "aria-controls": "pills-video",
-                            "aria-selected": "true",
-                            children: "Video"
-                          }, void 0, !1, {
-                            fileName: "app/routes/hostel/$hostelId.tsx",
-                            lineNumber: 162,
-                            columnNumber: 19
-                          }, this)
-                        }, void 0, !1, {
-                          fileName: "app/routes/hostel/$hostelId.tsx",
-                          lineNumber: 161,
-                          columnNumber: 17
-                        }, this),
-                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                          className: "nav-item",
-                          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
-                            className: "nav-link",
-                            id: "pills-plans-tab",
-                            "data-bs-toggle": "pill",
-                            href: "#pills-plans",
-                            role: "tab",
-                            "aria-controls": "pills-plans",
-                            "aria-selected": "false",
-                            children: "Floor Plans"
-                          }, void 0, !1, {
-                            fileName: "app/routes/hostel/$hostelId.tsx",
-                            lineNumber: 165,
-                            columnNumber: 19
-                          }, this)
-                        }, void 0, !1, {
-                          fileName: "app/routes/hostel/$hostelId.tsx",
-                          lineNumber: 164,
-                          columnNumber: 17
-                        }, this),
-                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                          className: "nav-item",
-                          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
-                            className: "nav-link",
-                            id: "pills-map-tab",
-                            "data-bs-toggle": "pill",
-                            href: "#pills-map",
-                            role: "tab",
-                            "aria-controls": "pills-map",
-                            "aria-selected": "false",
-                            children: "Ubication"
-                          }, void 0, !1, {
-                            fileName: "app/routes/hostel/$hostelId.tsx",
-                            lineNumber: 168,
-                            columnNumber: 19
-                          }, this)
-                        }, void 0, !1, {
-                          fileName: "app/routes/hostel/$hostelId.tsx",
-                          lineNumber: 167,
-                          columnNumber: 17
-                        }, this)
-                      ]
-                    }, void 0, !0, {
+                    }, void 0, !1, {
                       fileName: "app/routes/hostel/$hostelId.tsx",
-                      lineNumber: 160,
+                      lineNumber: 88,
                       columnNumber: 15
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                      className: "tab-content",
-                      id: "pills-tabContent",
+                      className: "property-summary",
                       children: [
                         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                          className: "tab-pane fade show active",
-                          id: "pills-video",
-                          role: "tabpanel",
-                          "aria-labelledby": "pills-video-tab",
-                          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("iframe", {
-                            src: "https://player.vimeo.com/video/73221098",
-                            width: "100%",
-                            height: "460",
-                            frameBorder: "0",
-                            allowFullScreen: !0
+                          className: "row",
+                          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
+                            className: "col-sm-12",
+                            children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
+                              className: "title-box-d section-t4",
+                              children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h3", {
+                                className: "title-d",
+                                children: "Quick Summary"
+                              }, void 0, !1, {
+                                fileName: "app/routes/hostel/$hostelId.tsx",
+                                lineNumber: 102,
+                                columnNumber: 23
+                              }, this)
+                            }, void 0, !1, {
+                              fileName: "app/routes/hostel/$hostelId.tsx",
+                              lineNumber: 101,
+                              columnNumber: 21
+                            }, this)
                           }, void 0, !1, {
                             fileName: "app/routes/hostel/$hostelId.tsx",
-                            lineNumber: 173,
+                            lineNumber: 100,
                             columnNumber: 19
                           }, this)
                         }, void 0, !1, {
                           fileName: "app/routes/hostel/$hostelId.tsx",
-                          lineNumber: 172,
+                          lineNumber: 99,
                           columnNumber: 17
                         }, this),
                         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                          className: "tab-pane fade",
-                          id: "pills-plans",
-                          role: "tabpanel",
-                          "aria-labelledby": "pills-plans-tab",
-                          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", {
-                            src: "assets/img/plan2.jpg",
-                            alt: "",
-                            className: "img-fluid"
-                          }, void 0, !1, {
+                          className: "summary-list",
+                          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("ul", {
+                            className: "list",
+                            children: [
+                              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
+                                className: "d-flex justify-content-between",
+                                children: [
+                                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("strong", {
+                                    children: "Property ID:"
+                                  }, void 0, !1, {
+                                    fileName: "app/routes/hostel/$hostelId.tsx",
+                                    lineNumber: 109,
+                                    columnNumber: 23
+                                  }, this),
+                                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
+                                    children: "1134"
+                                  }, void 0, !1, {
+                                    fileName: "app/routes/hostel/$hostelId.tsx",
+                                    lineNumber: 110,
+                                    columnNumber: 23
+                                  }, this)
+                                ]
+                              }, void 0, !0, {
+                                fileName: "app/routes/hostel/$hostelId.tsx",
+                                lineNumber: 108,
+                                columnNumber: 21
+                              }, this),
+                              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
+                                className: "d-flex justify-content-between",
+                                children: [
+                                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("strong", {
+                                    children: "Location:"
+                                  }, void 0, !1, {
+                                    fileName: "app/routes/hostel/$hostelId.tsx",
+                                    lineNumber: 113,
+                                    columnNumber: 23
+                                  }, this),
+                                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
+                                    children: "Chicago, IL 606543"
+                                  }, void 0, !1, {
+                                    fileName: "app/routes/hostel/$hostelId.tsx",
+                                    lineNumber: 114,
+                                    columnNumber: 23
+                                  }, this)
+                                ]
+                              }, void 0, !0, {
+                                fileName: "app/routes/hostel/$hostelId.tsx",
+                                lineNumber: 112,
+                                columnNumber: 21
+                              }, this),
+                              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
+                                className: "d-flex justify-content-between",
+                                children: [
+                                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("strong", {
+                                    children: "Property Type:"
+                                  }, void 0, !1, {
+                                    fileName: "app/routes/hostel/$hostelId.tsx",
+                                    lineNumber: 117,
+                                    columnNumber: 23
+                                  }, this),
+                                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
+                                    children: "House"
+                                  }, void 0, !1, {
+                                    fileName: "app/routes/hostel/$hostelId.tsx",
+                                    lineNumber: 118,
+                                    columnNumber: 23
+                                  }, this)
+                                ]
+                              }, void 0, !0, {
+                                fileName: "app/routes/hostel/$hostelId.tsx",
+                                lineNumber: 116,
+                                columnNumber: 21
+                              }, this),
+                              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
+                                className: "d-flex justify-content-between",
+                                children: [
+                                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("strong", {
+                                    children: "Status:"
+                                  }, void 0, !1, {
+                                    fileName: "app/routes/hostel/$hostelId.tsx",
+                                    lineNumber: 121,
+                                    columnNumber: 23
+                                  }, this),
+                                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
+                                    children: "Sale"
+                                  }, void 0, !1, {
+                                    fileName: "app/routes/hostel/$hostelId.tsx",
+                                    lineNumber: 122,
+                                    columnNumber: 23
+                                  }, this)
+                                ]
+                              }, void 0, !0, {
+                                fileName: "app/routes/hostel/$hostelId.tsx",
+                                lineNumber: 120,
+                                columnNumber: 21
+                              }, this),
+                              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
+                                className: "d-flex justify-content-between",
+                                children: [
+                                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("strong", {
+                                    children: "Area:"
+                                  }, void 0, !1, {
+                                    fileName: "app/routes/hostel/$hostelId.tsx",
+                                    lineNumber: 125,
+                                    columnNumber: 23
+                                  }, this),
+                                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
+                                    children: [
+                                      "340m",
+                                      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("sup", {
+                                        children: "2"
+                                      }, void 0, !1, {
+                                        fileName: "app/routes/hostel/$hostelId.tsx",
+                                        lineNumber: 127,
+                                        columnNumber: 25
+                                      }, this)
+                                    ]
+                                  }, void 0, !0, {
+                                    fileName: "app/routes/hostel/$hostelId.tsx",
+                                    lineNumber: 126,
+                                    columnNumber: 23
+                                  }, this)
+                                ]
+                              }, void 0, !0, {
+                                fileName: "app/routes/hostel/$hostelId.tsx",
+                                lineNumber: 124,
+                                columnNumber: 21
+                              }, this),
+                              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
+                                className: "d-flex justify-content-between",
+                                children: [
+                                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("strong", {
+                                    children: "Beds:"
+                                  }, void 0, !1, {
+                                    fileName: "app/routes/hostel/$hostelId.tsx",
+                                    lineNumber: 131,
+                                    columnNumber: 23
+                                  }, this),
+                                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
+                                    children: "4"
+                                  }, void 0, !1, {
+                                    fileName: "app/routes/hostel/$hostelId.tsx",
+                                    lineNumber: 132,
+                                    columnNumber: 23
+                                  }, this)
+                                ]
+                              }, void 0, !0, {
+                                fileName: "app/routes/hostel/$hostelId.tsx",
+                                lineNumber: 130,
+                                columnNumber: 21
+                              }, this),
+                              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
+                                className: "d-flex justify-content-between",
+                                children: [
+                                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("strong", {
+                                    children: "Baths:"
+                                  }, void 0, !1, {
+                                    fileName: "app/routes/hostel/$hostelId.tsx",
+                                    lineNumber: 135,
+                                    columnNumber: 23
+                                  }, this),
+                                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
+                                    children: "2"
+                                  }, void 0, !1, {
+                                    fileName: "app/routes/hostel/$hostelId.tsx",
+                                    lineNumber: 136,
+                                    columnNumber: 23
+                                  }, this)
+                                ]
+                              }, void 0, !0, {
+                                fileName: "app/routes/hostel/$hostelId.tsx",
+                                lineNumber: 134,
+                                columnNumber: 21
+                              }, this),
+                              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
+                                className: "d-flex justify-content-between",
+                                children: [
+                                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("strong", {
+                                    children: "Garage:"
+                                  }, void 0, !1, {
+                                    fileName: "app/routes/hostel/$hostelId.tsx",
+                                    lineNumber: 139,
+                                    columnNumber: 23
+                                  }, this),
+                                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
+                                    children: "1"
+                                  }, void 0, !1, {
+                                    fileName: "app/routes/hostel/$hostelId.tsx",
+                                    lineNumber: 140,
+                                    columnNumber: 23
+                                  }, this)
+                                ]
+                              }, void 0, !0, {
+                                fileName: "app/routes/hostel/$hostelId.tsx",
+                                lineNumber: 138,
+                                columnNumber: 21
+                              }, this)
+                            ]
+                          }, void 0, !0, {
                             fileName: "app/routes/hostel/$hostelId.tsx",
-                            lineNumber: 176,
+                            lineNumber: 107,
                             columnNumber: 19
                           }, this)
                         }, void 0, !1, {
                           fileName: "app/routes/hostel/$hostelId.tsx",
-                          lineNumber: 175,
-                          columnNumber: 17
-                        }, this),
-                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                          className: "tab-pane fade",
-                          id: "pills-map",
-                          role: "tabpanel",
-                          "aria-labelledby": "pills-map-tab",
-                          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("iframe", {
-                            src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968482413!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes+Square!5e0!3m2!1ses-419!2sve!4v1510329142834",
-                            width: "100%",
-                            height: "460",
-                            frameBorder: "0",
-                            style: { border: 0 },
-                            allowFullScreen: !0
-                          }, void 0, !1, {
-                            fileName: "app/routes/hostel/$hostelId.tsx",
-                            lineNumber: 179,
-                            columnNumber: 19
-                          }, this)
-                        }, void 0, !1, {
-                          fileName: "app/routes/hostel/$hostelId.tsx",
-                          lineNumber: 178,
+                          lineNumber: 106,
                           columnNumber: 17
                         }, this)
                       ]
                     }, void 0, !0, {
                       fileName: "app/routes/hostel/$hostelId.tsx",
-                      lineNumber: 171,
+                      lineNumber: 98,
                       columnNumber: 15
                     }, this)
                   ]
                 }, void 0, !0, {
                   fileName: "app/routes/hostel/$hostelId.tsx",
-                  lineNumber: 159,
+                  lineNumber: 87,
                   columnNumber: 13
                 }, this),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                  className: "col-md-12",
+                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react11.GridItem, {
+                  colSpan: [12, 7, 8],
+                  className: "section-md-t3",
                   children: [
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
+                      className: "row",
+                      children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
+                        className: "col-sm-12",
+                        children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
+                          className: "title-box-d",
+                          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h3", {
+                            className: "title-d",
+                            children: "Property Description"
+                          }, void 0, !1, {
+                            fileName: "app/routes/hostel/$hostelId.tsx",
+                            lineNumber: 150,
+                            columnNumber: 21
+                          }, this)
+                        }, void 0, !1, {
+                          fileName: "app/routes/hostel/$hostelId.tsx",
+                          lineNumber: 149,
+                          columnNumber: 19
+                        }, this)
+                      }, void 0, !1, {
+                        fileName: "app/routes/hostel/$hostelId.tsx",
+                        lineNumber: 148,
+                        columnNumber: 17
+                      }, this)
+                    }, void 0, !1, {
+                      fileName: "app/routes/hostel/$hostelId.tsx",
+                      lineNumber: 147,
+                      columnNumber: 15
+                    }, this),
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
+                      className: "property-description",
+                      children: [
+                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+                          className: "description color-text-a",
+                          children: "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Cras ultricies ligula sed magna dictum porta. Curabitur aliquet quam id dui posuere blandit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar quam id dui posuere blandit."
+                        }, void 0, !1, {
+                          fileName: "app/routes/hostel/$hostelId.tsx",
+                          lineNumber: 155,
+                          columnNumber: 17
+                        }, this),
+                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+                          className: "description color-text-a no-margin",
+                          children: "Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec rutrum congue leo eget malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Donec sollicitudin molestie malesuada."
+                        }, void 0, !1, {
+                          fileName: "app/routes/hostel/$hostelId.tsx",
+                          lineNumber: 162,
+                          columnNumber: 17
+                        }, this)
+                      ]
+                    }, void 0, !0, {
+                      fileName: "app/routes/hostel/$hostelId.tsx",
+                      lineNumber: 154,
+                      columnNumber: 15
+                    }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
                       className: "row section-t3",
                       children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
@@ -1663,443 +1451,183 @@ function HostelListing() {
                           className: "title-box-d",
                           children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h3", {
                             className: "title-d",
-                            children: "Contact Agent"
+                            children: "Amenities"
                           }, void 0, !1, {
                             fileName: "app/routes/hostel/$hostelId.tsx",
-                            lineNumber: 187,
+                            lineNumber: 171,
                             columnNumber: 21
                           }, this)
                         }, void 0, !1, {
                           fileName: "app/routes/hostel/$hostelId.tsx",
-                          lineNumber: 186,
+                          lineNumber: 170,
                           columnNumber: 19
                         }, this)
                       }, void 0, !1, {
                         fileName: "app/routes/hostel/$hostelId.tsx",
-                        lineNumber: 185,
+                        lineNumber: 169,
                         columnNumber: 17
                       }, this)
                     }, void 0, !1, {
                       fileName: "app/routes/hostel/$hostelId.tsx",
-                      lineNumber: 184,
+                      lineNumber: 168,
                       columnNumber: 15
                     }, this),
                     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                      className: "row",
-                      children: [
-                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                          className: "col-md-6 col-lg-4",
-                          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", {
-                            src: "assets/img/agent-4.jpg",
-                            alt: "",
-                            className: "img-fluid"
+                      className: "amenities-list color-text-a",
+                      children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("ul", {
+                        className: "list-a no-margin",
+                        children: [
+                          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
+                            children: "Balcony"
                           }, void 0, !1, {
                             fileName: "app/routes/hostel/$hostelId.tsx",
-                            lineNumber: 193,
+                            lineNumber: 177,
                             columnNumber: 19
-                          }, this)
-                        }, void 0, !1, {
-                          fileName: "app/routes/hostel/$hostelId.tsx",
-                          lineNumber: 192,
-                          columnNumber: 17
-                        }, this),
-                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                          className: "col-md-6 col-lg-4",
-                          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                            className: "property-agent",
-                            children: [
-                              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", {
-                                className: "title-agent",
-                                children: "Anabella Geller"
-                              }, void 0, !1, {
-                                fileName: "app/routes/hostel/$hostelId.tsx",
-                                lineNumber: 197,
-                                columnNumber: 21
-                              }, this),
-                              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
-                                className: "color-text-a",
-                                children: "Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Quisque velit nisi, pretium ut lacinia in, elementum id enim."
-                              }, void 0, !1, {
-                                fileName: "app/routes/hostel/$hostelId.tsx",
-                                lineNumber: 198,
-                                columnNumber: 21
-                              }, this),
-                              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("ul", {
-                                className: "list-unstyled",
-                                children: [
-                                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                    className: "d-flex justify-content-between",
-                                    children: [
-                                      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("strong", {
-                                        children: "Phone:"
-                                      }, void 0, !1, {
-                                        fileName: "app/routes/hostel/$hostelId.tsx",
-                                        lineNumber: 205,
-                                        columnNumber: 25
-                                      }, this),
-                                      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
-                                        className: "color-text-a",
-                                        children: "(222) 4568932"
-                                      }, void 0, !1, {
-                                        fileName: "app/routes/hostel/$hostelId.tsx",
-                                        lineNumber: 206,
-                                        columnNumber: 25
-                                      }, this)
-                                    ]
-                                  }, void 0, !0, {
-                                    fileName: "app/routes/hostel/$hostelId.tsx",
-                                    lineNumber: 204,
-                                    columnNumber: 23
-                                  }, this),
-                                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                    className: "d-flex justify-content-between",
-                                    children: [
-                                      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("strong", {
-                                        children: "Mobile:"
-                                      }, void 0, !1, {
-                                        fileName: "app/routes/hostel/$hostelId.tsx",
-                                        lineNumber: 209,
-                                        columnNumber: 25
-                                      }, this),
-                                      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
-                                        className: "color-text-a",
-                                        children: "777 287 378 737"
-                                      }, void 0, !1, {
-                                        fileName: "app/routes/hostel/$hostelId.tsx",
-                                        lineNumber: 210,
-                                        columnNumber: 25
-                                      }, this)
-                                    ]
-                                  }, void 0, !0, {
-                                    fileName: "app/routes/hostel/$hostelId.tsx",
-                                    lineNumber: 208,
-                                    columnNumber: 23
-                                  }, this),
-                                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                    className: "d-flex justify-content-between",
-                                    children: [
-                                      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("strong", {
-                                        children: "Email:"
-                                      }, void 0, !1, {
-                                        fileName: "app/routes/hostel/$hostelId.tsx",
-                                        lineNumber: 213,
-                                        columnNumber: 25
-                                      }, this),
-                                      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
-                                        className: "color-text-a",
-                                        children: "annabella@example.com"
-                                      }, void 0, !1, {
-                                        fileName: "app/routes/hostel/$hostelId.tsx",
-                                        lineNumber: 214,
-                                        columnNumber: 25
-                                      }, this)
-                                    ]
-                                  }, void 0, !0, {
-                                    fileName: "app/routes/hostel/$hostelId.tsx",
-                                    lineNumber: 212,
-                                    columnNumber: 23
-                                  }, this),
-                                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                    className: "d-flex justify-content-between",
-                                    children: [
-                                      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("strong", {
-                                        children: "Skype:"
-                                      }, void 0, !1, {
-                                        fileName: "app/routes/hostel/$hostelId.tsx",
-                                        lineNumber: 217,
-                                        columnNumber: 25
-                                      }, this),
-                                      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
-                                        className: "color-text-a",
-                                        children: "Annabela.ge"
-                                      }, void 0, !1, {
-                                        fileName: "app/routes/hostel/$hostelId.tsx",
-                                        lineNumber: 218,
-                                        columnNumber: 25
-                                      }, this)
-                                    ]
-                                  }, void 0, !0, {
-                                    fileName: "app/routes/hostel/$hostelId.tsx",
-                                    lineNumber: 216,
-                                    columnNumber: 23
-                                  }, this)
-                                ]
-                              }, void 0, !0, {
-                                fileName: "app/routes/hostel/$hostelId.tsx",
-                                lineNumber: 203,
-                                columnNumber: 21
-                              }, this),
-                              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                                className: "socials-a",
-                                children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("ul", {
-                                  className: "list-inline",
-                                  children: [
-                                    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                      className: "list-inline-item",
-                                      children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
-                                        href: "#",
-                                        children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("i", {
-                                          className: "bi bi-facebook",
-                                          "aria-hidden": "true"
-                                        }, void 0, !1, {
-                                          fileName: "app/routes/hostel/$hostelId.tsx",
-                                          lineNumber: 225,
-                                          columnNumber: 29
-                                        }, this)
-                                      }, void 0, !1, {
-                                        fileName: "app/routes/hostel/$hostelId.tsx",
-                                        lineNumber: 224,
-                                        columnNumber: 27
-                                      }, this)
-                                    }, void 0, !1, {
-                                      fileName: "app/routes/hostel/$hostelId.tsx",
-                                      lineNumber: 223,
-                                      columnNumber: 25
-                                    }, this),
-                                    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                      className: "list-inline-item",
-                                      children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
-                                        href: "#",
-                                        children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("i", {
-                                          className: "bi bi-twitter",
-                                          "aria-hidden": "true"
-                                        }, void 0, !1, {
-                                          fileName: "app/routes/hostel/$hostelId.tsx",
-                                          lineNumber: 230,
-                                          columnNumber: 29
-                                        }, this)
-                                      }, void 0, !1, {
-                                        fileName: "app/routes/hostel/$hostelId.tsx",
-                                        lineNumber: 229,
-                                        columnNumber: 27
-                                      }, this)
-                                    }, void 0, !1, {
-                                      fileName: "app/routes/hostel/$hostelId.tsx",
-                                      lineNumber: 228,
-                                      columnNumber: 25
-                                    }, this),
-                                    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                      className: "list-inline-item",
-                                      children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
-                                        href: "#",
-                                        children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("i", {
-                                          className: "bi bi-instagram",
-                                          "aria-hidden": "true"
-                                        }, void 0, !1, {
-                                          fileName: "app/routes/hostel/$hostelId.tsx",
-                                          lineNumber: 235,
-                                          columnNumber: 29
-                                        }, this)
-                                      }, void 0, !1, {
-                                        fileName: "app/routes/hostel/$hostelId.tsx",
-                                        lineNumber: 234,
-                                        columnNumber: 27
-                                      }, this)
-                                    }, void 0, !1, {
-                                      fileName: "app/routes/hostel/$hostelId.tsx",
-                                      lineNumber: 233,
-                                      columnNumber: 25
-                                    }, this),
-                                    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
-                                      className: "list-inline-item",
-                                      children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
-                                        href: "#",
-                                        children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("i", {
-                                          className: "bi bi-linkedin",
-                                          "aria-hidden": "true"
-                                        }, void 0, !1, {
-                                          fileName: "app/routes/hostel/$hostelId.tsx",
-                                          lineNumber: 240,
-                                          columnNumber: 29
-                                        }, this)
-                                      }, void 0, !1, {
-                                        fileName: "app/routes/hostel/$hostelId.tsx",
-                                        lineNumber: 239,
-                                        columnNumber: 27
-                                      }, this)
-                                    }, void 0, !1, {
-                                      fileName: "app/routes/hostel/$hostelId.tsx",
-                                      lineNumber: 238,
-                                      columnNumber: 25
-                                    }, this)
-                                  ]
-                                }, void 0, !0, {
-                                  fileName: "app/routes/hostel/$hostelId.tsx",
-                                  lineNumber: 222,
-                                  columnNumber: 23
-                                }, this)
-                              }, void 0, !1, {
-                                fileName: "app/routes/hostel/$hostelId.tsx",
-                                lineNumber: 221,
-                                columnNumber: 21
-                              }, this)
-                            ]
-                          }, void 0, !0, {
-                            fileName: "app/routes/hostel/$hostelId.tsx",
-                            lineNumber: 196,
-                            columnNumber: 19
-                          }, this)
-                        }, void 0, !1, {
-                          fileName: "app/routes/hostel/$hostelId.tsx",
-                          lineNumber: 195,
-                          columnNumber: 17
-                        }, this),
-                        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                          className: "col-md-12 col-lg-4",
-                          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                            className: "property-contact",
-                            children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("form", {
-                              className: "form-a",
-                              children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                                className: "row",
-                                children: [
-                                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                                    className: "col-md-12 mb-1",
-                                    children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                                      className: "form-group",
-                                      children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("input", {
-                                        type: "text",
-                                        className: "form-control form-control-lg form-control-a",
-                                        id: "inputName",
-                                        placeholder: "Name *",
-                                        required: !0
-                                      }, void 0, !1, {
-                                        fileName: "app/routes/hostel/$hostelId.tsx",
-                                        lineNumber: 253,
-                                        columnNumber: 29
-                                      }, this)
-                                    }, void 0, !1, {
-                                      fileName: "app/routes/hostel/$hostelId.tsx",
-                                      lineNumber: 252,
-                                      columnNumber: 27
-                                    }, this)
-                                  }, void 0, !1, {
-                                    fileName: "app/routes/hostel/$hostelId.tsx",
-                                    lineNumber: 251,
-                                    columnNumber: 25
-                                  }, this),
-                                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                                    className: "col-md-12 mb-1",
-                                    children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                                      className: "form-group",
-                                      children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("input", {
-                                        type: "email",
-                                        className: "form-control form-control-lg form-control-a",
-                                        id: "inputEmail1",
-                                        placeholder: "Email *",
-                                        required: !0
-                                      }, void 0, !1, {
-                                        fileName: "app/routes/hostel/$hostelId.tsx",
-                                        lineNumber: 258,
-                                        columnNumber: 29
-                                      }, this)
-                                    }, void 0, !1, {
-                                      fileName: "app/routes/hostel/$hostelId.tsx",
-                                      lineNumber: 257,
-                                      columnNumber: 27
-                                    }, this)
-                                  }, void 0, !1, {
-                                    fileName: "app/routes/hostel/$hostelId.tsx",
-                                    lineNumber: 256,
-                                    columnNumber: 25
-                                  }, this),
-                                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                                    className: "col-md-12 mb-1",
-                                    children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                                      className: "form-group",
-                                      children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("textarea", {
-                                        id: "textMessage",
-                                        className: "form-control",
-                                        placeholder: "Comment *",
-                                        name: "message",
-                                        cols: 45,
-                                        rows: 8,
-                                        required: !0
-                                      }, void 0, !1, {
-                                        fileName: "app/routes/hostel/$hostelId.tsx",
-                                        lineNumber: 263,
-                                        columnNumber: 29
-                                      }, this)
-                                    }, void 0, !1, {
-                                      fileName: "app/routes/hostel/$hostelId.tsx",
-                                      lineNumber: 262,
-                                      columnNumber: 27
-                                    }, this)
-                                  }, void 0, !1, {
-                                    fileName: "app/routes/hostel/$hostelId.tsx",
-                                    lineNumber: 261,
-                                    columnNumber: 25
-                                  }, this),
-                                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
-                                    className: "col-md-12 mt-3",
-                                    children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", {
-                                      type: "submit",
-                                      className: "btn btn-a",
-                                      children: "Send Message"
-                                    }, void 0, !1, {
-                                      fileName: "app/routes/hostel/$hostelId.tsx",
-                                      lineNumber: 267,
-                                      columnNumber: 27
-                                    }, this)
-                                  }, void 0, !1, {
-                                    fileName: "app/routes/hostel/$hostelId.tsx",
-                                    lineNumber: 266,
-                                    columnNumber: 25
-                                  }, this)
-                                ]
-                              }, void 0, !0, {
-                                fileName: "app/routes/hostel/$hostelId.tsx",
-                                lineNumber: 250,
-                                columnNumber: 23
-                              }, this)
-                            }, void 0, !1, {
-                              fileName: "app/routes/hostel/$hostelId.tsx",
-                              lineNumber: 249,
-                              columnNumber: 21
-                            }, this)
+                          }, this),
+                          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
+                            children: "Outdoor Kitchen"
                           }, void 0, !1, {
                             fileName: "app/routes/hostel/$hostelId.tsx",
-                            lineNumber: 248,
+                            lineNumber: 178,
+                            columnNumber: 19
+                          }, this),
+                          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
+                            children: "Cable Tv"
+                          }, void 0, !1, {
+                            fileName: "app/routes/hostel/$hostelId.tsx",
+                            lineNumber: 179,
+                            columnNumber: 19
+                          }, this),
+                          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
+                            children: "Deck"
+                          }, void 0, !1, {
+                            fileName: "app/routes/hostel/$hostelId.tsx",
+                            lineNumber: 180,
+                            columnNumber: 19
+                          }, this),
+                          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
+                            children: "Tennis Courts"
+                          }, void 0, !1, {
+                            fileName: "app/routes/hostel/$hostelId.tsx",
+                            lineNumber: 181,
+                            columnNumber: 19
+                          }, this),
+                          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
+                            children: "Internet"
+                          }, void 0, !1, {
+                            fileName: "app/routes/hostel/$hostelId.tsx",
+                            lineNumber: 182,
+                            columnNumber: 19
+                          }, this),
+                          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
+                            children: "Parking"
+                          }, void 0, !1, {
+                            fileName: "app/routes/hostel/$hostelId.tsx",
+                            lineNumber: 183,
+                            columnNumber: 19
+                          }, this),
+                          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
+                            children: "Sun Room"
+                          }, void 0, !1, {
+                            fileName: "app/routes/hostel/$hostelId.tsx",
+                            lineNumber: 184,
+                            columnNumber: 19
+                          }, this),
+                          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
+                            children: "Concrete Flooring"
+                          }, void 0, !1, {
+                            fileName: "app/routes/hostel/$hostelId.tsx",
+                            lineNumber: 185,
                             columnNumber: 19
                           }, this)
-                        }, void 0, !1, {
-                          fileName: "app/routes/hostel/$hostelId.tsx",
-                          lineNumber: 247,
-                          columnNumber: 17
-                        }, this)
-                      ]
-                    }, void 0, !0, {
+                        ]
+                      }, void 0, !0, {
+                        fileName: "app/routes/hostel/$hostelId.tsx",
+                        lineNumber: 176,
+                        columnNumber: 17
+                      }, this)
+                    }, void 0, !1, {
                       fileName: "app/routes/hostel/$hostelId.tsx",
-                      lineNumber: 191,
+                      lineNumber: 175,
                       columnNumber: 15
                     }, this)
                   ]
                 }, void 0, !0, {
                   fileName: "app/routes/hostel/$hostelId.tsx",
-                  lineNumber: 183,
+                  lineNumber: 146,
+                  columnNumber: 13
+                }, this),
+                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react11.GridItem, {
+                  colSpan: [12, 10],
+                  className: "offset-md-1",
+                  children: [
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("ul", {
+                      className: "nav nav-pills-a nav-pills mb-3 section-t3",
+                      id: "pills-tab",
+                      role: "tablist",
+                      children: tabs.map((tab, index) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
+                        className: "nav-item",
+                        children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
+                          className: (0, import_clsx.default)("nav-link", infoTabIndex === index && "active"),
+                          id: `pills-${tab.name}-tab`,
+                          "data-bs-toggle": "pill",
+                          href: `#pills-${tab.name}`,
+                          role: "tab",
+                          "aria-controls": `pills-${tab.name}`,
+                          "aria-selected": infoTabIndex === index,
+                          onClick: () => setInfoTabIndex(index),
+                          children: tab.name
+                        }, void 0, !1, {
+                          fileName: "app/routes/hostel/$hostelId.tsx",
+                          lineNumber: 194,
+                          columnNumber: 23
+                        }, this)
+                      }, void 0, !1, {
+                        fileName: "app/routes/hostel/$hostelId.tsx",
+                        lineNumber: 193,
+                        columnNumber: 21
+                      }, this))
+                    }, void 0, !1, {
+                      fileName: "app/routes/hostel/$hostelId.tsx",
+                      lineNumber: 190,
+                      columnNumber: 15
+                    }, this),
+                    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
+                      className: "tab-content",
+                      id: "pills-tabContent",
+                      children: tabs[infoTabIndex].render()
+                    }, void 0, !1, {
+                      fileName: "app/routes/hostel/$hostelId.tsx",
+                      lineNumber: 210,
+                      columnNumber: 15
+                    }, this)
+                  ]
+                }, void 0, !0, {
+                  fileName: "app/routes/hostel/$hostelId.tsx",
+                  lineNumber: 189,
                   columnNumber: 13
                 }, this)
               ]
             }, void 0, !0, {
               fileName: "app/routes/hostel/$hostelId.tsx",
-              lineNumber: 51,
+              lineNumber: 86,
               columnNumber: 11
             }, this)
           ]
         }, void 0, !0, {
           fileName: "app/routes/hostel/$hostelId.tsx",
-          lineNumber: 34,
+          lineNumber: 69,
           columnNumber: 9
         }, this)
       }, void 0, !1, {
         fileName: "app/routes/hostel/$hostelId.tsx",
-        lineNumber: 33,
+        lineNumber: 68,
         columnNumber: 7
       }, this)
     ]
   }, void 0, !0, {
     fileName: "app/routes/hostel/$hostelId.tsx",
-    lineNumber: 5,
+    lineNumber: 40,
     columnNumber: 5
   }, this);
 }
@@ -2109,9 +1637,9 @@ var __exports = {};
 __export(__exports, {
   default: () => SignInRoute
 });
-var import_react12 = require("@chakra-ui/react"), import_remix3 = require("@clerk/remix"), import_jsx_dev_runtime = require("react/jsx-dev-runtime");
+var import_react13 = require("@chakra-ui/react"), import_remix3 = require("@clerk/remix"), import_jsx_dev_runtime = require("react/jsx-dev-runtime");
 function SignInRoute() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react12.Center, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react13.Center, {
     height: "100vh",
     p: 10,
     children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_remix3.SignIn, {
@@ -2135,9 +1663,9 @@ var __exports2 = {};
 __export(__exports2, {
   default: () => SignUpRoute
 });
-var import_react13 = require("@chakra-ui/react"), import_remix4 = require("@clerk/remix"), import_jsx_dev_runtime = require("react/jsx-dev-runtime");
+var import_react14 = require("@chakra-ui/react"), import_remix4 = require("@clerk/remix"), import_jsx_dev_runtime = require("react/jsx-dev-runtime");
 function SignUpRoute() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react13.Center, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react14.Center, {
     height: "100vh",
     p: 10,
     children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_remix4.SignUp, {
@@ -2163,7 +1691,7 @@ __export(routes_exports, {
   default: () => Index,
   loader: () => loader2
 });
-var import_react36 = require("@remix-run/react"), import_node = require("@remix-run/node"), import_remix5 = require("@clerk/remix"), import_ssr3 = require("@clerk/remix/ssr.server"), import_react37 = require("@chakra-ui/react");
+var import_react37 = require("@remix-run/react"), import_node = require("@remix-run/node"), import_remix5 = require("@clerk/remix"), import_ssr3 = require("@clerk/remix/ssr.server"), import_react38 = require("@chakra-ui/react");
 
 // app/utils/db.server.ts
 var import_ssr2 = require("@clerk/remix/ssr.server"), import_supabase_js = require("@supabase/supabase-js"), getDB = async (request) => {
@@ -2182,7 +1710,7 @@ var import_ssr2 = require("@clerk/remix/ssr.server"), import_supabase_js = requi
 };
 
 // node_modules/hero-slider/dist/HeroSlider.js
-var import_react23 = __toESM(require("react"));
+var import_react24 = __toESM(require("react"));
 
 // node_modules/hero-slider/dist/node_modules/.pnpm/style-inject@0.3.0/node_modules/style-inject/dist/style-inject.es.js
 function styleInject(css, ref) {
@@ -2316,7 +1844,7 @@ var css_248z = `.HeroSlider-module_Wrapper__TaeBr {
 styleInject(css_248z);
 
 // node_modules/hero-slider/dist/components/Buttons/index.js
-var import_react17 = __toESM(require("react"));
+var import_react18 = __toESM(require("react"));
 
 // node_modules/hero-slider/dist/components/Buttons/index.module.css.js
 var css_248z2 = `.index-module_Wrapper__ZIVLd {
@@ -2484,13 +2012,13 @@ var css_248z2 = `.index-module_Wrapper__ZIVLd {
 styleInject(css_248z2);
 
 // node_modules/hero-slider/dist/modules/Manager.js
-var import_react14 = __toESM(require("react"));
+var import_react15 = __toESM(require("react"));
 function isMobile() {
   return typeof window < "u" ? !!(navigator && /Mobi|Android/i.test(navigator.userAgentData || navigator.userAgent)) : !1;
 }
 var defaultProps2 = {
   isMobile: isMobile()
-}, ManagerStateContext = import_react14.default.createContext(void 0);
+}, ManagerStateContext = import_react15.default.createContext(void 0);
 function managerReducer(state, action2) {
   switch (action2.type) {
     case "update-is-mobile":
@@ -2513,7 +2041,7 @@ function managerReducer(state, action2) {
 }
 function ManagerProvider({ children, manager }) {
   var _a;
-  let [state, dispatch] = import_react14.default.useReducer(managerReducer, {
+  let [state, dispatch] = import_react15.default.useReducer(managerReducer, {
     isMobile: (_a = manager == null ? void 0 : manager.isMobile) !== null && _a !== void 0 ? _a : defaultProps2.isMobile,
     slides: /* @__PURE__ */ new Map(),
     totalSlides: 0
@@ -2531,32 +2059,32 @@ function ManagerProvider({ children, manager }) {
       payload: ref
     });
   };
-  import_react14.default.useEffect(() => {
+  import_react15.default.useEffect(() => {
     typeof (manager == null ? void 0 : manager.isMobile) == "boolean" && dispatch({
       type: "update-is-mobile",
       payload: manager == null ? void 0 : manager.isMobile
     });
   }, [manager == null ? void 0 : manager.isMobile]);
   let value = { state, getSlide, registerSlide, removeSlide };
-  return import_react14.default.createElement(ManagerStateContext.Provider, { value }, children);
+  return import_react15.default.createElement(ManagerStateContext.Provider, { value }, children);
 }
 function useManager() {
-  let context = import_react14.default.useContext(ManagerStateContext);
+  let context = import_react15.default.useContext(ManagerStateContext);
   if (context === void 0)
     throw new Error("useManager must be used within a ManagerProvider");
   return context;
 }
 
 // node_modules/hero-slider/dist/modules/Accessability.js
-var import_react16 = __toESM(require("react"));
+var import_react17 = __toESM(require("react"));
 
 // node_modules/hero-slider/dist/modules/Controller.js
-var import_react15 = __toESM(require("react"));
+var import_react16 = __toESM(require("react"));
 var defaultProps3 = {
   slidingDuration: 500,
   slidingDelay: 200,
   initialSlide: 1
-}, ControllerStateContext = import_react15.default.createContext(void 0);
+}, ControllerStateContext = import_react16.default.createContext(void 0);
 function settingsReducer(state, action2) {
   switch (action2.type) {
     case "start-sliding":
@@ -2577,7 +2105,7 @@ function ControllerProvider({ children, controller }) {
     slidingDuration: (_a = controller == null ? void 0 : controller.slidingDuration) !== null && _a !== void 0 ? _a : defaultProps3.slidingDuration,
     slidingDelay: (_b = controller == null ? void 0 : controller.slidingDelay) !== null && _b !== void 0 ? _b : defaultProps3.slidingDelay,
     initialSlide: (controller == null ? void 0 : controller.initialSlide) || defaultProps3.initialSlide
-  }, [state, dispatch] = import_react15.default.useReducer(settingsReducer, {
+  }, [state, dispatch] = import_react16.default.useReducer(settingsReducer, {
     activeSlide: params.initialSlide,
     prevActiveSlide: 0,
     isSliding: !1,
@@ -2603,11 +2131,11 @@ function ControllerProvider({ children, controller }) {
   }, goToPreviousSlide = () => {
     changeSlide(getPreviousSlide(state.activeSlide), "backward");
   };
-  import_react15.default.useEffect(() => {
+  import_react16.default.useEffect(() => {
     controller != null && controller.goToNextSlidePointer && (controller.goToNextSlidePointer.current = goToNextSlide);
-  }, [controller == null ? void 0 : controller.goToNextSlidePointer, goToNextSlide]), import_react15.default.useEffect(() => {
+  }, [controller == null ? void 0 : controller.goToNextSlidePointer, goToNextSlide]), import_react16.default.useEffect(() => {
     controller != null && controller.goToPreviousSlidePointer && (controller.goToPreviousSlidePointer.current = goToPreviousSlide);
-  }, [controller == null ? void 0 : controller.goToPreviousSlidePointer, goToNextSlide]), import_react15.default.useEffect(() => (dispatch({
+  }, [controller == null ? void 0 : controller.goToPreviousSlidePointer, goToNextSlide]), import_react16.default.useEffect(() => (dispatch({
     type: "set-delay-timeout",
     payload: setTimeout(() => {
       controller != null && controller.onSliding && controller.onSliding(state.activeSlide, state.prevActiveSlide);
@@ -2631,10 +2159,10 @@ function ControllerProvider({ children, controller }) {
     goToNextSlide,
     goToPreviousSlide
   };
-  return import_react15.default.createElement(ControllerStateContext.Provider, { value }, children);
+  return import_react16.default.createElement(ControllerStateContext.Provider, { value }, children);
 }
 function useController() {
-  let context = import_react15.default.useContext(ControllerStateContext);
+  let context = import_react16.default.useContext(ControllerStateContext);
   if (context === void 0)
     throw new Error("useController must be used within a ControllerProvider");
   return context;
@@ -2650,7 +2178,7 @@ var defaultProps4 = {
   shouldSlideOnArrowKeypress: !0,
   orientation: AccessabilityOrientation.HORIZONTAL,
   thresholdToSlide: 50
-}, AccessabilityStateContext = import_react16.default.createContext(void 0);
+}, AccessabilityStateContext = import_react17.default.createContext(void 0);
 function accessabilityReducer(state, action2) {
   switch (action2.type) {
     case "start-motion":
@@ -2685,7 +2213,7 @@ function AccessabilityProvider({ children, accessability }) {
     shouldSlideOnArrowKeypress: (_b = accessability == null ? void 0 : accessability.shouldSlideOnArrowKeypress) !== null && _b !== void 0 ? _b : defaultProps4.shouldSlideOnArrowKeypress,
     orientation: (accessability == null ? void 0 : accessability.orientation) || defaultProps4.orientation,
     thresholdToSlide: (_c = accessability == null ? void 0 : accessability.thresholdToSlide) !== null && _c !== void 0 ? _c : defaultProps4.thresholdToSlide
-  }, [state, dispatch] = import_react16.default.useReducer(accessabilityReducer, {
+  }, [state, dispatch] = import_react17.default.useReducer(accessabilityReducer, {
     initialX: void 0,
     initialY: void 0,
     currentX: void 0,
@@ -2728,7 +2256,7 @@ function AccessabilityProvider({ children, accessability }) {
         break;
     }
   };
-  import_react16.default.useEffect(() => (window.addEventListener("keydown", onArrowKeypressHandler), () => {
+  import_react17.default.useEffect(() => (window.addEventListener("keydown", onArrowKeypressHandler), () => {
     window.removeEventListener("keydown", onArrowKeypressHandler);
   }), [onArrowKeypressHandler]);
   let value = {
@@ -2739,10 +2267,10 @@ function AccessabilityProvider({ children, accessability }) {
     onTouchMoveHandler,
     onTouchEndHandler
   };
-  return import_react16.default.createElement(AccessabilityStateContext.Provider, { value }, children);
+  return import_react17.default.createElement(AccessabilityStateContext.Provider, { value }, children);
 }
 function useAccessability() {
-  let context = import_react16.default.useContext(AccessabilityStateContext);
+  let context = import_react17.default.useContext(AccessabilityStateContext);
   if (context === void 0)
     throw new Error("useAccessability must be used within a AccessabilityProvider");
   return context;
@@ -2755,13 +2283,13 @@ function composeCssClasses(...classes) {
 
 // node_modules/hero-slider/dist/components/Buttons/index.js
 function ArrowSvg() {
-  return import_react17.default.createElement(
+  return import_react18.default.createElement(
     "svg",
     { width: "60px", height: "60px", strokeWidth: "5", version: "1.1", viewBox: "0 0 129 129" },
-    import_react17.default.createElement(
+    import_react18.default.createElement(
       "g",
       { fill: "currentColor" },
-      import_react17.default.createElement("path", { d: "m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z" })
+      import_react18.default.createElement("path", { d: "m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z" })
     )
   );
 }
@@ -2770,32 +2298,32 @@ function Buttons() {
   if (isMobile2)
     return null;
   let isHorizontal = orientation === AccessabilityOrientation.HORIZONTAL;
-  return import_react17.default.createElement(
-    import_react17.default.Fragment,
+  return import_react18.default.createElement(
+    import_react18.default.Fragment,
     null,
-    import_react17.default.createElement(
+    import_react18.default.createElement(
       "div",
       { className: composeCssClasses("hero-slider-previous", ButtonsModuleCss.Previous, ButtonsModuleCss.Wrapper, { className: ButtonsModuleCss.Horizontal, useIf: isHorizontal }, { className: ButtonsModuleCss.Vertical, useIf: !isHorizontal }) },
-      import_react17.default.createElement(
+      import_react18.default.createElement(
         "div",
         { className: composeCssClasses("hero-slider-previous-container", ButtonsModuleCss.Container) },
-        import_react17.default.createElement(
+        import_react18.default.createElement(
           "button",
           { className: composeCssClasses("hero-slider-previous-button", ButtonsModuleCss.Button), onClick: goToPreviousSlide },
-          import_react17.default.createElement(ArrowSvg, null)
+          import_react18.default.createElement(ArrowSvg, null)
         )
       )
     ),
-    import_react17.default.createElement(
+    import_react18.default.createElement(
       "div",
       { className: composeCssClasses("hero-slider-next", ButtonsModuleCss.Next, ButtonsModuleCss.Wrapper, { className: ButtonsModuleCss.Horizontal, useIf: isHorizontal }, { className: ButtonsModuleCss.Vertical, useIf: !isHorizontal }) },
-      import_react17.default.createElement(
+      import_react18.default.createElement(
         "div",
         { className: composeCssClasses("hero-slider-next-container", ButtonsModuleCss.Container) },
-        import_react17.default.createElement(
+        import_react18.default.createElement(
           "button",
           { className: composeCssClasses("hero-slider-next-button", ButtonsModuleCss.Button), onClick: goToNextSlide },
-          import_react17.default.createElement(ArrowSvg, null)
+          import_react18.default.createElement(ArrowSvg, null)
         )
       )
     )
@@ -2803,7 +2331,7 @@ function Buttons() {
 }
 
 // node_modules/hero-slider/dist/modules/Settings.js
-var import_react18 = __toESM(require("react"));
+var import_react19 = __toESM(require("react"));
 
 // node_modules/hero-slider/dist/modules/ConsoleLogger.js
 var ConsoleLogger = class {
@@ -2844,7 +2372,7 @@ var defaultProps5 = {
     color: void 0,
     activeColor: void 0
   }
-}, SettingsStateContext = import_react18.default.createContext(void 0);
+}, SettingsStateContext = import_react19.default.createContext(void 0);
 function SettingsProvider({ children, settings }) {
   let params = {
     sliderColor: (settings == null ? void 0 : settings.sliderColor) || defaultProps5.sliderColor,
@@ -2852,21 +2380,21 @@ function SettingsProvider({ children, settings }) {
     navbarStyle: (settings == null ? void 0 : settings.navbarStyle) || defaultProps5.navbarStyle,
     debug: settings == null ? void 0 : settings.debug
   };
-  import_react18.default.useEffect(() => {
+  import_react19.default.useEffect(() => {
     ConsoleLogger.new(params.debug);
   }, [params.debug]);
   let value = params;
-  return import_react18.default.createElement(SettingsStateContext.Provider, { value }, children);
+  return import_react19.default.createElement(SettingsStateContext.Provider, { value }, children);
 }
 function useSettings() {
-  let context = import_react18.default.useContext(SettingsStateContext);
+  let context = import_react19.default.useContext(SettingsStateContext);
   if (context === void 0)
     throw new Error("useSettings must be used within a SettingsProvider");
   return context;
 }
 
 // node_modules/hero-slider/dist/modules/Animations.js
-var import_react19 = __toESM(require("react"));
+var import_react20 = __toESM(require("react"));
 var SlidingAnimation;
 (function(SlidingAnimation2) {
   SlidingAnimation2.TOP_TO_BOTTOM = "top_to_bottom", SlidingAnimation2.BOTTOM_TO_TOP = "bottom_to_top", SlidingAnimation2.LEFT_TO_RIGHT = "left_to_right", SlidingAnimation2.RIGHT_TO_LEFT = "right_to_left", SlidingAnimation2.FADE = "fade";
@@ -2883,7 +2411,7 @@ var SlidingAnimationCssClassMap = {
   navbarFadeInDuration: 1e3,
   navbarFadeInDelay: 500,
   shouldManageAnimationSequence: !0
-}, AnimationsStateContext = import_react19.default.createContext(void 0);
+}, AnimationsStateContext = import_react20.default.createContext(void 0);
 function AnimationsProvider({ children, animations }) {
   var _a, _b, _c, _d;
   let { orientation } = useAccessability(), params = {
@@ -2909,17 +2437,17 @@ function AnimationsProvider({ children, animations }) {
     navbarFadeInDelay: params.sliderFadeInDuration,
     getSlidingAnimationCssClass
   };
-  return import_react19.default.createElement(AnimationsStateContext.Provider, { value }, children);
+  return import_react20.default.createElement(AnimationsStateContext.Provider, { value }, children);
 }
 function useAnimations() {
-  let context = import_react19.default.useContext(AnimationsStateContext);
+  let context = import_react20.default.useContext(AnimationsStateContext);
   if (context === void 0)
     throw new Error("useAnimations must be used within a AnimationsProvider");
   return context;
 }
 
 // node_modules/hero-slider/dist/modules/Layout.js
-var import_react20 = __toESM(require("react")), mobileThreshold = 1024, LayoutStateContext = import_react20.default.createContext(void 0);
+var import_react21 = __toESM(require("react")), mobileThreshold = 1024, LayoutStateContext = import_react21.default.createContext(void 0);
 function layoutReducer(state, action2) {
   var _a, _b;
   switch (action2.type) {
@@ -2934,12 +2462,12 @@ function layoutReducer(state, action2) {
   }
 }
 function LayoutProvider({ children }) {
-  let [state, dispatch] = import_react20.default.useReducer(layoutReducer, {
-    slider: import_react20.default.useRef(null),
+  let [state, dispatch] = import_react21.default.useReducer(layoutReducer, {
+    slider: import_react21.default.useRef(null),
     width: void 0,
     height: void 0
   });
-  import_react20.default.useEffect(() => {
+  import_react21.default.useEffect(() => {
     function updateSliderDimensions() {
       state.slider.current && dispatch({ type: "update-slider-dimensions" });
     }
@@ -2948,17 +2476,17 @@ function LayoutProvider({ children }) {
     };
   }, [state.slider.current]);
   let value = { state, mobileThreshold };
-  return import_react20.default.createElement(LayoutStateContext.Provider, { value }, children);
+  return import_react21.default.createElement(LayoutStateContext.Provider, { value }, children);
 }
 function useLayout() {
-  let context = import_react20.default.useContext(LayoutStateContext);
+  let context = import_react21.default.useContext(LayoutStateContext);
   if (context === void 0)
     throw new Error("useLayout must be used within a LayoutProvider");
   return context;
 }
 
 // node_modules/hero-slider/dist/modules/Autoplay.js
-var import_react22 = __toESM(require("react"));
+var import_react23 = __toESM(require("react"));
 
 // node_modules/hero-slider/dist/modules/IntervalTimer.js
 var IntervalState;
@@ -2996,7 +2524,7 @@ var IntervalTimer = class {
 };
 
 // node_modules/hero-slider/dist/modules/IntersectionObserver.js
-var import_react21 = __toESM(require("react"));
+var import_react22 = __toESM(require("react"));
 
 // node_modules/hero-slider/dist/node_modules/.pnpm/react-intersection-observer@9.4.0_react@18.2.0/node_modules/react-intersection-observer/react-intersection-observer.modern.mjs.js
 var React3 = __toESM(require("react")), observerMap = /* @__PURE__ */ new Map(), RootIds = /* @__PURE__ */ new WeakMap(), rootId = 0, unsupportedValue;
@@ -3110,16 +2638,16 @@ function useInView({
 }
 
 // node_modules/hero-slider/dist/modules/IntersectionObserver.js
-var IntersectionObserverStateContext = import_react21.default.createContext(void 0);
+var IntersectionObserverStateContext = import_react22.default.createContext(void 0);
 function IntersectionObserverProvider({ children }) {
   let [ref, inView] = useInView({ threshold: 0 }), value = {
     elementObservedRef: ref,
     isInView: inView
   };
-  return import_react21.default.createElement(IntersectionObserverStateContext.Provider, { value }, children);
+  return import_react22.default.createElement(IntersectionObserverStateContext.Provider, { value }, children);
 }
 function useIntersectionObserver() {
-  let context = import_react21.default.useContext(IntersectionObserverStateContext);
+  let context = import_react22.default.useContext(IntersectionObserverStateContext);
   if (context === void 0)
     throw new Error("useIntersectionObserver must be used within a IntersectionObserverProvider");
   return context;
@@ -3129,7 +2657,7 @@ function useIntersectionObserver() {
 var logger = ConsoleLogger.new(), defaultProps7 = {
   autoplayDuration: 8e3,
   autoplayDebounce: 4e3
-}, AutoplayStateContext = import_react22.default.createContext(void 0);
+}, AutoplayStateContext = import_react23.default.createContext(void 0);
 function autoplayReducer(state, action2) {
   switch (action2.type) {
     case "pause":
@@ -3147,7 +2675,7 @@ function AutoplayProvider({ children, autoplay }) {
   let params = {
     autoplayDuration: (_a = typeof autoplay == "object" ? autoplay == null ? void 0 : autoplay.autoplayDuration : void 0) !== null && _a !== void 0 ? _a : defaultProps7.autoplayDuration,
     autoplayDebounce: (_b = typeof autoplay == "object" ? autoplay == null ? void 0 : autoplay.autoplayDebounce : void 0) !== null && _b !== void 0 ? _b : defaultProps7.autoplayDebounce
-  }, [state, dispatch] = import_react22.default.useReducer(autoplayReducer, {
+  }, [state, dispatch] = import_react23.default.useReducer(autoplayReducer, {
     isPausedByUser: !1,
     debounceTimeout: void 0
   }), { state: controller, changeSlide, getNextSlide, getSlidingCycleDuration } = useController(), slidingCycleDuration = getSlidingCycleDuration(), autoplayCycleDuration = Math.max(slidingCycleDuration, params.autoplayDuration);
@@ -3164,8 +2692,8 @@ function AutoplayProvider({ children, autoplay }) {
   }, resume = () => {
     logger.debug("[Autoplay] Resumed by user."), autoplayInstance.resume(), dispatch({ type: "resume" });
   };
-  import_react22.default.useEffect(() => (state.isPausedByUser && clearTimeout(state.debounceTimeout), () => {
-  }), [state.isPausedByUser]), import_react22.default.useEffect(() => {
+  import_react23.default.useEffect(() => (state.isPausedByUser && clearTimeout(state.debounceTimeout), () => {
+  }), [state.isPausedByUser]), import_react23.default.useEffect(() => {
     if (autoplay)
       switch (!0) {
         case state.isPausedByUser:
@@ -3184,9 +2712,9 @@ function AutoplayProvider({ children, autoplay }) {
       }
     else
       autoplayInstance.state !== IntervalState.IDLE && (autoplayInstance.stop(), logger.info("[Autoplay] Stopped."));
-  }, [autoplay, isInView]), import_react22.default.useEffect(() => () => {
+  }, [autoplay, isInView]), import_react23.default.useEffect(() => () => {
     clearTimeout(state.debounceTimeout), autoplayInstance.stop();
-  }, []), import_react22.default.useEffect(() => (clearTimeout(state.debounceTimeout), () => {
+  }, []), import_react23.default.useEffect(() => (clearTimeout(state.debounceTimeout), () => {
   }), [controller.activeSlide]);
   let value = {
     state,
@@ -3195,10 +2723,10 @@ function AutoplayProvider({ children, autoplay }) {
     pause,
     resume
   };
-  return import_react22.default.createElement(AutoplayStateContext.Provider, { value }, children);
+  return import_react23.default.createElement(AutoplayStateContext.Provider, { value }, children);
 }
 function useAutoplay() {
-  let context = import_react22.default.useContext(AutoplayStateContext);
+  let context = import_react23.default.useContext(AutoplayStateContext);
   if (context === void 0)
     throw new Error("useAutoplay must be used within a AutoplayProvider");
   return context;
@@ -3222,43 +2750,43 @@ function Orchestrator({ className, width = "100%", height = "100vh", style, chil
     "--nav-active-color": settings.navbarStyle ? settings.navbarStyle.activeColor : void 0,
     "--mask-duration": `${getSlidingCycleDuration()}ms`
   };
-  return import_react23.default.createElement(
+  return import_react24.default.createElement(
     "div",
     { className: composeCssClasses("hero-slider-root", className), ref: elementObservedRef },
-    import_react23.default.createElement(
+    import_react24.default.createElement(
       "div",
       { ref: layout.slider, className: composeCssClasses("hero-slider-wrapper", HeroSliderModuleCss.Wrapper), onTouchStart: onTouchStartHandler, onTouchMove: onTouchMoveHandler, onTouchEnd: onTouchEndHandler, onMouseMoveCapture: debounce, style: Object.assign(Object.assign(Object.assign({}, CSSVariables), style), { width, height }) },
       children,
-      shouldDisplayButtons && import_react23.default.createElement(Buttons, null)
+      shouldDisplayButtons && import_react24.default.createElement(Buttons, null)
     )
   );
 }
 function HeroSlider(props) {
-  return import_react23.default.createElement(
+  return import_react24.default.createElement(
     LayoutProvider,
     null,
-    import_react23.default.createElement(
+    import_react24.default.createElement(
       ManagerProvider,
       { manager: props.manager },
-      import_react23.default.createElement(
+      import_react24.default.createElement(
         SettingsProvider,
         { settings: props.settings },
-        import_react23.default.createElement(
+        import_react24.default.createElement(
           ControllerProvider,
           { controller: props.controller },
-          import_react23.default.createElement(
+          import_react24.default.createElement(
             AccessabilityProvider,
             { accessability: props.accessability },
-            import_react23.default.createElement(
+            import_react24.default.createElement(
               AnimationsProvider,
               { animations: props.animations },
-              import_react23.default.createElement(
+              import_react24.default.createElement(
                 IntersectionObserverProvider,
                 null,
-                import_react23.default.createElement(
+                import_react24.default.createElement(
                   AutoplayProvider,
                   { autoplay: props.autoplay },
-                  import_react23.default.createElement(Orchestrator, { className: props.className, width: props.width, height: props.height, style: props.style }, props.children)
+                  import_react24.default.createElement(Orchestrator, { className: props.className, width: props.width, height: props.height, style: props.style }, props.children)
                 )
               )
             )
@@ -3270,7 +2798,7 @@ function HeroSlider(props) {
 }
 
 // node_modules/hero-slider/dist/components/AutoplayButton/index.js
-var import_react24 = __toESM(require("react"));
+var import_react25 = __toESM(require("react"));
 
 // node_modules/hero-slider/dist/components/AutoplayButton/index.module.css.js
 var css_248z3 = `.index-module_Button__Lw9Oe {
@@ -3310,25 +2838,25 @@ function AutoplayButton(props) {
   let { className, style, position = {
     bottom: "0",
     left: "0"
-  } } = props, { state: { isPausedByUser }, autoplayState, resume, pause } = useAutoplay(), [buttonType, setButtonType] = import_react24.default.useState(autoplayState !== IntervalState.IDLE ? ButtonType.PAUSE : ButtonType.PLAY), onClickHandler = (event) => {
+  } } = props, { state: { isPausedByUser }, autoplayState, resume, pause } = useAutoplay(), [buttonType, setButtonType] = import_react25.default.useState(autoplayState !== IntervalState.IDLE ? ButtonType.PAUSE : ButtonType.PLAY), onClickHandler = (event) => {
     event.stopPropagation(), isPausedByUser ? resume() : pause();
   };
-  return import_react24.default.useEffect(() => {
+  return import_react25.default.useEffect(() => {
     isPausedByUser && autoplayState === IntervalState.IDLE || isPausedByUser && autoplayState === IntervalState.PAUSED ? setButtonType(ButtonType.PLAY) : setButtonType(ButtonType.PAUSE);
-  }, [isPausedByUser, autoplayState]), import_react24.default.createElement(
+  }, [isPausedByUser, autoplayState]), import_react25.default.createElement(
     "button",
     { className: composeCssClasses("hero-slider-autoplay-button", AutoplayButtonModuleCss.Button, className), onClick: onClickHandler, style: Object.assign(Object.assign({}, position), style) },
-    import_react24.default.createElement(
+    import_react25.default.createElement(
       "svg",
       { fill: "currentColor", height: "100%", width: "100%", viewBox: "0 0 36 36" },
-      import_react24.default.createElement("path", { d: AutoplaySvg.getPath(buttonType) })
+      import_react25.default.createElement("path", { d: AutoplaySvg.getPath(buttonType) })
     )
   );
 }
 AutoplayButton.displayName = "hero-slider/autoplay-button";
 
 // node_modules/hero-slider/dist/components/ButtonsNav/index.js
-var import_react26 = __toESM(require("react"));
+var import_react27 = __toESM(require("react"));
 
 // node_modules/hero-slider/dist/components/ButtonsNav/index.module.css.js
 var css_248z4 = `.index-module_Wrapper__wU5EB {
@@ -3465,7 +2993,7 @@ var css_248z4 = `.index-module_Wrapper__wU5EB {
 styleInject(css_248z4);
 
 // node_modules/hero-slider/dist/components/Nav/index.js
-var import_react25 = __toESM(require("react"));
+var import_react26 = __toESM(require("react"));
 
 // node_modules/hero-slider/dist/components/Nav/index.module.css.js
 var css_248z5 = `.index-module_Wrapper__xqqKi {
@@ -3543,13 +3071,13 @@ function Nav({ color, activeColor, position = {
     let onClickHandler = (slideNumber) => {
       slideNumber !== activeSlide && changeSlide(slideNumber);
     };
-    return Array.from(slides.values()).map(({ number }) => import_react25.default.createElement("li", { key: number, className: composeCssClasses("hero-slider-nav-button", NavModuleCss.Button, { className: NavModuleCss.Active, useIf: activeSlide === number }), onClick: () => onClickHandler(number) }));
+    return Array.from(slides.values()).map(({ number }) => import_react26.default.createElement("li", { key: number, className: composeCssClasses("hero-slider-nav-button", NavModuleCss.Button, { className: NavModuleCss.Active, useIf: activeSlide === number }), onClick: () => onClickHandler(number) }));
   }
   let CSSVariables = {
     "--nav-color": color,
     "--nav-active-color": activeColor
   };
-  return import_react25.default.createElement("ul", { className: composeCssClasses("hero-slider-nav-wrapper", NavModuleCss.Wrapper), style: Object.assign(Object.assign({}, position), CSSVariables) }, renderButtons());
+  return import_react26.default.createElement("ul", { className: composeCssClasses("hero-slider-nav-wrapper", NavModuleCss.Wrapper), style: Object.assign(Object.assign({}, position), CSSVariables) }, renderButtons());
 }
 Nav.displayName = "hero-slider/nav";
 
@@ -3565,7 +3093,7 @@ function ButtonsNav(props) {
     "--nav-active-color": activeColor
   };
   if (Number(width) <= (componentMobileThreshold ?? mobileThreshold2))
-    return isNullAfterThreshold ? null : import_react26.default.createElement(Nav, Object.assign({}, props));
+    return isNullAfterThreshold ? null : import_react27.default.createElement(Nav, Object.assign({}, props));
   function renderButtons() {
     if (!totalSlides)
       return [];
@@ -3574,31 +3102,31 @@ function ButtonsNav(props) {
     };
     return Array.from(slides.values()).map(({ number, label }) => {
       let description = label;
-      return import_react26.default.createElement(
+      return import_react27.default.createElement(
         "li",
         { key: number, className: composeCssClasses("hero-slider-buttons-nav-button", ButtonsNavModuleCss.Button, {
           className: ButtonsNavModuleCss.Active,
           useIf: activeSlide === number
         }), onClick: () => onClickHandler(number) },
-        import_react26.default.createElement(
+        import_react27.default.createElement(
           "div",
           { className: composeCssClasses("hero-slider-buttons-nav-button-description", ButtonsNavModuleCss.Description) },
-          import_react26.default.createElement("div", { className: composeCssClasses("hero-slider-buttons-nav-button-text", ButtonsNavModuleCss.Text) }, description)
+          import_react27.default.createElement("div", { className: composeCssClasses("hero-slider-buttons-nav-button-text", ButtonsNavModuleCss.Text) }, description)
         )
       );
     });
   }
-  return import_react26.default.createElement(
+  return import_react27.default.createElement(
     "div",
     { className: composeCssClasses("hero-slider-buttons-nav-wrapper", ButtonsNavModuleCss.Wrapper), style: Object.assign(Object.assign({}, position), CSSVariables) },
-    import_react26.default.createElement(
+    import_react27.default.createElement(
       "ul",
       { className: composeCssClasses("hero-slider-buttons-nav-container", ButtonsNavModuleCss.Container), style: {
         justifyContent: justifyContent || "center",
         alignItems: alignItems || (position.top !== void 0 ? "flex-start" : "flex-end")
       } },
       renderButtons(),
-      extraButton && import_react26.default.createElement("div", { className: composeCssClasses("hero-slider-buttons-nav-extra-button", ButtonsNavModuleCss.ExtraButton), style: {
+      extraButton && import_react27.default.createElement("div", { className: composeCssClasses("hero-slider-buttons-nav-extra-button", ButtonsNavModuleCss.ExtraButton), style: {
         order: isExtraButtonRight ? 1 : 0
       } }, extraButton)
     )
@@ -3607,7 +3135,7 @@ function ButtonsNav(props) {
 ButtonsNav.displayName = "hero-slider/buttons-nav";
 
 // node_modules/hero-slider/dist/components/MenuNav/index.js
-var import_react27 = __toESM(require("react"));
+var import_react28 = __toESM(require("react"));
 
 // node_modules/hero-slider/dist/components/MenuNav/index.module.css.js
 var css_248z6 = `.index-module_Wrapper__-jUiF {
@@ -3743,7 +3271,7 @@ function MenuNav(props) {
     transform: "translateX(-50%)"
   }, justifyContent = "center", mobileThreshold: componentMobileThreshold, isNullAfterThreshold, extraButton, isExtraButtonRight = !0 } = props, { state: { width }, mobileThreshold: mobileThreshold2 } = useLayout(), { state: { slides, totalSlides } } = useManager(), { state: { activeSlide }, changeSlide } = useController();
   if (Number(width) <= (componentMobileThreshold ?? mobileThreshold2))
-    return isNullAfterThreshold ? null : import_react27.default.createElement(Nav, Object.assign({}, props));
+    return isNullAfterThreshold ? null : import_react28.default.createElement(Nav, Object.assign({}, props));
   function renderButtons() {
     if (!totalSlides)
       return [];
@@ -3752,22 +3280,22 @@ function MenuNav(props) {
     };
     return Array.from(slides.values()).map(({ label, number }, index) => {
       let description = label;
-      return import_react27.default.createElement(
+      return import_react28.default.createElement(
         "li",
         { key: index, className: composeCssClasses("hero-slider-menu-nav-button", MenuNavModuleCss.Button, {
           className: MenuNavModuleCss.Active,
           useIf: activeSlide === number
         }), onClick: () => onClickHandler(number) },
-        import_react27.default.createElement(
+        import_react28.default.createElement(
           "div",
           { className: composeCssClasses("hero-slider-menu-nav-button-description", MenuNavModuleCss.Description) },
-          import_react27.default.createElement(
+          import_react28.default.createElement(
             "div",
             { className: composeCssClasses("hero-slider-menu-nav-button-number", MenuNavModuleCss.Number) },
             number,
-            import_react27.default.createElement("span", { className: composeCssClasses("hero-slider-menu-nav-button-square", MenuNavModuleCss.Square) })
+            import_react28.default.createElement("span", { className: composeCssClasses("hero-slider-menu-nav-button-square", MenuNavModuleCss.Square) })
           ),
-          import_react27.default.createElement("div", { className: composeCssClasses("hero-slider-menu-nav-button-text", MenuNavModuleCss.Text) }, description)
+          import_react28.default.createElement("div", { className: composeCssClasses("hero-slider-menu-nav-button-text", MenuNavModuleCss.Text) }, description)
         )
       );
     });
@@ -3776,24 +3304,24 @@ function MenuNav(props) {
     "--nav-color": color,
     "--nav-active-color": activeColor
   };
-  return import_react27.default.createElement(
+  return import_react28.default.createElement(
     "div",
     { className: composeCssClasses("hero-slider-menu-nav-wrapper", MenuNavModuleCss.Wrapper), style: Object.assign(Object.assign(Object.assign({}, position), CSSVariables), { justifyContent }) },
-    extraButton && import_react27.default.createElement(
+    extraButton && import_react28.default.createElement(
       "div",
       { className: composeCssClasses("hero-slider-menu-nav-extra", MenuNavModuleCss.Extra), style: {
         order: isExtraButtonRight ? 1 : 0
       } },
-      import_react27.default.createElement("span", { className: composeCssClasses("hero-slider-menu-nav-extra-button", MenuNavModuleCss.ExtraButton), style: {
+      import_react28.default.createElement("span", { className: composeCssClasses("hero-slider-menu-nav-extra-button", MenuNavModuleCss.ExtraButton), style: {
         borderLeft: isExtraButtonRight ? "1px solid var(--nav-color, rgba(215, 225, 235, 0.6))" : void 0,
         borderRight: isExtraButtonRight ? void 0 : "1px solid var(--nav-color, rgba(215, 225, 235, 0.6))"
       } }, extraButton)
     ),
-    import_react27.default.createElement(
+    import_react28.default.createElement(
       "ul",
       { className: composeCssClasses("hero-slider-menu-nav-container", MenuNavModuleCss.Container) },
       renderButtons(),
-      import_react27.default.createElement("span", { className: composeCssClasses("hero-slider-menu-nav-bar", MenuNavModuleCss.Bar), style: {
+      import_react28.default.createElement("span", { className: composeCssClasses("hero-slider-menu-nav-bar", MenuNavModuleCss.Bar), style: {
         width: `${100 / totalSlides}%`,
         transform: `translate3d(${activeSlide - 1}00%, 0, 0)`
       } })
@@ -3803,7 +3331,7 @@ function MenuNav(props) {
 MenuNav.displayName = "hero-slider/menu-nav";
 
 // node_modules/hero-slider/dist/components/Overlay/index.js
-var import_react28 = __toESM(require("react"));
+var import_react29 = __toESM(require("react"));
 
 // node_modules/hero-slider/dist/components/Overlay/index.module.css.js
 var css_248z7 = `.index-module_Container__uwyVd {
@@ -3824,12 +3352,12 @@ styleInject(css_248z7);
 
 // node_modules/hero-slider/dist/components/Overlay/index.js
 function Overlay(props) {
-  return import_react28.default.createElement("div", { className: composeCssClasses("hero-slider-overlay", OverlayModuleCss.Container) }, props.children);
+  return import_react29.default.createElement("div", { className: composeCssClasses("hero-slider-overlay", OverlayModuleCss.Container) }, props.children);
 }
 Overlay.displayName = "hero-slider/overlay";
 
 // node_modules/hero-slider/dist/components/SideNav/index.js
-var import_react29 = __toESM(require("react"));
+var import_react30 = __toESM(require("react"));
 
 // node_modules/hero-slider/dist/components/SideNav/index.module.css.js
 var css_248z8 = `.index-module_Wrapper__jT-Cn {
@@ -3909,7 +3437,7 @@ function SideNav({ color, activeColor, left, right, isPositionedRight = !0, posi
     let onClickHandler = (slideNumber) => {
       slideNumber !== activeSlide && changeSlide(slideNumber);
     };
-    return Array.from(slides.values()).map(({ number }) => import_react29.default.createElement(
+    return Array.from(slides.values()).map(({ number }) => import_react30.default.createElement(
       "li",
       { key: number, className: composeCssClasses("hero-slider-side-nav-button", SideNavModuleCss.Button, {
         className: SideNavModuleCss.Active,
@@ -3917,20 +3445,20 @@ function SideNav({ color, activeColor, left, right, isPositionedRight = !0, posi
       }), onClick: () => onClickHandler(number), style: {
         justifyContent: isPositionedRight ? "flex-end" : "flex-start"
       } },
-      import_react29.default.createElement("span", { className: composeCssClasses("hero-slider-side-nav-button-line", SideNavModuleCss.Line) }),
-      import_react29.default.createElement("span", { className: composeCssClasses("hero-slider-side-nav-button-number", SideNavModuleCss.Number) }, number.toLocaleString())
+      import_react30.default.createElement("span", { className: composeCssClasses("hero-slider-side-nav-button-line", SideNavModuleCss.Line) }),
+      import_react30.default.createElement("span", { className: composeCssClasses("hero-slider-side-nav-button-number", SideNavModuleCss.Number) }, number.toLocaleString())
     ));
   }
   let CSSVariables = {
     "--nav-color": color,
     "--nav-active-color": activeColor
   };
-  return import_react29.default.createElement("ul", { className: composeCssClasses("hero-slider-side-nav-wrapper", SideNavModuleCss.Wrapper), style: Object.assign(Object.assign({}, position), CSSVariables) }, renderButtons());
+  return import_react30.default.createElement("ul", { className: composeCssClasses("hero-slider-side-nav-wrapper", SideNavModuleCss.Wrapper), style: Object.assign(Object.assign({}, position), CSSVariables) }, renderButtons());
 }
 SideNav.displayName = "hero-slider/nav";
 
 // node_modules/hero-slider/dist/components/Slide/index.js
-var import_react32 = __toESM(require("react"));
+var import_react33 = __toESM(require("react"));
 
 // node_modules/hero-slider/dist/components/Slide/index.module.css.js
 var css_248z9 = `.index-module_Slide__vy4u2,
@@ -3998,7 +3526,7 @@ function __rest(s, e) {
 }
 
 // node_modules/hero-slider/dist/components/Slide/Background/index.js
-var import_react30 = __toESM(require("react"));
+var import_react31 = __toESM(require("react"));
 
 // node_modules/hero-slider/dist/components/Slide/Background/index.module.css.js
 var css_248z10 = `.index-module_Background__hqV3F {
@@ -4077,7 +3605,7 @@ function Background(props) {
     maskBackgroundBlendMode: _,
     shouldLazyLoad = !0,
     onLoad
-  } = props, background = __rest(props, ["backgroundAnimation", "backgroundImageClassName", "backgroundImageBlendMode", "backgroundImageSizes", "backgroundImageSrcSet", "backgroundImageSrc", "backgroundImageAlt", "backgroundImageStyle", "maskBackgroundBlendMode", "shouldLazyLoad", "onLoad"]), [isLoaded, setIsLoaded] = import_react30.default.useState(!1), onLoadHandler = (event) => {
+  } = props, background = __rest(props, ["backgroundAnimation", "backgroundImageClassName", "backgroundImageBlendMode", "backgroundImageSizes", "backgroundImageSrcSet", "backgroundImageSrc", "backgroundImageAlt", "backgroundImageStyle", "maskBackgroundBlendMode", "shouldLazyLoad", "onLoad"]), [isLoaded, setIsLoaded] = import_react31.default.useState(!1), onLoadHandler = (event) => {
     onLoad && onLoad(event), setIsLoaded(!0);
   }, imageBackgroundClassNames = [];
   if (isLoaded)
@@ -4091,15 +3619,15 @@ function Background(props) {
     }
   else
     imageBackgroundClassNames.push(BackgroundModuleCss.Loading);
-  return import_react30.default.createElement(
+  return import_react31.default.createElement(
     "div",
     { className: composeCssClasses("hero-slider-slide-background", backgroundImageClassName, BackgroundModuleCss.Background), style: background },
-    import_react30.default.createElement("img", { className: composeCssClasses("hero-slider-slide-background-image", backgroundImageClassName, BackgroundModuleCss.Image, ...imageBackgroundClassNames), sizes: backgroundImageSizes, srcSet: backgroundImageSrcSet, src: backgroundImageSrc, alt: backgroundImageAlt, style: Object.assign({ mixBlendMode: backgroundImageBlendMode }, backgroundImageStyle), onLoad: onLoadHandler, loading: shouldLazyLoad ? "lazy" : "eager" })
+    import_react31.default.createElement("img", { className: composeCssClasses("hero-slider-slide-background-image", backgroundImageClassName, BackgroundModuleCss.Image, ...imageBackgroundClassNames), sizes: backgroundImageSizes, srcSet: backgroundImageSrcSet, src: backgroundImageSrc, alt: backgroundImageAlt, style: Object.assign({ mixBlendMode: backgroundImageBlendMode }, backgroundImageStyle), onLoad: onLoadHandler, loading: shouldLazyLoad ? "lazy" : "eager" })
   );
 }
 
 // node_modules/hero-slider/dist/components/Slide/Mask/index.js
-var import_react31 = __toESM(require("react"));
+var import_react32 = __toESM(require("react"));
 
 // node_modules/hero-slider/dist/components/Slide/Mask/index.module.css.js
 var css_248z11 = `.index-module_Mask__i5n4j {
@@ -4196,33 +3724,33 @@ styleInject(css_248z11);
 
 // node_modules/hero-slider/dist/components/Slide/Mask/index.js
 function Mask({ background, isActive }) {
-  let { state: { isSliding } } = useController(), [className, setClassName] = import_react31.default.useState(MaskModuleCss.Loading), onLoadHandler = () => {
+  let { state: { isSliding } } = useController(), [className, setClassName] = import_react32.default.useState(MaskModuleCss.Loading), onLoadHandler = () => {
     setClassName(MaskModuleCss.Loaded);
   }, style = {
     backgroundColor: background == null ? void 0 : background.backgroundColor,
     backgroundBlendMode: background == null ? void 0 : background.maskBackgroundBlendMode,
     backgroundImage: `url('${background == null ? void 0 : background.backgroundImageSrc}')`
   }, isLoaded = className === MaskModuleCss.Loaded;
-  return import_react31.default.createElement(
+  return import_react32.default.createElement(
     "div",
     { className: composeCssClasses("hero-slider-slide-mask", MaskModuleCss.Mask, { className: MaskModuleCss.Active, useIf: isActive && !isSliding }, { className: MaskModuleCss.Inactive, useIf: !(isActive && !isSliding) }) },
-    import_react31.default.createElement("img", { alt: (background == null ? void 0 : background.backgroundImageAlt) || "", className: MaskModuleCss.Loader, onLoad: onLoadHandler, src: background == null ? void 0 : background.backgroundImageSrc, loading: background != null && background.shouldLazyLoad ? "lazy" : "eager" }),
-    isLoaded && import_react31.default.createElement("div", { className: composeCssClasses("hero-slider-slide-mask-inner", className, MaskModuleCss.Inner, { className: MaskModuleCss.Sliding, useIf: isSliding }), style })
+    import_react32.default.createElement("img", { alt: (background == null ? void 0 : background.backgroundImageAlt) || "", className: MaskModuleCss.Loader, onLoad: onLoadHandler, src: background == null ? void 0 : background.backgroundImageSrc, loading: background != null && background.shouldLazyLoad ? "lazy" : "eager" }),
+    isLoaded && import_react32.default.createElement("div", { className: composeCssClasses("hero-slider-slide-mask-inner", className, MaskModuleCss.Inner, { className: MaskModuleCss.Sliding, useIf: isSliding }), style })
   );
 }
 
 // node_modules/hero-slider/dist/components/Slide/index.js
 var logger3 = ConsoleLogger.new();
 function Slide(props) {
-  let { className, shouldRenderMask = !1, style, background, onBackgroundLoad, children, label } = props, { getSlide, registerSlide, removeSlide } = useManager(), { state: { activeSlide, isSliding, prevActiveSlide, slidingDirection } } = useController(), { getSlidingAnimationCssClass } = useAnimations(), slideRef = import_react32.default.useRef(null), slide = getSlide(slideRef);
+  let { className, shouldRenderMask = !1, style, background, onBackgroundLoad, children, label } = props, { getSlide, registerSlide, removeSlide } = useManager(), { state: { activeSlide, isSliding, prevActiveSlide, slidingDirection } } = useController(), { getSlidingAnimationCssClass } = useAnimations(), slideRef = import_react33.default.useRef(null), slide = getSlide(slideRef);
   logger3.info("[Slide] rerender", "slide.number: ", slide == null ? void 0 : slide.number);
-  let [classNames, setClassNames] = import_react32.default.useState(composeCssClasses("hero-slider-slide", SlideModuleCss.Slide, className)), isActive = activeSlide === (slide == null ? void 0 : slide.number);
-  if (import_react32.default.useEffect(() => {
+  let [classNames, setClassNames] = import_react33.default.useState(composeCssClasses("hero-slider-slide", SlideModuleCss.Slide, className)), isActive = activeSlide === (slide == null ? void 0 : slide.number);
+  if (import_react33.default.useEffect(() => {
     slide && setClassNames(composeCssClasses("hero-slider-slide", SlideModuleCss.Slide, { className: SlideModuleCss.Active, useIf: isActive }, { className: SlideModuleCss.Sliding, useIf: isActive && !isSliding }, {
       className: getSlidingAnimationCssClass(slide.number, prevActiveSlide, slidingDirection),
       useIf: isActive && isSliding
     }));
-  }, [isActive, isSliding]), import_react32.default.useEffect(() => (slideRef && registerSlide(slideRef, label), () => {
+  }, [isActive, isSliding]), import_react33.default.useEffect(() => (slideRef && registerSlide(slideRef, label), () => {
     slideRef && removeSlide(slideRef);
   }), []), !slide)
     return null;
@@ -4230,15 +3758,15 @@ function Slide(props) {
     "--background-animation-duration": background != null && background.backgroundAnimationDuration ? `${background.backgroundAnimationDuration}ms` : null,
     "--background-animation-delay": background != null && background.backgroundAnimationDelay ? `${background.backgroundAnimationDelay}ms` : null
   };
-  return import_react32.default.createElement(
+  return import_react33.default.createElement(
     "div",
     { ref: slideRef, className: classNames, style: Object.assign(Object.assign({}, style), CSSVariables) },
-    import_react32.default.createElement(Background, Object.assign({}, background, { onLoad: onBackgroundLoad })),
-    import_react32.default.createElement(
+    import_react33.default.createElement(Background, Object.assign({}, background, { onLoad: onBackgroundLoad })),
+    import_react33.default.createElement(
       "div",
       { className: composeCssClasses("hero-slider-slide-wrapper", SlideModuleCss.Wrapper) },
-      shouldRenderMask ? import_react32.default.createElement(Mask, { background, isActive }) : null,
-      import_react32.default.createElement("div", { className: composeCssClasses("hero-slider-slide-container", SlideModuleCss.Container, { className: SlideModuleCss.Active, useIf: isActive && !isSliding }) }, children)
+      shouldRenderMask ? import_react33.default.createElement(Mask, { background, isActive }) : null,
+      import_react33.default.createElement("div", { className: composeCssClasses("hero-slider-slide-container", SlideModuleCss.Container, { className: SlideModuleCss.Active, useIf: isActive && !isSliding }) }, children)
     )
   );
 }
@@ -4272,7 +3800,7 @@ wrapper.propTypes = {
 var Wrapper_default = wrapper;
 
 // app/components/ZeroSlider/ZeroSlider.tsx
-var import_react33 = require("@chakra-ui/react"), import_jsx_dev_runtime = require("react/jsx-dev-runtime"), hallstatt = "https://images.unsplash.com/photo-1667470928088-57bfc3f28cf8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1452&q=80", poolTable = "https://images.unsplash.com/photo-1661242686756-de9bdeb69ad8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80", windowView = "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80";
+var import_react34 = require("@chakra-ui/react"), import_jsx_dev_runtime = require("react/jsx-dev-runtime"), hallstatt = "https://images.unsplash.com/photo-1667470928088-57bfc3f28cf8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1452&q=80", poolTable = "https://images.unsplash.com/photo-1661242686756-de9bdeb69ad8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80", windowView = "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80";
 var app = () => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HeroSlider, {
   height: "100vh",
   autoplay: !0,
@@ -4290,14 +3818,14 @@ var app = () => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HeroSlider, {
   },
   children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Overlay, {
-      children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react33.Center, {
+      children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Center, {
         h: "100%",
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react33.Stack, {
+        children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Stack, {
           alignItems: "center",
           children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Wrapper_default, {
               children: [
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react33.Heading, {
+                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Heading, {
                   fontSize: "9xl",
                   color: "hostelloRed.700",
                   children: "Hostello"
@@ -4306,7 +3834,7 @@ var app = () => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HeroSlider, {
                   lineNumber: 47,
                   columnNumber: 21
                 }, this),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react33.Text, {
+                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Text, {
                   fontSize: "4xl",
                   color: "hostelloRed.600",
                   children: "Hostel finding made easy"
@@ -4321,7 +3849,7 @@ var app = () => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HeroSlider, {
               lineNumber: 46,
               columnNumber: 17
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react33.Button, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Button, {
               backgroundColor: "hostelloRed.500",
               maxWidth: "-webkit-fit-content",
               children: "Explore Now"
@@ -4386,11 +3914,12 @@ var app = () => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HeroSlider, {
 }, this), ZeroSlider_default = app;
 
 // app/components/HostelsList/HostelsList.tsx
-var import_react34 = require("@chakra-ui/react"), import_icons = require("@chakra-ui/icons"), import_react35 = require("react");
+var import_react35 = require("@chakra-ui/react"), import_icons = require("@chakra-ui/icons"), import_react36 = require("react"), import_react_router_dom2 = require("react-router-dom");
 
 // app/components/HostelsList/hostels.json
 var hostels_default = [
   {
+    id: 1,
     city: "Helsinki",
     country: "Finland",
     superHost: !1,
@@ -4402,6 +3931,7 @@ var hostels_default = [
     photo: "https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80"
   },
   {
+    id: 1,
     city: "Turku",
     country: "Finland",
     superHost: !1,
@@ -4413,6 +3943,7 @@ var hostels_default = [
     photo: "https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
   },
   {
+    id: 1,
     city: "Helsinki",
     country: "Finland",
     superHost: !0,
@@ -4424,6 +3955,7 @@ var hostels_default = [
     photo: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
   },
   {
+    id: 1,
     city: "Helsinki",
     country: "Finland",
     superHost: !1,
@@ -4435,6 +3967,7 @@ var hostels_default = [
     photo: "https://images.unsplash.com/photo-1556020685-ae41abfc9365?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
   },
   {
+    id: 1,
     city: "Turku",
     country: "Finland",
     superHost: !0,
@@ -4446,6 +3979,7 @@ var hostels_default = [
     photo: "https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2249&q=80"
   },
   {
+    id: 1,
     city: "Vaasa",
     country: "Finland",
     superHost: !0,
@@ -4457,6 +3991,7 @@ var hostels_default = [
     photo: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
   },
   {
+    id: 1,
     city: "Vaasa",
     country: "Finland",
     superHost: !1,
@@ -4468,6 +4003,7 @@ var hostels_default = [
     photo: "https://images.unsplash.com/photo-1505693314120-0d443867891c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2591&q=80"
   },
   {
+    id: 1,
     city: "Oulu",
     country: "Finland",
     superHost: !1,
@@ -4479,6 +4015,7 @@ var hostels_default = [
     photo: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
   },
   {
+    id: 1,
     city: "Oulu",
     country: "Finland",
     superHost: !1,
@@ -4490,6 +4027,7 @@ var hostels_default = [
     photo: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2255&q=80"
   },
   {
+    id: 1,
     city: "Oulu",
     country: "Finland",
     superHost: !0,
@@ -4501,6 +4039,7 @@ var hostels_default = [
     photo: "https://images.unsplash.com/photo-1522156373667-4c7234bbd804?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=930&q=80"
   },
   {
+    id: 1,
     city: "Vaasa",
     country: "Finland",
     superHost: !1,
@@ -4512,6 +4051,7 @@ var hostels_default = [
     photo: "https://images.unsplash.com/photo-1494203484021-3c454daf695d?ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
   },
   {
+    id: 1,
     city: "Helsinki",
     country: "Finland",
     superHost: !1,
@@ -4523,6 +4063,7 @@ var hostels_default = [
     photo: "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
   },
   {
+    id: 1,
     city: "Turku",
     country: "Finland",
     superHost: !1,
@@ -4534,6 +4075,7 @@ var hostels_default = [
     photo: "https://images.unsplash.com/photo-1519643381401-22c77e60520e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjE3MzYxfQ&auto=format&fit=crop&w=2253&q=80"
   },
   {
+    id: 1,
     city: "Turku",
     country: "Finland",
     superHost: !0,
@@ -4548,57 +4090,58 @@ var hostels_default = [
 
 // app/components/HostelsList/HostelsList.tsx
 var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), HostelsList = () => {
-  let [location, setLocation] = (0, import_react35.useState)(null), [guests, setGuests] = (0, import_react35.useState)(0), filteredStays = hostels_default.filter((stay) => (location === null || stay.city + ", " + stay.country === location) && stay.maxGuests >= guests), staysList = /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Stack, {
+  let [location, setLocation] = (0, import_react36.useState)(null), [guests, setGuests] = (0, import_react36.useState)(0), navigate = (0, import_react_router_dom2.useNavigate)(), filteredStays = hostels_default.filter((stay) => (location === null || stay.city + ", " + stay.country === location) && stay.maxGuests >= guests), staysList = /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react35.Stack, {
     width: "100%",
     paddingX: "60px",
-    children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Grid, {
+    children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react35.Grid, {
       templateColumns: "repeat(12, 1fr)",
       gap: 8,
       paddingY: 2,
       children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.GridItem, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react35.GridItem, {
           colSpan: 12,
-          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Box, {
+          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react35.Box, {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "flex-end",
             children: [
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Text, {
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react35.Text, {
                 variant: "h5",
                 as: "h2",
                 sx: { fontWeight: "bold" },
                 children: "All stays"
               }, void 0, !1, {
                 fileName: "app/components/HostelsList/HostelsList.tsx",
-                lineNumber: 16,
+                lineNumber: 18,
                 columnNumber: 17
               }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Text, {
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react35.Text, {
                 variant: "body2",
                 as: "span",
                 children: filteredStays.length + " stay" + (filteredStays.length !== 1 ? "s" : "")
               }, void 0, !1, {
                 fileName: "app/components/HostelsList/HostelsList.tsx",
-                lineNumber: 20,
+                lineNumber: 22,
                 columnNumber: 17
               }, this)
             ]
           }, void 0, !0, {
             fileName: "app/components/HostelsList/HostelsList.tsx",
-            lineNumber: 15,
+            lineNumber: 17,
             columnNumber: 15
           }, this)
         }, void 0, !1, {
           fileName: "app/components/HostelsList/HostelsList.tsx",
-          lineNumber: 14,
+          lineNumber: 16,
           columnNumber: 13
         }, this),
-        filteredStays.map((stay) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.GridItem, {
+        filteredStays.map((stay) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react35.GridItem, {
           colSpan: [12, 6, 4],
-          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Card, {
+          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react35.Card, {
             sx: { border: 0, boxShadow: 0, background: "unset", height: "100%" },
+            onClick: () => navigate(`/hostel/${stay.id}`),
             children: [
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.CardHeader, {
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react35.CardHeader, {
                 padding: 0,
                 children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", {
                   src: stay.photo,
@@ -4607,50 +4150,50 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), HostelsList = () 
                   style: { borderRadius: "16px", aspectRatio: "394/267", objectFit: "cover" }
                 }, void 0, !1, {
                   fileName: "app/components/HostelsList/HostelsList.tsx",
-                  lineNumber: 30,
+                  lineNumber: 32,
                   columnNumber: 23
                 }, this)
               }, void 0, !1, {
                 fileName: "app/components/HostelsList/HostelsList.tsx",
-                lineNumber: 29,
+                lineNumber: 31,
                 columnNumber: 21
               }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.CardBody, {
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react35.CardBody, {
                 sx: { padding: 0, paddingTop: "0.5em" },
                 children: [
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Box, {
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react35.Box, {
                     display: "flex",
                     justifyContent: "space-between",
                     children: [
-                      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Box, {
+                      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react35.Box, {
                         children: [
-                          stay.superHost && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Button, {
+                          stay.superHost && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react35.Button, {
                             variant: "outlined",
                             size: "small",
                             sx: { fontSize: "0.7em", borderRadius: "20px", lineHeight: 1.3, textTransform: "uppercase", fontWeight: "bold", marginRight: "1em" },
                             children: "Super host"
                           }, void 0, !1, {
                             fileName: "app/components/HostelsList/HostelsList.tsx",
-                            lineNumber: 36,
+                            lineNumber: 38,
                             columnNumber: 29
                           }, this),
-                          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Text, {
+                          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react35.Text, {
                             variant: "body2",
                             as: "span",
                             sx: { opacity: 0.7 },
                             children: stay.type + (stay.beds ? " \xB7 " + stay.beds + " beds" : "")
                           }, void 0, !1, {
                             fileName: "app/components/HostelsList/HostelsList.tsx",
-                            lineNumber: 40,
+                            lineNumber: 42,
                             columnNumber: 27
                           }, this)
                         ]
                       }, void 0, !0, {
                         fileName: "app/components/HostelsList/HostelsList.tsx",
-                        lineNumber: 34,
+                        lineNumber: 36,
                         columnNumber: 25
                       }, this),
-                      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Stack, {
+                      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react35.Stack, {
                         direction: "row",
                         alignItems: "center",
                         gap: 0.5,
@@ -4659,72 +4202,72 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), HostelsList = () 
                             color: "secondary"
                           }, void 0, !1, {
                             fileName: "app/components/HostelsList/HostelsList.tsx",
-                            lineNumber: 45,
+                            lineNumber: 47,
                             columnNumber: 27
                           }, this),
-                          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Text, {
+                          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react35.Text, {
                             variant: "body2",
                             as: "span",
                             children: stay.rating
                           }, void 0, !1, {
                             fileName: "app/components/HostelsList/HostelsList.tsx",
-                            lineNumber: 46,
+                            lineNumber: 48,
                             columnNumber: 27
                           }, this)
                         ]
                       }, void 0, !0, {
                         fileName: "app/components/HostelsList/HostelsList.tsx",
-                        lineNumber: 44,
+                        lineNumber: 46,
                         columnNumber: 25
                       }, this)
                     ]
                   }, void 0, !0, {
                     fileName: "app/components/HostelsList/HostelsList.tsx",
-                    lineNumber: 33,
+                    lineNumber: 35,
                     columnNumber: 23
                   }, this),
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react34.Text, {
+                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react35.Text, {
                     variant: "h6",
                     as: "p",
                     children: stay.title
                   }, void 0, !1, {
                     fileName: "app/components/HostelsList/HostelsList.tsx",
-                    lineNumber: 52,
+                    lineNumber: 54,
                     columnNumber: 23
                   }, this)
                 ]
               }, void 0, !0, {
                 fileName: "app/components/HostelsList/HostelsList.tsx",
-                lineNumber: 32,
+                lineNumber: 34,
                 columnNumber: 21
               }, this)
             ]
           }, void 0, !0, {
             fileName: "app/components/HostelsList/HostelsList.tsx",
-            lineNumber: 28,
+            lineNumber: 30,
             columnNumber: 19
           }, this)
         }, void 0, !1, {
           fileName: "app/components/HostelsList/HostelsList.tsx",
-          lineNumber: 27,
+          lineNumber: 29,
           columnNumber: 17
         }, this))
       ]
     }, void 0, !0, {
       fileName: "app/components/HostelsList/HostelsList.tsx",
-      lineNumber: 13,
+      lineNumber: 15,
       columnNumber: 11
     }, this)
   }, void 0, !1, {
     fileName: "app/components/HostelsList/HostelsList.tsx",
-    lineNumber: 12,
+    lineNumber: 14,
     columnNumber: 9
   }, this);
   return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, {
     children: staysList
   }, void 0, !1, {
     fileName: "app/components/HostelsList/HostelsList.tsx",
-    lineNumber: 64,
+    lineNumber: 66,
     columnNumber: 5
   }, this);
 }, HostelsList_default = HostelsList;
@@ -4744,10 +4287,10 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), dbErrorMessage = 
   return db && await db.from("songs").insert({ body: song, user_id: userId }), null;
 };
 function Index() {
-  let { signOut } = (0, import_remix5.useAuth)(), data = (0, import_react36.useLoaderData)(), headingSize = (0, import_react37.useBreakpointValue)({ base: "lg", sm: "2xl", lg: "4xl" });
+  let { signOut } = (0, import_remix5.useAuth)(), data = (0, import_react37.useLoaderData)(), headingSize = (0, import_react38.useBreakpointValue)({ base: "lg", sm: "2xl", lg: "4xl" });
   return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, {
     children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react37.Stack, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react38.Stack, {
         justify: "center",
         textAlign: "center",
         h: "100vh",
@@ -4778,7 +4321,7 @@ function Index() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "32141f69", entry: { module: "/build/entry.client-54QDP5ML.js", imports: ["/build/_shared/chunk-RFR2BVBZ.js", "/build/_shared/chunk-U7PDLUNP.js", "/build/_shared/chunk-36S4JRLM.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-OXIFEUA5.js", imports: ["/build/_shared/chunk-V5RMJA44.js", "/build/_shared/chunk-6AZZXBV6.js", "/build/_shared/chunk-3WKBNXIS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/hostel/$hostelId": { id: "routes/hostel/$hostelId", parentId: "root", path: "hostel/:hostelId", index: void 0, caseSensitive: void 0, module: "/build/routes/hostel/$hostelId-AUKC2TL5.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-GXHKC4IW.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in/$": { id: "routes/sign-in/$", parentId: "root", path: "sign-in/*", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in/$-EOIJ7FOZ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up/$": { id: "routes/sign-up/$", parentId: "root", path: "sign-up/*", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up/$-PSSTIFSB.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-32141F69.js" };
+var assets_manifest_default = { version: "2787e009", entry: { module: "/build/entry.client-54QDP5ML.js", imports: ["/build/_shared/chunk-RFR2BVBZ.js", "/build/_shared/chunk-U7PDLUNP.js", "/build/_shared/chunk-36S4JRLM.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-YLXFXWWU.js", imports: ["/build/_shared/chunk-V5RMJA44.js", "/build/_shared/chunk-6AZZXBV6.js", "/build/_shared/chunk-3WKBNXIS.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !1 }, "routes/hostel/$hostelId": { id: "routes/hostel/$hostelId", parentId: "root", path: "hostel/:hostelId", index: void 0, caseSensitive: void 0, module: "/build/routes/hostel/$hostelId-IPBJ2HH7.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-QXEVK4AG.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-in/$": { id: "routes/sign-in/$", parentId: "root", path: "sign-in/*", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-in/$-EOIJ7FOZ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/sign-up/$": { id: "routes/sign-up/$", parentId: "root", path: "sign-up/*", index: void 0, caseSensitive: void 0, module: "/build/routes/sign-up/$-PSSTIFSB.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-2787E009.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
