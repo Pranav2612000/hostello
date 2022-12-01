@@ -217,7 +217,7 @@ export default function Header({ /*placeholder*/ }) {
         */}
 
         <div className="profile">
-          <a href="#">Become a host</a>
+          <a href="/hostel/list">Become a host</a>
           {/*
           <a href="#" className="globe">
             <Globe />
