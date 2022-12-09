@@ -15,6 +15,15 @@ type Hostel struct {
 	State            string `json:"state"`
 	CoverImgURL      string `json:"coverimg"`
 	City             string `json:"city"`
+	Description      string `json:"description"`
+	Ammenities       string `json:"ammenities"`
+	Type             string `json:"type"`
+	VideoLink        string `json:"videoLink"`
+	RoomPhoto        string `json:"roomPhoto"`
+	Bathroom         string `json:"bathroomPhoto"`
+	Reception        string `json:"ReceptionPhoto"`
+	Kitchen          string `json:"kitchen"`
+	GmapLink         string `json:"gmap"`
 	NumberOfRooms    int    `json:"numberofrooms"`
 	OccupancyPerRoom int    `json:"occupancyperroom"`
 	Price            int    `json:"price"`

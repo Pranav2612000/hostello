@@ -11,6 +11,7 @@ import (
 type HostelController interface {
 	Savehostel(ctx *gin.Context)
 	FindAll(ctx *gin.Context)
+	FindById(ctx *gin.Context)
 	AppendUser(ctx *gin.Context)
 	RegisterHostelRoutes(rg *gin.RouterGroup)
 }
@@ -30,11 +31,18 @@ func (c *controller) FindAll(ctx *gin.Context) {
 	hostel := c.service.FindAll(&city)
 	ctx.JSON(http.StatusOK, hostel)
 }
+
+func (c *controller) FindById(ctx *gin.Context) {
+	var _id string = ctx.Param("id")
+	hostel := c.service.FindById(&_id)
+	ctx.JSON(http.StatusOK, hostel)
+}
+
 func (c *controller) Savehostel(ctx *gin.Context) {
 	var hostel entity.Hostel
 	ctx.BindJSON(&hostel)
-	c.service.Save(hostel)
-	ctx.JSON(http.StatusOK, gin.H{"message": "success"})
+	id, _ := c.service.Save(hostel)
+	ctx.JSON(http.StatusOK, gin.H{"message": "success", "id": id})
 }
 
 func (c *controller) AppendUser(ctx *gin.Context) {
@@ -50,4 +58,5 @@ func (c *controller) RegisterHostelRoutes(rg *gin.RouterGroup) {
 	hostelroute.GET("/findall/:city", c.FindAll)
 	hostelroute.POST("/save", c.Savehostel)
 	hostelroute.PUT("/appenduser/:hostelName", c.AppendUser)
+	hostelroute.GET("/findbyId/:id", c.FindById)
 }

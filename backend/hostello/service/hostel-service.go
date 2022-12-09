@@ -5,13 +5,15 @@ import (
 	"hostello_app/hostello/entity"
 
 	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
 type HostelService interface {
-	Save(entity.Hostel) error
+	Save(entity.Hostel) (string, error)
 	AppendUser(entity.User, *string) ([]entity.User, error)
 	FindAll(*string) []entity.Hostel
+	FindById(*string) entity.Hostel
 }
 
 type hostelService struct {
@@ -26,9 +28,13 @@ func NewHostel(hostelCollection *mongo.Collection, ctx context.Context) HostelSe
 	}
 }
 
-func (service *hostelService) Save(hostel entity.Hostel) error {
-	_, err := service.hostelCollection.InsertOne(service.ctx, hostel)
-	return err
+func (service *hostelService) Save(hostel entity.Hostel) (string, error) {
+	id, err := service.hostelCollection.InsertOne(service.ctx, hostel)
+	if oid, ok := id.InsertedID.(primitive.ObjectID); ok {
+		return oid.Hex(), err
+	} else {
+		return "", err
+	}
 }
 
 func (service *hostelService) AppendUser(user entity.User, hostelName *string) ([]entity.User, error) {
@@ -70,4 +76,19 @@ func (service *hostelService) FindAll(city *string) []entity.Hostel {
 	}
 	cursor.Close(service.ctx)
 	return hostels
+}
+
+func (service *hostelService) FindById(id *string) entity.Hostel {
+	var hostel entity.Hostel
+	objectId, err := primitive.ObjectIDFromHex(*id)
+	if err != nil {
+		return entity.Hostel{}
+	}
+	filter := bson.D{bson.E{Key: "_id", Value: objectId}}
+	cursor := service.hostelCollection.FindOne(service.ctx, filter)
+	err = cursor.Decode(&hostel)
+	if err != nil {
+		return entity.Hostel{}
+	}
+	return hostel
 }
