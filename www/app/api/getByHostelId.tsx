@@ -3,7 +3,7 @@ import axios from 'axios';
 const getByHostelId = async (id: any) => {
   let config = {
     method: 'get',
-    url: `http://localhost:8080/v1/hostel/findall/${id}`,
+    url: `http://localhost:8080/v1/hostel/findbyId/${id}`,
     headers: { }
   };
 

@@ -42,7 +42,7 @@ const HostelsList = () => {
             {filteredStays.map((stay:any, index:number) => {
               return (
                 <GridItem colSpan={[12,6,4]}>
-                  <Card sx={{ border: 0, boxShadow: 0, background: 'unset', height: '100%' }} onClick={() => navigate(`/hostel/${stay._id}`)}>
+                  <Card sx={{ border: 0, boxShadow: 0, background: 'unset', height: '100%' }} onClick={() => navigate(`/hostel/${stay.id}`)}>
                     <CardHeader padding={0}>
                       <img src={stays[index].photo} alt={stay.hostelName} width="100%" style={{ borderRadius: '16px', aspectRatio: '394/267', objectFit: 'cover' }} />
                     </CardHeader>
