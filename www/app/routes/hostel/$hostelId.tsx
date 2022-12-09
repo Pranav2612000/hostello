@@ -1,49 +1,64 @@
 import { Container, Grid, GridItem, Stack } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import clsx from "clsx";
+import getByHostelId from "~/api/getByHostelId";
+import { useParams } from "@remix-run/react";
 
-const tabs = [
-  {
-    name: "Video",
-    render: () => {
-      return (
-        <div className="tab-pane fade show active" id="pills-video" role="tabpanel" aria-labelledby="pills-video-tab">
-          <iframe src="https://player.vimeo.com/video/73221098" width="100%" height="460" frameBorder="0" allowFullScreen></iframe>
-        </div>
-      );
-    }
-  },
-  {
-    name: "Floor Plans",
-    render: () => {
-      return (
-        <div className="tab-pane fade" id="pills-plans" role="tabpanel" aria-labelledby="pills-plans-tab">
-          <img src="assets/img/plan2.jpg" alt="" className="img-fluid"/>
-        </div>
-      );
-    }
-  },
-  {
-    name: "Ubication",
-    render: () => {
-      return (
-        <div className="tab-pane fade" id="pills-map" role="tabpanel" aria-labelledby="pills-map-tab">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968482413!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes+Square!5e0!3m2!1ses-419!2sve!4v1510329142834" width="100%" height="460" frameBorder="0" style={{border:0}} allowFullScreen></iframe>
-        </div>
-      );
-    }
-  },
-];
+
 export default function HostelListing() {
   const [infoTabIndex, setInfoTabIndex] = useState<number>(0);
+  const [hostel, setHostel] = useState<any>({});
+  const params = useParams();
+  const id = params.hostelId;
+  useEffect(() => {
+    const getData = async () => {
+      const hostel = await getByHostelId(id);
+      setHostel(hostel);
+    }
+    getData();
+  }, []);
+
+  const tabs = [
+    {
+      name: "Video",
+      render: () => {
+        return (
+          <div className="tab-pane fade show active" id="pills-video" role="tabpanel" aria-labelledby="pills-video-tab">
+            <iframe src={hostel.videoLink} width="100%" height="460" frameBorder="0" allowFullScreen></iframe>
+          </div>
+        );
+      }
+    },
+    {
+      name: "Floor Plans",
+      render: () => {
+        return (
+          <div className="tab-pane fade" id="pills-plans" role="tabpanel" aria-labelledby="pills-plans-tab">
+            <img src="assets/img/plan2.jpg" alt="" className="img-fluid"/>
+          </div>
+        );
+      }
+    },
+    {
+      name: "Ubication",
+      render: () => {
+        return (
+          <div className="tab-pane fade" id="pills-map" role="tabpanel" aria-labelledby="pills-map-tab">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968482413!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes+Square!5e0!3m2!1ses-419!2sve!4v1510329142834" width="100%" height="460" frameBorder="0" style={{border:0}} allowFullScreen></iframe>
+          </div>
+        );
+      }
+    },
+  ];
+
   return (
     <>
       <section className="intro-single">
         <Grid px={['4', '32']} templateColumns={'repeat(12, 1fr)'}>
           <GridItem colSpan={[12, 8]}>
             <div className="title-single-box">
-              <h1 className="title-single">304 Blaster Up</h1>
-              <span className="color-text-a">Chicago, IL 606543</span>
+              <h1 className="title-single">{hostel.hostelName}</h1>
+              <span className="color-text-a">{hostel.address1}</span>
             </div>
           </GridItem>
           <GridItem colSpan={[12, 4]}>
@@ -56,7 +71,7 @@ export default function HostelListing() {
                   <a href="property-grid.html">Properties</a>
                 </li>
                 <li className="breadcrumb-item active" aria-current="page">
-                  304 Blaster Up
+                  {hostel.address1}
                 </li>
               </ol>
             </nav>
@@ -72,7 +87,7 @@ export default function HostelListing() {
               <div id="property-single-carousel" className="swiper">
                 <div className="swiper-wrapper">
                   <div className="carousel-item-b swiper-slide">
-                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80" alt=""/>
+                    <img src={hostel.coverimg} alt=""/>
                   </div>
                   <div className="carousel-item-b swiper-slide">
                     <img src="assets/img/slide-2.jpg" alt=""/>
@@ -88,10 +103,10 @@ export default function HostelListing() {
               <div className="property-price d-flex justify-content-center foo">
                 <div className="card-header-c d-flex relative">
                   <div className="card-box-ico">
-                    <span className="bi bi-cash">$</span>
+                    <span className="bi bi-cash">₹</span>
                   </div>
                   <div className="card-title-c align-self-center absolute top-30 left-50">
-                    <h5 className="title-c">15000</h5>
+                    <h5 className="title-c">{hostel.price}</h5>
                   </div>
                 </div>
               </div>
@@ -105,22 +120,26 @@ export default function HostelListing() {
                 </div>
                 <div className="summary-list">
                   <ul className="list">
+                    {/*
                     <li className="d-flex justify-content-between">
                       <strong>Property ID:</strong>
                       <span>1134</span>
                     </li>
+                    */}
                     <li className="d-flex justify-content-between">
                       <strong>Location:</strong>
-                      <span>Chicago, IL 606543</span>
+                      <span>{hostel.address2}</span>
                     </li>
                     <li className="d-flex justify-content-between">
                       <strong>Property Type:</strong>
-                      <span>House</span>
+                      <span>{hostel.type}</span>
                     </li>
+                    {/*
                     <li className="d-flex justify-content-between">
                       <strong>Status:</strong>
                       <span>Sale</span>
                     </li>
+                    */}
                     <li className="d-flex justify-content-between">
                       <strong>Area:</strong>
                       <span>340m
@@ -153,16 +172,7 @@ export default function HostelListing() {
               </div>
               <div className="property-description">
                 <p className="description color-text-a">
-                  Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit
-                  neque, auctor sit amet
-                  aliquam vel, ullamcorper sit amet ligula. Cras ultricies ligula sed magna dictum porta.
-                  Curabitur aliquet quam id dui posuere blandit. Mauris blandit aliquet elit, eget tincidunt
-                  nibh pulvinar quam id dui posuere blandit.
-                </p>
-                <p className="description color-text-a no-margin">
-                  Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec rutrum congue leo eget
-                  malesuada. Quisque velit nisi,
-                  pretium ut lacinia in, elementum id enim. Donec sollicitudin molestie malesuada.
+                  <p dangerouslySetInnerHTML={ {__html: hostel.description} }></p>
                 </p>
               </div>
               <div className="row section-t3">
@@ -174,6 +184,11 @@ export default function HostelListing() {
               </div>
               <div className="amenities-list color-text-a">
                 <ul className="list-a no-margin">
+                  {(hostel.amenities ? hostel.amenities : '').split(", ").map(amenity => {
+                    return (
+                      <li>{amenity}</li>
+                    )
+                  })}
                   <li>Balcony</li>
                   <li>Outdoor Kitchen</li>
                   <li>Cable Tv</li>

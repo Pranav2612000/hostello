@@ -64,14 +64,13 @@ export default function Index() {
             <Stack
                 justify='center'
                 textAlign='center'
-                h='100vh'
                 flex={1}
                 color='white'
                 gap={20}
             >
                 <ZeroSlider/>
+                <HostelsList/>
             </Stack>
-            <HostelsList/>
         </>
     )
 }
