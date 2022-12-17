@@ -13,6 +13,7 @@ type HostelController interface {
 	FindAll(ctx *gin.Context)
 	FindById(ctx *gin.Context)
 	AppendUser(ctx *gin.Context)
+	FindDistinct(ctx *gin.Context)
 	RegisterHostelRoutes(rg *gin.RouterGroup)
 }
 
@@ -53,10 +54,16 @@ func (c *controller) AppendUser(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, ulist)
 }
 
+func (c *controller) FindDistinct(ctx *gin.Context) {
+	city := c.service.FindDistinctCity()
+	ctx.JSON(http.StatusOK, gin.H{"message": "success", "city": city})
+}
+
 func (c *controller) RegisterHostelRoutes(rg *gin.RouterGroup) {
 	hostelroute := rg.Group("/hostel")
 	hostelroute.GET("/findall/:city", c.FindAll)
 	hostelroute.POST("/save", c.Savehostel)
 	hostelroute.PUT("/appenduser/:hostelName", c.AppendUser)
 	hostelroute.GET("/findbyId/:id", c.FindById)
+	hostelroute.GET("/city", c.FindDistinct)
 }

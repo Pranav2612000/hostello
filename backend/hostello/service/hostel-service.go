@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+	"fmt"
 	"hostello_app/hostello/entity"
 
 	"go.mongodb.org/mongo-driver/bson"
@@ -14,11 +15,16 @@ type HostelService interface {
 	AppendUser(entity.User, *string) ([]entity.User, error)
 	FindAll(*string) []entity.Hostel
 	FindById(*string) entity.Hostel
+	FindDistinctCity() []string
 }
 
 type hostelService struct {
 	hostelCollection *mongo.Collection
 	ctx              context.Context
+}
+
+type city struct {
+	city []string
 }
 
 func NewHostel(hostelCollection *mongo.Collection, ctx context.Context) HostelService {
@@ -91,4 +97,17 @@ func (service *hostelService) FindById(id *string) entity.Hostel {
 		return entity.Hostel{}
 	}
 	return hostel
+}
+
+func (service *hostelService) FindDistinctCity() []string {
+	var cities []string
+	result, err := service.hostelCollection.Distinct(service.ctx, "city", bson.D{})
+	if err != nil {
+		return nil
+	}
+	for _, v := range result {
+		valStr := fmt.Sprint(v)
+		cities = append(cities, valStr)
+	}
+	return cities
 }
