@@ -4,16 +4,23 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import stays from './hostels.json';
 import getHostelsByCity from '~/api/getHostelsByCity';
-
-const cities = ["Pune", "Mumbai", "Nashik"];
+import getCities from '~/api/getCities';
 
 const HostelsList = () => {
   const [location, setLocation] = useState<null | String>(null);
   const [guests, setGuests] = useState<number>(0);
   const [hostels, setHostels] = useState<any>([]);
   const navigate = useNavigate()
-  const [city, setCity] = useState<string>(cities[0]);
-  console.log({city});
+  const [cities, setCities] = useState<string[]>([]);
+  const [city, setCity] = useState<string>('');
+
+  useEffect(() => {
+    const fetchCities = async () => {
+      const cities = await getCities();
+      setCities(cities.city);
+    };
+    fetchCities();
+  }, []);
 
   useEffect(() => {
     const fetchHostels = async () => {
