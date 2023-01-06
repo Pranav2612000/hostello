@@ -31,7 +31,8 @@ var (
 func init() {
 	ctx = context.TODO()
 	ctx := context.Background()
-	client, err := mongo.Connect(ctx, options.Client().ApplyURI("mongodb+srv://hostello:hostello123@cluster0.3i52dk5.mongodb.net/?retryWrites=true&w=majority"))
+	// client, err := mongo.Connect(ctx, options.Client().ApplyURI("mongodb+srv://hostello:hostello123@cluster0.3i52dk5.mongodb.net/?retryWrites=true&w=majority"))
+	client, err := mongo.Connect(ctx, options.Client().ApplyURI("mongodb+srv://Hostello00:_*_EZjD8LCsek_4@cluster0.z6mdnpz.mongodb.net/?retryWrites=true&w=majority"))
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -50,7 +51,7 @@ func init() {
 	us = service.NewUser(userrc, ctx)
 	uc = controller.NewUserController(us)
 	server = gin.Default()
-    server.Use(cors.Default())
+	server.Use(cors.Default())
 
 }
 
