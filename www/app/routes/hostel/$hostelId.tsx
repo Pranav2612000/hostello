@@ -1,10 +1,19 @@
-import { Container, Grid, GridItem, Stack } from "@chakra-ui/react";
+import { Button, Container, Grid, GridItem, Stack, Table, TableContainer, Tbody, Td, Th, Thead } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import getByHostelId from "~/api/getByHostelId";
 import { useParams } from "@remix-run/react";
 import { useUser } from '@clerk/remix';
 import sendHostelInfo from "~/api/sendHostelInfo";
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+} from '@chakra-ui/react'
 
 
 export default function HostelListing() {
@@ -12,6 +21,7 @@ export default function HostelListing() {
   const [hostel, setHostel] = useState<any>({});
   const [imgs, setImgs] = useState<any>([]);
   const [imgIndex, setImgIndex] = useState<number>(0);
+  const [isPricingModalOpen, setIsPricingModalOpen] = useState<boolean>(false);
   const params = useParams();
   const id = params.hostelId;
   const { user } = useUser();
@@ -84,6 +94,36 @@ export default function HostelListing() {
 
   return (
     <>
+      <Modal isOpen={isPricingModalOpen} onClose={() => setIsPricingModalOpen(false)}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Pricing</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+
+            Choose your payment plan 
+            <TableContainer>
+              <Table size="lg">
+                <Thead>
+                  <Th>Monthly</Th>
+                  <Th>Annually</Th>
+                </Thead>
+                <Tbody>
+                  <Td>{hostel.price}</Td>
+                  <Td>{hostel.price * 12}</Td>
+                </Tbody>
+              </Table>
+            </TableContainer>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme='blue' mr={3} onClick={() => setIsPricingModalOpen(false)}>
+              Close
+            </Button>
+            <Button variant='ghost' onClick={onButtonClicked}>I'm interested</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
       <section className="intro-single">
         <Grid px={['4', '32']} templateColumns={'repeat(12, 1fr)'}>
           <GridItem colSpan={[12, 8]}>
@@ -133,12 +173,7 @@ export default function HostelListing() {
             <GridItem colSpan={[12, 5, 4]}>
               <div className="property-price d-flex justify-content-center foo">
                 <div className="card-header-c d-flex relative">
-                  <div className="card-box-ico">
-                    <span className="bi bi-cash">₹</span>
-                  </div>
-                  <div className="card-title-c align-self-center absolute top-30 left-50">
-                    <h5 className="title-c">{hostel.price}</h5>
-                  </div>
+                  <Button onClick={() => setIsPricingModalOpen(true)}>Book Now!</Button>
                 </div>
               </div>
               <div className="property-summary">
