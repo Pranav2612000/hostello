@@ -989,6 +989,12 @@ body {
     position: relative;
     color: #ffffff;
   }
+
+  .intro.hero {
+    height: 100vh;
+    position: relative;
+    background-color: #f5e0e0;
+  }
   
   .intro .swiper-pagination {
     bottom: 50px;
