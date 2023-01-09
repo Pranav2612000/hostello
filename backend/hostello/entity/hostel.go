@@ -19,7 +19,7 @@ type Hostel struct {
 	CoverImgURL      string             `json:"coverimg"`
 	City             string             `json:"city"`
 	Description      string             `json:"description"`
-	Ammenities       string             `json:"ammenities"`
+	Amenities        string             `json:"amenities"`
 	Type             string             `json:"type"`
 	VideoLink        string             `json:"videoLink"`
 	RoomPhoto        string             `json:"roomPhoto"`
