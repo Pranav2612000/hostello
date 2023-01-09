@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"hostello_app/hostello/entity"
+	"net/smtp"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -16,6 +17,7 @@ type HostelService interface {
 	FindAll(*string) []entity.Hostel
 	FindById(*string) entity.Hostel
 	FindDistinctCity() []string
+	SendDetails(entity.User, *string)
 }
 
 type hostelService struct {
@@ -110,4 +112,39 @@ func (service *hostelService) FindDistinctCity() []string {
 		cities = append(cities, valStr)
 	}
 	return cities
+}
+
+func (service *hostelService) SendDetails(user entity.User, hostelid *string) {
+	var hostel entity.Hostel = service.FindById(hostelid)
+	// hostel = service.FindById(hostelid)
+	from := "wtlproject20@gmail.com"
+	password := "dayhsbhxuwzgidqq"
+	auth := smtp.PlainAuth("", from, password, "smtp.gmail.com")
+	to := []string{
+		"wtlproject20@gmail.com",
+		user.Email,
+	}
+	fmt.Println(user)
+	fmt.Println(to)
+	fmt.Println(hostel)
+	smtpHost := "smtp.gmail.com"
+	smtpPort := "587"
+	// message := []byte("This is a test email message.")
+	message := []byte("To: " + user.Email + "\r\n" +
+
+		"Subject: Thank you for you interest in " + hostel.HostelName + "," + hostel.City + "\r\n" +
+
+		"\r\n" +
+
+		"Dear " + user.FistName + " " + user.LastName + ", \n Thank for showing interest in " +
+		hostel.HostelName + "," + hostel.City + ".\n Our team will reach back to you soon on your email : " + user.Email + "\r\n")
+
+	// Authentication.
+	// Sending email.
+	err := smtp.SendMail(smtpHost+":"+smtpPort, auth, from, to, message)
+	if err != nil {
+		fmt.Println("Email error")
+		fmt.Println(err)
+		return
+	}
 }

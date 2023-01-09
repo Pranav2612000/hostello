@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"fmt"
 	"hostello_app/hostello/entity"
 	"hostello_app/hostello/service"
 	"net/http"
@@ -14,6 +15,7 @@ type HostelController interface {
 	FindById(ctx *gin.Context)
 	AppendUser(ctx *gin.Context)
 	FindDistinct(ctx *gin.Context)
+	SendEmail(ctx *gin.Context)
 	RegisterHostelRoutes(rg *gin.RouterGroup)
 }
 
@@ -59,6 +61,15 @@ func (c *controller) FindDistinct(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{"message": "success", "city": city})
 }
 
+func (c *controller) SendEmail(ctx *gin.Context) {
+	var user entity.User
+	ctx.BindJSON(&user)
+	fmt.Println(user)
+	var hostelid string = ctx.Param("hostelid")
+	fmt.Println(hostelid)
+	c.service.SendDetails(user, &hostelid)
+	ctx.JSON(http.StatusOK, gin.H{"message": "success"})
+}
 func (c *controller) RegisterHostelRoutes(rg *gin.RouterGroup) {
 	hostelroute := rg.Group("/hostel")
 	hostelroute.GET("/findall/:city", c.FindAll)
@@ -66,4 +77,5 @@ func (c *controller) RegisterHostelRoutes(rg *gin.RouterGroup) {
 	hostelroute.PUT("/appenduser/:hostelName", c.AppendUser)
 	hostelroute.GET("/findbyId/:id", c.FindById)
 	hostelroute.GET("/city", c.FindDistinct)
+	hostelroute.POST("/email/:hostelid", c.SendEmail)
 }
