@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import clsx from "clsx";
 import getByHostelId from "~/api/getByHostelId";
 import { useParams } from "@remix-run/react";
+import { useUser } from '@clerk/remix';
+import sendHostelInfo from "~/api/sendHostelInfo";
 
 
 export default function HostelListing() {
@@ -10,6 +12,7 @@ export default function HostelListing() {
   const [hostel, setHostel] = useState<any>({});
   const params = useParams();
   const id = params.hostelId;
+  const { user } = useUser();
   useEffect(() => {
     const getData = async () => {
       const hostel = await getByHostelId(id);
@@ -50,6 +53,21 @@ export default function HostelListing() {
       }
     },
   ];
+
+  const onButtonClicked = () => {
+    try {
+      sendHostelInfo({
+        firstName: user?.firstName,
+        lastName: user?.lastName,
+        hostelId: id,
+        email: user?.emailAddresses[0].emailAddress
+      });
+      alert("You will receive an email with hostel details soon");
+    } catch (err) {
+      console.log(err);
+      alert("An error occured! Please try again in some time");
+    }
+  }
 
   return (
     <>
@@ -184,7 +202,7 @@ export default function HostelListing() {
               </div>
               <div className="amenities-list color-text-a">
                 <ul className="list-a no-margin">
-                  {(hostel.amenities ? hostel.amenities : '').split(", ").map(amenity => {
+                  {(hostel.amenities ? hostel.amenities : '').split(", ").map((amenity:any) => {
                     return (
                       <li>{amenity}</li>
                     )
@@ -229,6 +247,11 @@ export default function HostelListing() {
           </Grid>
         </Stack>
       </section>{/*<!-- End Property Single-->*/}
+      <section className="bottom-btn-container">
+        <button onClick={onButtonClicked}>
+          I'm interested
+        </button>
+      </section>
     </>
   )
 }
