@@ -1,9 +1,10 @@
 import axios from 'axios';
+import { BASE_URL } from './constants';
 
 const addHostel = async (hostel:any) => {
   let config = {
     method: 'post',
-    url: `http://localhost:8080/v1/hostel/save`,
+    url: `${BASE_URL}v1/hostel/save`,
     headers: {
       'Content-Type': 'application/json'
     },

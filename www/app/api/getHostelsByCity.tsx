@@ -1,9 +1,10 @@
 import axios from 'axios';
+import { BASE_URL } from './constants';
 
 const getHostelsByCity = async (city: any) => {
   let config = {
     method: 'get',
-    url: `http://localhost:8080/v1/hostel/findall/${city}`,
+    url: `${BASE_URL}v1/hostel/findall/${city}`,
     headers: { }
   };
 

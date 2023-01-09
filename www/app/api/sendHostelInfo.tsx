@@ -5,8 +5,6 @@ const sendHostelInfo = async ({ firstName, lastName, email, age, hostelId}:any )
   if(!age) {
     age = 0;
   }
-  console.log({ firstName, lastName, email, age, hostelId});
-
   let config = {
     method: 'post',
     url: `${BASE_URL}v1/hostel/email/${hostelId}`,
