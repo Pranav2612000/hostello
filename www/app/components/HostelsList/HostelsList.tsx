@@ -51,7 +51,7 @@ const HostelsList = () => {
                 <GridItem colSpan={[12,6,4]}>
                   <Card sx={{ border: 0, boxShadow: 0, background: 'unset', height: '100%' }} onClick={() => navigate(`/hostel/${stay.id}`)}>
                     <CardHeader padding={0}>
-                      <img src={stays[index].photo} alt={stay.hostelName} width="100%" style={{ borderRadius: '16px', aspectRatio: '394/267', objectFit: 'cover' }} />
+                      <img src={stays[index % 15].photo} alt={stay.hostelName} width="100%" style={{ borderRadius: '16px', aspectRatio: '394/267', objectFit: 'cover' }} />
                     </CardHeader>
                     <CardBody sx={{ padding: 0, paddingTop: '0.5em' }}>
                       <Box display={'flex'} justifyContent={'space-between'}>

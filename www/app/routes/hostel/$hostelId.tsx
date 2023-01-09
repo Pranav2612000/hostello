@@ -10,9 +10,17 @@ import sendHostelInfo from "~/api/sendHostelInfo";
 export default function HostelListing() {
   const [infoTabIndex, setInfoTabIndex] = useState<number>(0);
   const [hostel, setHostel] = useState<any>({});
+  const [imgs, setImgs] = useState<any>([]);
+  const [imgIndex, setImgIndex] = useState<number>(0);
   const params = useParams();
   const id = params.hostelId;
   const { user } = useUser();
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setImgIndex((imgIndex) => (imgIndex + 1) % 4);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
   useEffect(() => {
     const getData = async () => {
       const hostel = await getByHostelId(id);
@@ -20,6 +28,11 @@ export default function HostelListing() {
     }
     getData();
   }, []);
+
+  useEffect(() => {
+    setImgs([ hostel.coverimg, hostel.bathroomPhoto, hostel.ReceptionPhoto, hostel.roomPhoto]);
+  }, [hostel])
+
 
   const tabs = [
     {
@@ -105,7 +118,7 @@ export default function HostelListing() {
               <div id="property-single-carousel" className="swiper">
                 <div className="swiper-wrapper">
                   <div className="carousel-item-b swiper-slide">
-                    <img src={hostel.coverimg} alt=""/>
+                    <img src={imgs[imgIndex]} alt=""/>
                   </div>
                   <div className="carousel-item-b swiper-slide">
                     <img src="assets/img/slide-2.jpg" alt=""/>
