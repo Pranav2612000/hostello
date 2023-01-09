@@ -334,6 +334,7 @@ const HeaderSection = styled.header`
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
+    color: #ab0909;
   }
   & > div {
     flex: 0 0 20%;
