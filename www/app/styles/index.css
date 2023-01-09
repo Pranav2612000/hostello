@@ -2247,3 +2247,17 @@ body {
     margin-top:10px;
     margin-left: 10px;
   }
+
+  .image_aboutus{
+    display:flex;
+    margin-top: 30px;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo{
+    width : 40%;
+    height: 40%;
+  }
