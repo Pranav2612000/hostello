@@ -74,7 +74,7 @@ export default function Header({ /*placeholder*/ }) {
   */
 
   useEffect(() => {
-    const handleClick = (event: React.MouseEvent<HTMLElement>):void => {
+    const handleClick = (event: React.MouseEvent<HTMLElement>): void => {
       if (!headerRef.current) {
         return;
       }
@@ -104,13 +104,13 @@ export default function Header({ /*placeholder*/ }) {
     <HeaderSection
       ref={headerRef}
       className={[
-        scrolled && "scrolled" ,
+        scrolled && "scrolled",
         inputFocus ? "inputFocus" : null,
       ].join(' ')}
     >
       <div className="headerInner">
         <div className="logo" onClick={() => navigate("/")}>
-          <img src={logo} width="30px"/>
+          <img src={logo} width="30px" />
           <span>hostello</span>
         </div>
         <nav ref={navRef}>
@@ -125,7 +125,7 @@ export default function Header({ /*placeholder*/ }) {
         {/*
             <MobileNav />
         */}
-        
+
         {/*
         <form className="search">
           <input
@@ -210,6 +210,7 @@ export default function Header({ /*placeholder*/ }) {
         */}
 
         <div className="profile">
+          <a href="/aboutus">About us</a>
           <a href="/hostel/list">Become a host</a>
           {/*
           <a href="#" className="globe">
