@@ -124,9 +124,9 @@ func (service *hostelService) SendDetails(user entity.User, hostelid *string) {
 		"wtlproject20@gmail.com",
 		user.Email,
 	}
-	fmt.Println(user)
-	fmt.Println(to)
-	fmt.Println(hostel)
+	// fmt.Println(user)
+	// fmt.Println(to)
+	// fmt.Println(hostel)
 	smtpHost := "smtp.gmail.com"
 	smtpPort := "587"
 	// message := []byte("This is a test email message.")
@@ -137,14 +137,14 @@ func (service *hostelService) SendDetails(user entity.User, hostelid *string) {
 		"\r\n" +
 
 		"Dear " + user.FistName + " " + user.LastName + ", \n Thank for showing interest in " +
-		hostel.HostelName + "," + hostel.City + ".\n Our team will reach back to you soon on your email : " + user.Email + "\r\n")
+		hostel.HostelName + "," + hostel.City + ".\nOur team will reach back to you soon on your email : " + user.Email + "\r\n")
 
 	// Authentication.
 	// Sending email.
 	err := smtp.SendMail(smtpHost+":"+smtpPort, auth, from, to, message)
 	if err != nil {
-		fmt.Println("Email error")
-		fmt.Println(err)
+		// fmt.Println("Email error")
+		// fmt.Println(err)
 		return
 	}
 }
