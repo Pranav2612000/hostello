@@ -12,7 +12,7 @@ export default function HostelListing() {
 
   return (
     <>
-      <section className="intro-single">
+      <section className="aboutus-single">
         <Grid px={['4', '32']} templateColumns={'repeat(12, 1fr)'}>
           <GridItem colSpan={[12, 8]}>
             <div className="title-single-box">
