@@ -117,11 +117,14 @@ func (service *hostelService) FindDistinctCity() []string {
 func (service *hostelService) SendDetails(user entity.User, hostelid *string) {
 	var hostel entity.Hostel = service.FindById(hostelid)
 	// hostel = service.FindById(hostelid)
-	from := "wtlproject20@gmail.com"
-	password := "dayhsbhxuwzgidqq"
+	// from := "wtlproject20@gmail.com"
+	// password := "seoyapfpururwakq"
+	from := "hostello.co.in@gmail.com"
+	password := "phaeddbttbpywhab"
 	auth := smtp.PlainAuth("", from, password, "smtp.gmail.com")
 	to := []string{
-		"wtlproject20@gmail.com",
+		// "wtlproject20@gmail.com",
+		"hostello.co.in@gmail.com",
 		user.Email,
 	}
 	// fmt.Println(user)
@@ -143,8 +146,8 @@ func (service *hostelService) SendDetails(user entity.User, hostelid *string) {
 	// Sending email.
 	err := smtp.SendMail(smtpHost+":"+smtpPort, auth, from, to, message)
 	if err != nil {
-		// fmt.Println("Email error")
-		// fmt.Println(err)
+		fmt.Println("Email error")
+		fmt.Println(err)
 		return
 	}
 }

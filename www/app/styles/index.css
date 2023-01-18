@@ -1136,6 +1136,71 @@ body {
       padding-top: 3rem;
     }
   }
+
+    /*------/ Aboutus Single /------*/
+    .aboutus-single {
+      padding: 8rem 0 3rem;
+    }
+    
+    @media (max-width: 767px) {
+      .aboutus-single {
+        padding-top: 9rem;
+      }
+    }
+    
+    .aboutus-single .title-single-box {
+      padding: 1rem 0 1rem 2rem;
+    }
+    
+    .aboutus-single .title-single-box {
+      border-left: 3px solid #000000;
+    }
+    
+    .aboutus-single .title-single-box .title-single {
+      font-weight: 600;
+      font-size: 2.2rem;
+    }
+    
+    @media (min-width: 768px) {
+      .aboutus-single .title-single-box .title-single {
+        font-size: 2.1rem;
+      }
+    }
+    
+    @media (min-width: 992px) {
+      .aboutus-single .title-single-box .title-single {
+        font-size: 2.5rem;
+      }
+    }
+  
+    .breadcrumb {
+      padding: 8px 15px;
+      margin-bottom: 20px;
+      list-style: none;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+    }
+  
+    .breadcrumb>li {
+      display: inline-block;
+    }
+  
+    .breadcrumb>li+li:before {
+      padding: 0 5px;
+      color: #ccc;
+      content: "/\00a0";
+  }
+    
+    .aboutus-single .breadcrumb-box {
+      padding: 1rem 0 0 0.5rem;
+    }
+    
+    .aboutus-single .breadcrumb {
+      background-color: transparent;
+      padding-right: 0;
+      padding-left: 0;
+    }
+  
   
   /*------/ Intro Single /------*/
   .intro-single {
