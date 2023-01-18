@@ -117,10 +117,7 @@ export default function HostelListing() {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme='blue' mr={3} onClick={() => setIsPricingModalOpen(false)}>
-              Close
-            </Button>
-            <Button variant='ghost' onClick={onButtonClicked}>I'm interested</Button>
+            <Button colorScheme='red' variant='ghost' onClick={onButtonClicked}>I'm interested</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
