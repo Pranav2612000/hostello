@@ -172,7 +172,7 @@ export default function HostelListing() {
             <GridItem colSpan={[12, 5, 4]}>
               <div className="property-price d-flex justify-content-center foo">
                 <div className="card-header-c d-flex relative">
-                  <Button onClick={() => setIsPricingModalOpen(true)}>Book Now!</Button>
+                  <Button colorScheme='red' onClick={() => setIsPricingModalOpen(true)}>Book Now!</Button>
                 </div>
               </div>
               <div className="property-summary">
