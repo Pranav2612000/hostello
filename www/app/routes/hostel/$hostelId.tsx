@@ -19,6 +19,7 @@ import {
 export default function HostelListing() {
   const [infoTabIndex, setInfoTabIndex] = useState<number>(0);
   const [hostel, setHostel] = useState<any>({});
+  const [loading, setLoading] = useState<boolean>(true);
   const [imgs, setImgs] = useState<any>([]);
   const [imgIndex, setImgIndex] = useState<number>(0);
   const [isPricingModalOpen, setIsPricingModalOpen] = useState<boolean>(false);
@@ -35,6 +36,7 @@ export default function HostelListing() {
     const getData = async () => {
       const hostel = await getByHostelId(id);
       setHostel(hostel);
+      setLoading(false);
     }
     getData();
   }, []);
@@ -125,8 +127,8 @@ export default function HostelListing() {
         <Grid px={['4', '32']} templateColumns={'repeat(12, 1fr)'}>
           <GridItem colSpan={[12, 8]}>
             <div className="title-single-box">
-              <h1 className="title-single">{hostel.hostelName}</h1>
-              <span className="color-text-a">{hostel.address1}</span>
+              <h1 className="title-single">{loading ? "Loading..." : hostel.hostelName}</h1>
+              <span className="color-text-a">{loading ? "Loading..." : hostel.address1}</span>
             </div>
           </GridItem>
           <GridItem colSpan={[12, 4]}>

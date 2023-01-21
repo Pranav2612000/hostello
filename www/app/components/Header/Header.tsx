@@ -111,7 +111,7 @@ export default function Header({ /*placeholder*/ }) {
       <div className="headerInner">
         <div className="logo" onClick={() => navigate("/")}>
           <img src={logo} width="30px" />
-          <span>hostello</span>
+          {/*<span>hostello</span>*/}
         </div>
         <nav ref={navRef}>
           {/*

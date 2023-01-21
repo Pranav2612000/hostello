@@ -18,6 +18,7 @@ const HostelsList = () => {
     const fetchCities = async () => {
       const cities = await getCities();
       setCities(cities.city);
+      setCity(cities.city[0]); // Load the first city by default
     };
     fetchCities();
   }, []);
