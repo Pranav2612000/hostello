@@ -107,11 +107,11 @@ export default function HostelListing() {
             <TableContainer>
               <Table size="lg">
                 <Thead>
-                  <Th>Monthly</Th>
+                  <Th>Semi-Annually</Th>
                   <Th>Annually</Th>
                 </Thead>
                 <Tbody>
-                  <Td>{hostel.price}</Td>
+                  <Td>{hostel.price * 6}</Td>
                   <Td>{hostel.price * 12}</Td>
                 </Tbody>
               </Table>
@@ -171,9 +171,6 @@ export default function HostelListing() {
           <Grid templateColumns={'repeat(12, 1fr)'} gap={8}>
             <GridItem colSpan={[12, 5, 4]}>
               {/* <div className="property-price d-flex justify-content-center foo">
-                <div className="card-header-c d-flex relative">
-                  <Button colorScheme='red' onClick={() => setIsPricingModalOpen(true)}>Book Now!</Button>
-                </div>
               </div> */}
               <div className="property-summary">
                 <div className="row section-t3">
@@ -283,10 +280,13 @@ export default function HostelListing() {
         </Stack>
       </section>{/*<!-- End Property Single-->*/}
       <section className="bottom-btn-container">
-        <button onClick={onButtonClicked}>
-          I'm interested
+        <button onClick={() => setIsPricingModalOpen(false)}>
+          I'm Interested
         </button>
       </section>
+      <div className="book-now-btn-container">
+        <Button colorScheme='red' onClick={() => setIsPricingModalOpen(true)} width={200} height={50}>Book Now!</Button>
+      </div>
     </>
   )
 }

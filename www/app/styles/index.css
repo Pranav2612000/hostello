@@ -2326,6 +2326,7 @@ body {
     background-color: #000000;
     bottom: 0px;
     height: 60px;
+    width: 100%;
     max-width:300px;
     display: flex;
     justify-content: center;
@@ -2336,6 +2337,12 @@ body {
     margin-right: auto;
 
     font-size: 20px;
+  }
+
+  .book-now-btn-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 5rem;
   }
 
   .image_aboutus {
