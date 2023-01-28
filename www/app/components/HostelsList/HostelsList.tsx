@@ -8,6 +8,8 @@ import getCities from '~/api/getCities';
 
 const HostelsList = () => {
   const [location, setLocation] = useState<null | String>(null);
+  const [loadingCities, setLoadingCities] = useState<boolean>(true);
+  const [loadingHotels, setLoadingHotels] = useState<boolean>(true);
   const [guests, setGuests] = useState<number>(0);
   const [hostels, setHostels] = useState<any>([]);
   const navigate = useNavigate()
@@ -19,15 +21,18 @@ const HostelsList = () => {
       const cities = await getCities();
       setCities(cities.city);
       setCity(cities.city[0]); // Load the first city by default
+      setLoadingCities(false);
     };
     fetchCities();
   }, []);
 
   useEffect(() => {
     const fetchHostels = async () => {
+      setLoadingHotels(true);
       let hostels = await getHostelsByCity(city);
       console.log({hostels});
       setHostels(hostels ?? []);
+      setLoadingHotels(false);
     };
     fetchHostels();
   }, [city]);
@@ -88,16 +93,20 @@ const HostelsList = () => {
       <Heading as='h2' size='3xl'>
         Cities
       </Heading>
-      <Tabs onChange={(index) => setCity(cities[index])} colorScheme="gray" bg="darkgray">
-        <TabList>
-          {cities.map(city => {
-            return (
-              <Tab>{city.toUpperCase()}</Tab>
-            )
-          })}
-        </TabList>
-      </Tabs>
-      {staysList}
+      {loadingCities && <Text color='tomato'>Loading...</Text>}
+      {!loadingCities && (
+        <Tabs onChange={(index) => setCity(cities[index])} colorScheme="gray" bg="darkgray">
+          <TabList>
+            {cities.map(city => {
+              return (
+                <Tab>{city.toUpperCase()}</Tab>
+              )
+            })}
+          </TabList>
+        </Tabs>
+      )}
+      {loadingHotels && <Text fontSize='25px' color='tomato' marginBottom={20}>Loading...</Text>}
+      {!loadingHotels && staysList}
     </>
   )
 };
