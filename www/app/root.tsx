@@ -93,7 +93,7 @@ const Document = withEmotionCache(
         return (
             <html lang='en'>
                 <head>
-                    <title>Bossa Nova Stack</title>
+                    <title>Hostello</title>
                     <meta charSet='utf-8' />
                     <meta
                         name='viewport'
