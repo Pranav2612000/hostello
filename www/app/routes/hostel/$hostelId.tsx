@@ -42,7 +42,7 @@ export default function HostelListing() {
   }, []);
 
   useEffect(() => {
-    setImgs([ hostel.coverimg, hostel.bathroomPhoto, hostel.ReceptionPhoto, hostel.roomPhoto]);
+    setImgs([hostel.coverimg, hostel.bathroomPhoto, hostel.ReceptionPhoto, hostel.roomPhoto]);
   }, [hostel])
 
 
@@ -57,16 +57,16 @@ export default function HostelListing() {
         );
       }
     },
-    {
-      name: "Floor Plans",
-      render: () => {
-        return (
-          <div className="tab-pane fade" id="pills-plans" role="tabpanel" aria-labelledby="pills-plans-tab">
-            <img src="assets/img/plan2.jpg" alt="" className="img-fluid"/>
-          </div>
-        );
-      }
-    },
+    // {
+    //   name: "Floor Plans",
+    //   render: () => {
+    //     return (
+    //       <div className="tab-pane fade" id="pills-plans" role="tabpanel" aria-labelledby="pills-plans-tab">
+    //         <img src="assets/img/plan2.jpg" alt="" className="img-fluid"/>
+    //       </div>
+    //     );
+    //   }
+    // },
     // {
     //   name: "Ubication",
     //   render: () => {
@@ -103,7 +103,7 @@ export default function HostelListing() {
           <ModalCloseButton />
           <ModalBody>
 
-            Choose your payment plan 
+            Choose your payment plan
             <TableContainer>
               <Table size="lg">
                 <Thead>
@@ -157,10 +157,10 @@ export default function HostelListing() {
               <div id="property-single-carousel" className="swiper">
                 <div className="swiper-wrapper">
                   <div className="carousel-item-b swiper-slide">
-                    <img src={imgs[imgIndex]} alt=""/>
+                    <img src={imgs[imgIndex]} alt="" />
                   </div>
                   <div className="carousel-item-b swiper-slide">
-                    <img src="assets/img/slide-2.jpg" alt=""/>
+                    <img src="assets/img/slide-2.jpg" alt="" />
                   </div>
                 </div>
               </div>
@@ -170,16 +170,16 @@ export default function HostelListing() {
 
           <Grid templateColumns={'repeat(12, 1fr)'} gap={8}>
             <GridItem colSpan={[12, 5, 4]}>
-              <div className="property-price d-flex justify-content-center foo">
+              {/* <div className="property-price d-flex justify-content-center foo">
                 <div className="card-header-c d-flex relative">
                   <Button colorScheme='red' onClick={() => setIsPricingModalOpen(true)}>Book Now!</Button>
                 </div>
-              </div>
+              </div> */}
               <div className="property-summary">
-                <div className="row">
+                <div className="row section-t3">
                   <div className="col-sm-12">
-                    <div className="title-box-d section-t4">
-                      <h3 className="title-d">Quick Summary</h3>
+                    <div className="title-box-d">
+                      <h3 className="title-d">Property Description</h3>
                     </div>
                   </div>
                 </div>
@@ -228,18 +228,6 @@ export default function HostelListing() {
               </div>
             </GridItem>
             <GridItem colSpan={[12, 7, 8]} className="section-md-t3">
-              <div className="row">
-                <div className="col-sm-12">
-                  <div className="title-box-d">
-                    <h3 className="title-d">Property Description</h3>
-                  </div>
-                </div>
-              </div>
-              <div className="property-description">
-                <p className="description color-text-a">
-                  <p dangerouslySetInnerHTML={ {__html: hostel.description} }></p>
-                </p>
-              </div>
               <div className="row section-t3">
                 <div className="col-sm-12">
                   <div className="title-box-d">
@@ -249,7 +237,7 @@ export default function HostelListing() {
               </div>
               <div className="amenities-list color-text-a">
                 <ul className="list-a no-margin">
-                  {(hostel.amenities ? hostel.amenities : '').split(", ").map((amenity:any) => {
+                  {(hostel.amenities ? hostel.amenities : '').split(", ").map((amenity: any) => {
                     return (
                       <li>{amenity}</li>
                     )

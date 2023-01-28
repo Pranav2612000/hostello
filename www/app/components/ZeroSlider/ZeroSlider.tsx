@@ -19,7 +19,7 @@ const app = () => {
                 <Wrapper>
                 <img src={logo} width="400px" style={{ borderRadius: '25px' }}/>
                   <Text fontSize={'4xl'} color={'hostelloRed.600'}>
-                    Find your perfect space
+                    Find your perfect space!
                   </Text>
                 </Wrapper>
                 <Button
