@@ -279,11 +279,11 @@ export default function HostelListing() {
           </Grid>
         </Stack>
       </section>{/*<!-- End Property Single-->*/}
-      <section className="bottom-btn-container">
+      {/* <section className="bottom-btn-container">
         <button onClick={() => setIsPricingModalOpen(false)}>
           I'm Interested
         </button>
-      </section>
+      </section> */}
       <div className="book-now-btn-container">
         <Button colorScheme='red' onClick={() => setIsPricingModalOpen(true)} width={200} height={50}>Book Now!</Button>
       </div>
