@@ -475,7 +475,7 @@ const HeaderSection = styled.header`
   input[type="number"] {
     -moz-appearance: textfield;
   }
-  @media (max-width: 36rem) {
+  @media (max-width: 1rem) {
     .profile,
     .logo,
     nav,
@@ -510,10 +510,7 @@ const HeaderSection = styled.header`
       }
     }
   }
-  @media (min-width: 36rem) and (max-width: 62.5rem) {
-    nav {
-      display: none;
-    }
+  @media (min-width: 1rem) and (max-width: 1rem) {
     .headerInner {
       grid-template-columns: 1fr 1fr;
     }
@@ -556,18 +553,6 @@ const HeaderSection = styled.header`
         background: #efeff5;
       }
     }
-    @media (min-width: 36rem) and (max-width: 62.5rem) {
-      .profile {
-        opacity: 0;
-        pointer-events: none;
-      }
-      form {
-        left: auto;
-        right: 0;
-        transform: translate(0, 0.125rem) scale(0.83);
-        width: 50%;
-      }
-    }
   }
   &.inputFocus {
     color: #2e2e48;
@@ -579,5 +564,15 @@ const HeaderSection = styled.header`
       width: 100%;
       box-shadow: 0 1rem 1.5rem -0.5rem #0001;
     }
+  }
+
+  @media (max-width: 768px) {
+    .logo {
+      display: none;
+    }
+  }
+
+  header {
+    max-width: 100vh;
   }
 `;

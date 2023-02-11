@@ -39,7 +39,7 @@ const HostelsList = () => {
 
     const filteredStays = hostels;
     const staysList = (
-        <Stack width={'100%'} paddingX={'60px'}>
+        <Stack width={'100%'} paddingX={['20px', '60px']}>
           <Grid templateColumns={'repeat(12, 1fr)'} gap={8} paddingY={2}>
             <GridItem colSpan={12}>
               <Box display={'flex'} justifyContent={'space-between'} alignItems={'flex-end'}>
@@ -55,8 +55,8 @@ const HostelsList = () => {
             {filteredStays.map((stay:any, index:number) => {
               return (
                 <GridItem colSpan={[12,6,4]}>
-                  <Card sx={{ border: 0, boxShadow: 0, background: 'unset', height: '100%' }} onClick={() => navigate(`/hostel/${stay.id}`)}>
-                    <CardHeader padding={0}>
+                  <Card sx={{ border: 0, boxShadow: 0, background: 'unset', height: '100%' }} onClick={() => navigate(`/hostel/${stay.id}`)} maxWidth={[ '256px', 'unset']}>
+                    <CardHeader padding={0} maxWidth={[ '256px', 'unset']}>
                       <img src={stays[index % 15].photo} alt={stay.hostelName} width="100%" style={{ borderRadius: '16px', aspectRatio: '394/267', objectFit: 'cover' }} />
                     </CardHeader>
                     <CardBody sx={{ padding: 0, paddingTop: '0.5em' }}>
