@@ -132,19 +132,13 @@ func (service *hostelService) SendDetails(user entity.User, hostelid *string) {
 	// fmt.Println(hostel)
 	smtpHost := "smtp.gmail.com"
 	smtpPort := "587"
-	// message := []byte("This is a test email message.")
-	message := []byte("To: " + user.Email + "\r\n" +
-
-		"Subject: Thank you for you interest in " + hostel.HostelName + "," + hostel.City + "\r\n" +
-
-		"\r\n" +
-
-		"Dear " + user.FistName + " " + user.LastName + ", \n Thank for showing interest in " +
-		hostel.HostelName + "," + hostel.City + ".\nOur team will reach back to you soon on your email : " + user.Email + "\r\n")
-
+	headers := "MIME-version: 1.0;\nContent-Type: text/html; charset=\"UTF-8\""
+	subject := "Looks like we got your attention!"
+	body := "<p>Hola amigos!</p><br><p>Thank you for your interest in " + hostel.HostelName + ".</p><p>We've processed your enquiry request.<p>Until then, sit back, explore, and chill. Hostello will get back to you within 12 hours.</p><p> To explore more options, click on the link below. http://3.87.21.144:3000/</p><br><p>Toodles:))</p><p><img src=\"../assets/logo.png\"</p>"
+	message := "Subject: " + subject + "\n" + headers + "\n\n" + body
 	// Authentication.
 	// Sending email.
-	err := smtp.SendMail(smtpHost+":"+smtpPort, auth, from, to, message)
+	err := smtp.SendMail(smtpHost+":"+smtpPort, auth, from, to, []byte(message))
 	if err != nil {
 		fmt.Println("Email error")
 		fmt.Println(err)
