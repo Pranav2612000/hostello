@@ -134,7 +134,7 @@ func (service *hostelService) SendDetails(user entity.User, hostelid *string) {
 	smtpPort := "587"
 	headers := "MIME-version: 1.0;\nContent-Type: text/html; charset=\"UTF-8\""
 	subject := "Looks like we got your attention!"
-	body := "<p>Hola amigos!</p><br><p>Thank you for your interest in " + hostel.HostelName + ".</p><p>We've processed your enquiry request.<p>Until then, sit back, explore, and chill. Hostello will get back to you within 12 hours.</p><p> To explore more options, click on the link below. http://3.87.21.144:3000/</p><br><p>Toodles:))</p><p><img src=\"../assets/logo.png\"</p>"
+	body := "<p>Hola amigos!</p><br><p>Thank you for your interest in " + hostel.HostelName + ".</p><p>We've processed your enquiry request.<p>Until then, sit back, explore, and chill. Hostello will get back to you within 12 hours.</p><p> To explore more options, click on the link below. http://3.87.21.144:3000/</p><br><p>Toodles:))</p><p><img src=\"http://3.87.21.144:3000/build/_assets/logo_no_bg_edited-2D5DI5Y5.png\" width=\"100\"></p>"
 	message := "Subject: " + subject + "\n" + headers + "\n\n" + body
 	// Authentication.
 	// Sending email.
